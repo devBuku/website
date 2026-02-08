@@ -1,0 +1,82 @@
+/* Wrapper */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+  width: 100%;
+  margin-bottom: 64px; /* slightly more breathing space */
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px; /* subtle polish, optional */
+}
+
+/* Hero Text */
+.hero-content {
+  max-width: 900px;
+  padding-bottom: 96px; /* vertical spacing only */
+}
+
+.hero-content h1 {
+  font-size: 44px; /* stronger headline */
+  line-height: 1.25;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 720px;
+}
+
+/* CTA */
+.hero-link {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0b5cff;
+  text-decoration: underline;
+}
+
+.services-section {
+  padding: 0 80px 100px 80px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Card */
+.service-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}

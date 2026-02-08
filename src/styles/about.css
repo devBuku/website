@@ -1,0 +1,85 @@
+/* =====================
+   MAIN LAYOUT
+===================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  padding: 80px;
+  align-items: start;
+}
+
+/* =====================
+   LEFT COLUMN
+===================== */
+
+.about-left {
+  max-width: 720px;
+}
+
+.about-left h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+/* Paragraph text */
+.about-left p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* =====================
+   PROFILE IMAGE (NEWSPAPER STYLE)
+===================== */
+
+/* Image floats so text wraps beside it */
+.about-image {
+  float: left;
+  width: 160px;                 /* fixed width = clean wrap */
+  margin: 4px 24px 12px 0;      /* space between image & text */
+}
+
+.about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+/* Clear float after all paragraphs */
+.about-left::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* =====================
+   RIGHT COLUMN
+===================== */
+
+.about-right h3 {
+  margin-bottom: 12px;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.about-right ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.about-right li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+.about-right p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
