@@ -4,13 +4,11 @@ function About() {
   return (
     <section className="about">
       <div className="about-left">
-
         <h2>About Me</h2>
         {/* Profile Image */}
         <div className="about-image">
-          <img src="/me.jpg" alt="Shubhayan Bagchi" />
+          <img src="/kediii.jpg" alt="Shubhayan Bagchi" />
         </div>
-
 
         <p>
           I’m a final-year BTech Computer Science & Engineering student based in
@@ -45,8 +43,10 @@ function About() {
 
         <h3>Education</h3>
         <p>
-          <strong>B.Tech in Computer Science & Engineering</strong><br />
-          4th Year Undergraduate<br />
+          <strong>B.Tech in Computer Science & Engineering</strong>
+          <br />
+          4th Year Undergraduate
+          <br />
           Kolkata, India
         </p>
       </div>
