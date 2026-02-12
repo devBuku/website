@@ -4,68 +4,117 @@ function About() {
   return (
     <section className="about">
       <div className="about-left">
-        <h2>About Me</h2>
+        <h2>About</h2>
 
-        {/* Profile Image */}
         <div className="about-image">
           <img src="/kediii.jpg" alt="Shubhayan Bagchi" />
         </div>
 
         <p>
-          I’m a final-year B.Tech Computer Science & Engineering student from
-          Kolkata, currently focused on backend engineering and full-stack
-          application development. I enjoy designing systems, building REST
-          APIs, working with databases, and understanding how scalable software
-          is structured behind the scenes.
+          I’m a final-year B.Tech Computer Science student based in Kolkata,
+          focused on backend engineering and full-stack development. I work
+          primarily with REST APIs, authentication systems, and database-backed
+          applications.
         </p>
 
         <p>
-          I’ve built real-world projects including a full-stack cab booking
-          platform, an AI-powered multilingual chatbot, and a video dubbing
-          assistant using speech recognition and translation technologies. These
-          projects strengthened my understanding of authentication, API design,
-          database modeling, and production-ready architecture.
+          Over the past few years, I’ve built multiple full-stack systems
+          involving real-time features, AI integrations, and structured backend
+          services. My work has helped me develop a strong understanding of API
+          design, data modeling, and production-oriented architecture.
         </p>
 
         <p>
-          I was a Smart India Hackathon 2023 Finalist and Tech Fest Winner, and
-          I currently serve as a Group Leader in the Coding Club where I mentor
-          juniors in full-stack development.
+          I was a Smart India Hackathon 2023 Finalist and currently serve as
+          Group Leader of the Coding Club, where I mentor juniors in full-stack
+          development and guide project architecture decisions.
         </p>
 
         <p>
-          I’m actively seeking backend or full-stack software engineering roles
-          where I can contribute to meaningful systems and continue growing as a
-          developer.
+          I use{" "}
+          <a href="https://www.debian.org/" target="_blank" rel="noreferrer">
+            Debian
+          </a>{" "}
+          as my primary OS. Most of my development happens inside{" "}
+          <a
+            href="https://www.gnu.org/software/emacs/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GNU Emacs
+          </a>{" "}
+          (Doom), with tmux and Docker for isolated development environments.
+        </p>
+
+        <p className="seeking">
+          Currently seeking backend or full-stack engineering roles.
         </p>
       </div>
 
       <div className="about-right">
-        <h3>Technical Skills</h3>
+        <h3>Technical Stack</h3>
         <ul>
-          <li>JavaScript, TypeScript, SQL</li>
-          <li>Node.js & Express.js</li>
-          <li>React.js</li>
-          <li>PostgreSQL, MongoDB, MySQL</li>
-          <li>JWT & Cookie-based Authentication</li>
-          <li>REST API Design</li>
-          <li>Prisma & Mongoose</li>
-          <li>Git & Linux (Daily Driver)</li>
+          <li>
+            <strong>Languages:</strong> JavaScript, TypeScript, Structured Query
+            Language (SQL)
+          </li>
+          <li>
+            <strong>Backend:</strong> Node.js, Express.js, RESTful APIs
+          </li>
+          <li>
+            <strong>Frontend:</strong> React.js
+          </li>
+          <li>
+            <strong>Databases:</strong> PostgreSQL, MongoDB, MySQL
+          </li>
+          <li>
+            <strong>Authentication:</strong> JSON Web Tokens (JWT), Cookie-based
+            Authentication
+          </li>
+          <li>
+            <strong>ORM:</strong> Prisma, Mongoose
+          </li>
+          <li>
+            <strong>Tools:</strong> Docker, Git, Linux
+          </li>
         </ul>
+
+        <h3>Experience</h3>
+
+        <div className="experience-item">
+          <p>
+            <strong>Group Leader</strong>
+            <br />
+            Coding Club, Swami Vivekananda Institute of Science & Technology,
+            Kolkata
+            <br />
+            2023 – Present
+          </p>
+        </div>
+
+        <div className="experience-item">
+          <p>
+            <strong>Smart India Hackathon 2023 Finalist</strong>
+            <br />
+            December 19–20, 2023
+          </p>
+        </div>
 
         <h3>Education</h3>
         <p>
-          <strong>B.Tech in Computer Science & Engineering</strong>
+          <strong>Bachelor of Technology (B.Tech)</strong>
+          <br />
+          Computer Science & Engineering
           <br />
           Swami Vivekananda Institute of Science & Technology, Kolkata
           <br />
           MAKAUT | 2022 – Present
         </p>
 
-        <h3>Relevant Coursework</h3>
+        <h3>Core Subjects</h3>
         <p>
-          Data Structures & Algorithms, DBMS, Operating Systems, Computer
-          Networks, Design & Analysis of Algorithms
+          Data Structures & Algorithms, Database Management Systems (DBMS),
+          Operating Systems, Computer Networks, Design & Analysis of Algorithms
         </p>
       </div>
     </section>
