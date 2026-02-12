@@ -1,16 +1,99 @@
-# React + Vite
+# Portfolio TODO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## High Priority
 
-Currently, two official plugins are available:
+### Add Live Demo Links
+- [ ] Deploy Yoober
+- [ ] Deploy VagDevi.ai
+- [ ] Deploy QuickBite
+- [ ] Deploy Chat App
+- [ ] Add "Live Demo" link to each project
+- [ ] Configure production environment variables
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Add Blog Section
+- [ ] Create /blog route
+- [ ] Create blog listing page
+- [ ] Create blog detail page (/blog/:slug)
+- [ ] Add markdown rendering support
+- [ ] Add syntax highlighting
 
-## React Compiler
+### Blog Backend (If Backend-Based)
+- [ ] Create Express backend
+- [ ] Design Blog schema (title, slug, content, tags, createdAt)
+- [ ] Implement JWT authentication
+- [ ] Create REST API endpoints:
+  - [ ] GET /posts
+  - [ ] GET /posts/:slug
+  - [ ] POST /posts
+- [ ] Connect frontend to backend API
+- [ ] Deploy backend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Markdown-Based Blog (If File-Based)
+- [ ] Store blog posts in /content
+- [ ] Implement dynamic routing by slug
+- [ ] Add markdown parser
+- [ ] Add code syntax highlighting
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Medium Priority
+
+### Improve Projects Section
+- [ ] Add project screenshots
+- [ ] Add architecture diagrams
+- [ ] Add tech badges
+- [ ] Add "What I Learned" section
+- [ ] Add live demo links
+
+### Add Project Case Study Pages
+- [ ] Create dynamic route (/work/:slug)
+- [ ] Add detailed breakdown:
+  - [ ] Problem statement
+  - [ ] Architecture overview
+  - [ ] API design
+  - [ ] Database schema
+  - [ ] Challenges faced
+  - [ ] Future improvements
+
+---
+
+## Backend Enhancements
+
+### Contact Backend
+- [ ] Create Express endpoint
+- [ ] Add rate limiting
+- [ ] Add input validation (Zod)
+- [ ] Implement email sending
+- [ ] Add logging and error handling
+
+### Authentication Demo
+- [ ] Implement JWT-based authentication demo
+- [ ] Add role-based access control
+- [ ] Secure protected routes
+- [ ] Document authentication flow
+
+---
+
+## Performance & SEO
+
+### Optimization
+- [ ] Run Lighthouse audit
+- [ ] Lazy load images
+- [ ] Optimize images
+- [ ] Minify assets
+
+### SEO
+- [ ] Add meta tags
+- [ ] Add Open Graph tags
+- [ ] Configure proper title tags
+- [ ] Add favicon
+- [ ] Generate sitemap
+
+---
+
+## Long-Term Improvements
+
+- [ ] Add dark mode
+- [ ] Add analytics
+- [ ] Add timeline-style experience section
+- [ ] Add resume download tracking

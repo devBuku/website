@@ -2,36 +2,51 @@ import "../styles/projects.css";
 
 const projects = [
   {
-    title: "Personal Portfolio Website",
+    title: "Yoober — Cab Booking Platform",
     description:
-      "A responsive personal portfolio built using React and Vite to showcase projects, skills, and contact details.",
-    tech: "React, JavaScript, CSS",
-    link: "https://github.com/yourusername/portfolio",
+      "A full-stack cab booking application inspired by Uber. Built complete user and driver flows with authentication, booking management, and RESTful backend architecture.",
+    tech: "React, Express, MongoDB, JWT, REST APIs",
+    link: "https://github.com/devBuku/Uber",
   },
   {
-    title: "Todo List Web App",
+    title: "VagDevi.ai — AI Chat Application",
     description:
-      "A simple todo application with add, delete, and mark-as-complete functionality using React hooks.",
-    tech: "React, JavaScript",
-    link: "https://github.com/yourusername/todo-app",
+      "AI-powered multilingual chatbot with text-to-text and image-to-text generation using Gemini API. Implemented secure authentication and modular backend services.",
+    tech: "React, Flask, MongoDB, Gemini API, JWT",
+    link: "https://github.com/devBuku/VagDevi.ai",
   },
   {
-    title: "Weather Application",
+    title: "QuickBite — Food Ordering System",
     description:
-      "A weather app that fetches real-time weather data using a public API and displays temperature and conditions.",
-    tech: "JavaScript, API, HTML, CSS",
-    link: "https://github.com/yourusername/weather-app",
+      "Full-stack food ordering platform featuring user authentication, cart management, and order workflows. Designed backend APIs and structured database models.",
+    tech: "React, Node.js, Express, MongoDB",
+    link: "https://github.com/devBuku/QuickBite",
+  },
+  {
+    title: "Zoinsta — Social Media Backend",
+    description:
+      "Backend-focused social platform clone with authentication, post creation, and user interactions. Emphasis on database schema design and scalable API structure.",
+    tech: "Node.js, Express, MongoDB, REST APIs",
+    link: "https://github.com/devBuku/zoinsta",
+  },
+  {
+    title: "Real-Time Chat App",
+    description:
+      "Real-time messaging application implementing authentication and live communication features. Explored event-driven architecture and socket-based interactions.",
+    tech: "Node.js, Express, Socket.io, MongoDB",
+    link: "https://github.com/devBuku/chat-app-demo",
   },
 ];
 
 function Projects() {
   return (
     <section className="projects">
-      <h2>My Work</h2>
+      <h2>Selected Work</h2>
+
       <p className="projects-intro">
-        Here are some of the projects I’ve worked on during my learning journey.
-        Each project helped me strengthen my understanding of frontend
-        development and problem-solving.
+        These projects highlight my backend engineering focus, full-stack
+        architecture experience, and ability to build production-oriented web
+        applications.
       </p>
 
       <div className="projects-grid">
@@ -39,7 +54,9 @@ function Projects() {
           <div className="project-card" key={index}>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <p className="tech"><strong>Tech:</strong> {project.tech}</p>
+            <p className="tech">
+              <strong>Tech:</strong> {project.tech}
+            </p>
             <a href={project.link} target="_blank" rel="noreferrer">
               View on GitHub →
             </a>
