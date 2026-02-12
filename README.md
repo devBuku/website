@@ -95,5 +95,5 @@
 
 - [ ] Add dark mode
 - [ ] Add analytics
-- [ ] Add timeline-style experience section
+- [x] Add experience section
 - [ ] Add resume download tracking
