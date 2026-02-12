@@ -7,31 +7,30 @@ function Home() {
     <main>
       <Hero />
 
-      {/* Services Section */}
+      {/* What I Do Section */}
       <section className="services-section">
         <h2 className="section-title">What I Do</h2>
 
         <div className="services">
           <ServiceCard
-            image="/hero.jpg"
-            title="Web Development"
-            text="I build responsive and modern web applications using React, JavaScript, and clean CSS."
+            image="/backend_engineering.png"
+            title="Backend Engineering"
+            text="Designing scalable server-side systems using Node.js and Express. Building REST APIs, handling authentication (JWT & cookies), and structuring maintainable backend architecture."
           />
 
           <ServiceCard
-            image="/hero.jpg"
-            title="Frontend Engineering"
-            text="I focus on clean UI, reusable components, and maintainable code following best practices."
+            image="/db.png"
+            title="Database & System Design"
+            text="Working with PostgreSQL, MongoDB, and MySQL. Designing efficient schemas, optimizing queries, and ensuring reliable data flow across applications."
           />
 
           <ServiceCard
-            image="/hero.jpg"
-            title="Problem Solving"
-            text="I have a strong foundation in data structures, algorithms, OOPs, and core CS subjects."
+            image="/sysd.png"
+            title="Full Stack Applications"
+            text="Developing end-to-end web applications using React and modern tooling. Comfortable building frontend logic while keeping the backend architecture clean and production-ready."
           />
         </div>
       </section>
-
     </main>
   );
 }

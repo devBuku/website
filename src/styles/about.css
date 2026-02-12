@@ -3,57 +3,44 @@
 ===================== */
 
 .about {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 80px;
-  padding: 80px;
-  align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 80px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: start;
 }
 
 /* =====================
    LEFT COLUMN
 ===================== */
 
-.about-left {
-  max-width: 720px;
+.about-left h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 32px;
 }
 
-.about-left h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
+/* Profile Image */
+.about-image {
+    width: 180px;
+    margin-bottom: 28px;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    border: 1px solid #eee;
 }
 
 /* Paragraph text */
 .about-left p {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-/* =====================
-   PROFILE IMAGE (NEWSPAPER STYLE)
-===================== */
-
-/* Image floats so text wraps beside it */
-.about-image {
-  float: left;
-  width: 160px;                 /* fixed width = clean wrap */
-  margin: 4px 24px 12px 0;      /* space between image & text */
-}
-
-.about-image img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  border: 1px solid #eee;
-}
-
-/* Clear float after all paragraphs */
-.about-left::after {
-  content: "";
-  display: block;
-  clear: both;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    max-width: 680px;
 }
 
 /* =====================
@@ -61,25 +48,63 @@
 ===================== */
 
 .about-right h3 {
-  margin-bottom: 12px;
-  margin-top: 24px;
-  font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    margin-top: 40px;
+}
+
+.about-right h3:first-child {
+    margin-top: 0;
 }
 
 .about-right ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .about-right li {
-  margin-bottom: 8px;
-  font-size: 15px;
-  color: #444;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
 }
 
 .about-right p {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.6;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .about {
+        padding: 60px 40px;
+        gap: 60px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+        gap: 50px;
+    }
+
+    .about-image {
+        width: 140px;
+    }
+
+    .about-left h2 {
+        font-size: 26px;
+    }
+
+    .about-left p {
+        font-size: 15px;
+    }
 }

@@ -5,23 +5,21 @@ function Hero() {
     <section className="hero">
       {/* Hero Image */}
       <div className="hero-image-wrapper">
-        <img src="/hero.jpg" alt="Inner peace inspiration" />
+        <img src="/hero.jpg" alt="Shubhayan Bagchi - Full Stack Developer" />
       </div>
 
       {/* Hero Text */}
       <div className="hero-content">
-        <h1>
-          Frontend Developer focused on building clean, thoughtful web
-          experiences.
-        </h1>
+        <h1>Full Stack Developer with a backend mindset.</h1>
 
         <p className="hero-sub">
-          Final-year BTech CSE student from Kolkata, passionate about React,
-          JavaScript, and problem-solving.
+          I design systems, build REST APIs, work with PostgreSQL and MongoDB,
+          implement secure authentication, and ship production-ready web
+          applications. Final-year BTech CSE student from Kolkata.
         </p>
 
         <a href="/work" className="hero-link">
-          See My Work
+          View Projects
         </a>
       </div>
     </section>

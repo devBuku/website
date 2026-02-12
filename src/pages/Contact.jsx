@@ -3,28 +3,49 @@ import "../styles/contact.css";
 function Contact() {
   return (
     <section className="contact">
-      <div className="contact-left">
-        <h2>Get in Touch</h2>
+      <h2>Get in Touch</h2>
+
+      <p className="contact-intro">
+        If you'd like to collaborate, discuss opportunities, or talk about
+        backend systems and engineering — feel free to reach out.
+      </p>
+
+      <div className="contact-links">
         <p>
-          Reach out if you’d like to collaborate, discuss opportunities,
-          or just say hello. I’m currently open to internships and
-          entry-level roles.
+          <strong>Email:</strong>{" "}
+          <a href="mailto:shubhayanbagchi30@gmail.com">
+            shubhayanbagchi30@gmail.com
+          </a>
         </p>
 
-        <div className="contact-info">
-          <p><strong>Email:</strong> yourname@email.com</p>
-          <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
-          <p><strong>Location:</strong> Kolkata, India</p>
-        </div>
-      </div>
+        <p>
+          <strong>GitHub:</strong>{" "}
+          <a href="https://github.com/devBuku" target="_blank" rel="noreferrer">
+            github.com/devBuku
+          </a>
+        </p>
 
-      <div className="contact-right">
-        <form>
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <textarea placeholder="Your Message" rows="5"></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+        <p>
+          <strong>LinkedIn:</strong>{" "}
+          <a
+            href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin.com/in/shubhayan-bagchi
+          </a>
+        </p>
+
+        <p>
+          <strong>Twitter:</strong>{" "}
+          <a href="https://x.com/devBuku" target="_blank" rel="noreferrer">
+            @devBuku
+          </a>
+        </p>
+
+        <p>
+          <strong>Location:</strong> Kolkata, India
+        </p>
       </div>
     </section>
   );
