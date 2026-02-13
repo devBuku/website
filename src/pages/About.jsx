@@ -55,7 +55,7 @@ function About() {
         <h3>Technical Stack</h3>
         <ul>
           <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Structured Query
+            <strong>Languages:</strong> JavaScript, TypeScript, Python, Structured Query
             Language (SQL)
           </li>
           <li>
