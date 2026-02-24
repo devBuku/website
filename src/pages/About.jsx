@@ -7,7 +7,7 @@ function About() {
         <h2>About</h2>
 
         <div className="about-image">
-          <img src="/kediii.jpg" alt="Shubhayan Bagchi" />
+          <img src="/me.jpg" alt="Shubhayan Bagchi" />
         </div>
 
         <p>
@@ -55,8 +55,8 @@ function About() {
         <h3>Technical Stack</h3>
         <ul>
           <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Python, Structured Query
-            Language (SQL)
+            <strong>Languages:</strong> JavaScript, TypeScript, Python,
+            Structured Query Language (SQL)
           </li>
           <li>
             <strong>Backend:</strong> Node.js, Express.js, RESTful APIs
