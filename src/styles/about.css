@@ -22,10 +22,11 @@
     margin-bottom: 32px;
 }
 
-/* Profile Image */
+/* Profile Image - Newspaper Style */
 .about-image {
     width: 180px;
-    margin-bottom: 28px;
+    float: left;
+    margin: 0 28px 16px 0; /* right spacing + bottom spacing */
 }
 
 .about-image img {
@@ -43,6 +44,13 @@
     max-width: 680px;
 }
 
+/* Clear float */
+.about-left::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 /* =====================
    RIGHT COLUMN
 ===================== */
@@ -50,8 +58,8 @@
 .about-right h3 {
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 14px;
-    margin-top: 40px;
+    margin-bottom: 16px;
+    margin-top: 48px;
 }
 
 .about-right h3:first-child {
@@ -76,6 +84,10 @@
     line-height: 1.6;
 }
 
+.experience-item {
+    margin-bottom: 20px;
+}
+
 /* =====================
    RESPONSIVE
 ===================== */
@@ -98,6 +110,8 @@
 
     .about-image {
         width: 140px;
+        float: none; /* remove wrapping on mobile */
+        margin: 0 0 20px 0;
     }
 
     .about-left h2 {
@@ -107,13 +121,4 @@
     .about-left p {
         font-size: 15px;
     }
-}
-.experience-item {
-    margin-bottom: 20px;
-}
-.about-right h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    margin-top: 48px;
 }

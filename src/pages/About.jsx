@@ -32,8 +32,8 @@ function About() {
 
         <p>
           I use{" "}
-          <a href="https://www.debian.org/" target="_blank" rel="noreferrer">
-            Debian
+          <a href="https://www.ubuntu.com/" target="_blank" rel="noreferrer">
+            Ubuntu
           </a>{" "}
           as my primary OS. Most of my development happens inside{" "}
           <a
@@ -55,14 +55,14 @@ function About() {
         <h3>Technical Stack</h3>
         <ul>
           <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Python,
+            <strong>Languages:</strong> JavaScript, TypeScript, Python, C, Java,
             Structured Query Language (SQL)
           </li>
           <li>
             <strong>Backend:</strong> Node.js, Express.js, RESTful APIs
           </li>
           <li>
-            <strong>Frontend:</strong> React.js
+            <strong>Frontend:</strong> React.js, Tailwind CSS
           </li>
           <li>
             <strong>Databases:</strong> PostgreSQL, MongoDB, MySQL

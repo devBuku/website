@@ -6,35 +6,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 80px; /* reduced from 24px */
-    background: white;
+    padding: 16px 80px;
+    min-height: 64px;
+    background: var(--bg-color);
     position: relative;
-    border-bottom: 1px solid #eee; /* subtle structure */
+    border-bottom: 1px solid var(--border-color);
 }
 
+/* Logo */
 .logo {
-    font-size: 18px; /* reduced */
+    font-size: 18px;
     font-weight: 600;
+    color: var(--text-color);
 }
 
-/* Right side container */
+/* =========================
+   RIGHT SIDE
+========================= */
+
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 28px; /* slightly tighter */
+    gap: 28px;
 }
 
-/* Links */
+/* =========================
+   NAV LINKS
+========================= */
+
 .nav-links {
     display: flex;
     gap: 20px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #222;
-    font-size: 14px; /* smaller */
+    color: var(--text-color);
+    font-size: 14px;
     font-weight: 500;
     transition: opacity 0.2s ease;
 }
@@ -43,20 +54,54 @@
     opacity: 0.6;
 }
 
-/* Icons */
+/* =========================
+   ICONS (FIXED ALIGNMENT)
+========================= */
+
 .nav-icons {
     display: flex;
-    gap: 14px;
+    align-items: center;
+    gap: 18px;
 }
 
-.nav-icons a {
-    color: #222;
-    font-size: 16px; /* slightly smaller */
-    transition: color 0.2s ease;
+/* Uniform icon container */
+.nav-icons a,
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    color: var(--icon-color);
+    border-radius: 6px;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
-.nav-icons a:hover {
-    color: #0b5cff;
+/* Remove button defaults */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Fix SVG baseline shift */
+.nav-icons svg {
+    display: block;
+}
+
+/* Hover Effects */
+.nav-icons a:hover,
+.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .nav-icons a:hover,
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 /* =========================
@@ -67,6 +112,7 @@
     display: none;
     font-size: 24px;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 @media (max-width: 900px) {
@@ -80,15 +126,16 @@
 
     .nav-right {
         position: absolute;
-        top: 58px; /* adjusted for thinner navbar */
+        top: 64px;
         right: 0;
         width: 100%;
-        background: white;
+        background: var(--bg-color);
         flex-direction: column;
         align-items: flex-start;
         padding: 20px 24px;
         gap: 20px;
         display: none;
+        border-top: 1px solid var(--border-color);
     }
 
     .nav-right.active {

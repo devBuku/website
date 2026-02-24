@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaTwitter,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
 import {
   HiOutlineDocumentDownload,
   HiOutlineMenu,
@@ -10,6 +16,17 @@ import "../styles/navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  // Apply theme to body + persist
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <nav className="navbar">
@@ -45,6 +62,11 @@ function Navbar() {
         </ul>
 
         <div className="nav-icons">
+          {/* Theme Toggle */}
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === "light" ? <FaMoon /> : <FaSun />}
+          </button>
+
           <a
             href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275"
             target="_blank"
@@ -52,12 +74,15 @@ function Navbar() {
           >
             <FaLinkedinIn />
           </a>
+
           <a href="https://github.com/devBuku" target="_blank" rel="noreferrer">
             <FaGithub />
           </a>
+
           <a href="https://x.com/devBuku" target="_blank" rel="noreferrer">
             <FaTwitter />
           </a>
+
           <a href="/resume.pdf" download>
             <HiOutlineDocumentDownload />
           </a>
