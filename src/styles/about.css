@@ -1,7 +1,3 @@
-/* =====================
-   MAIN LAYOUT
-===================== */
-
 .about {
     max-width: 1200px;
     margin: 0 auto;
@@ -12,21 +8,16 @@
     align-items: start;
 }
 
-/* =====================
-   LEFT COLUMN
-===================== */
-
 .about-left h2 {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 32px;
 }
 
-/* Profile Image - Newspaper Style */
 .about-image {
     width: 180px;
     float: left;
-    margin: 0 28px 16px 0; /* right spacing + bottom spacing */
+    margin: 0 28px 16px 0;
 }
 
 .about-image img {
@@ -35,7 +26,6 @@
     border: 1px solid #eee;
 }
 
-/* Paragraph text */
 .about-left p {
     font-size: 16px;
     color: #444;
@@ -44,16 +34,11 @@
     max-width: 680px;
 }
 
-/* Clear float */
 .about-left::after {
     content: "";
     display: block;
     clear: both;
 }
-
-/* =====================
-   RIGHT COLUMN
-===================== */
 
 .about-right h3 {
     font-size: 16px;
@@ -88,11 +73,6 @@
     margin-bottom: 20px;
 }
 
-/* =====================
-   RESPONSIVE
-===================== */
-
-/* Tablet */
 @media (max-width: 1024px) {
     .about {
         padding: 60px 40px;
@@ -100,7 +80,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .about {
         grid-template-columns: 1fr;
@@ -110,7 +89,7 @@
 
     .about-image {
         width: 140px;
-        float: none; /* remove wrapping on mobile */
+        float: none;
         margin: 0 0 20px 0;
     }
 
