@@ -1,103 +1,91 @@
 .about {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 80px 80px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 80px;
-    align-items: start;
+    padding: 80px;
 }
 
-.about-left h2 {
+.about h2 {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 32px;
 }
 
 .about-image {
-    width: 180px;
-    float: left;
-    margin: 0 28px 16px 0;
+    width: 220px;
+    margin-bottom: 28px;
 }
 
 .about-image img {
     width: 100%;
     display: block;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
 }
 
-.about-left p {
+.about p {
     font-size: 16px;
-    color: #444;
+    color: var(--secondary-text);
     line-height: 1.7;
     margin-bottom: 18px;
-    max-width: 680px;
 }
 
-.about-left::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.about-right h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    margin-top: 48px;
-}
-
-.about-right h3:first-child {
-    margin-top: 0;
-}
-
-.about-right ul {
+.about-bullets {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 18px 0;
 }
 
-.about-right li {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 10px;
+.about-bullets li {
+    font-size: 15px;
+    color: var(--secondary-text);
+    line-height: 1.7;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
 }
 
-.about-right p {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.6;
+.about-bullets li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0b5cff;
+    font-weight: 500;
 }
 
-.experience-item {
-    margin-bottom: 20px;
+.about-bullets a {
+    color: #0b5cff;
+    text-decoration: underline;
 }
 
 @media (max-width: 1024px) {
     .about {
         padding: 60px 40px;
-        gap: 60px;
+    }
+
+    .about-image {
+        width: 180px;
     }
 }
 
 @media (max-width: 768px) {
     .about {
-        grid-template-columns: 1fr;
         padding: 60px 24px;
-        gap: 50px;
     }
 
-    .about-image {
-        width: 140px;
-        float: none;
-        margin: 0 0 20px 0;
-    }
-
-    .about-left h2 {
+    .about h2 {
         font-size: 26px;
     }
 
-    .about-left p {
+    .about-image {
+        width: 160px;
+        margin-bottom: 24px;
+    }
+
+    .about p {
         font-size: 15px;
+    }
+
+    .about-bullets li {
+        font-size: 14px;
     }
 }

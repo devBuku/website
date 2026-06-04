@@ -3,23 +3,28 @@ import "../styles/home.css";
 function Hero() {
   return (
     <section className="hero">
-      {/* Hero Image */}
       <div className="hero-image-wrapper">
-        <img src="/hero.jpg" alt="Shubhayan Bagchi - Full Stack Developer" />
+        <img src="/hero.jpg" alt="Shubhayan Bagchi - Backend Developer" />
       </div>
 
-      {/* Hero Text */}
       <div className="hero-content">
-        <h1>Full Stack Developer with a backend mindset.</h1>
+        <h1>Backend-First Full-Stack Developer</h1>
         <p className="hero-sub">
-          I design systems, build REST APIs, work with PostgreSQL and MongoDB,
-          implement secure authentication, and ship production-ready web
-          applications. Final-year BTech CSE student from Kolkata.
+          I design REST APIs, model databases, implement authentication, and
+          build full-stack web applications. Final-year B.Tech CSE at MAKAUT,
+          Kolkata.
         </p>
-        <a href="/work" className="hero-link">
-          View Projects
-        </a>
-        (Button not working for now)
+        <div className="hero-actions">
+          <a href="/work" className="btn btn-primary">
+            View Projects
+          </a>
+          <a href="/resume.pdf" download className="btn btn-secondary">
+            Resume
+          </a>
+          <a href="/contact" className="btn btn-outline">
+            Contact
+          </a>
+        </div>
       </div>
     </section>
   );

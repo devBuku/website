@@ -12,7 +12,7 @@
 
 .projects-intro {
     max-width: 700px;
-    color: #555;
+    color: var(--secondary-text);
     margin-bottom: 60px;
     line-height: 1.6;
     font-size: 16px;
@@ -25,37 +25,68 @@
 }
 
 .project-card {
-    border-top: 2px solid #eee;
+    border-top: 2px solid var(--border-color);
     padding-top: 24px;
 }
 
-.project-card h3 {
+.project-image {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
+}
+
+.project-body h3 {
     font-size: 18px;
     margin-bottom: 14px;
 }
 
-.project-card p {
-    font-size: 15px;
-    color: #444;
+.project-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px 0;
+}
+
+.project-highlights li {
+    font-size: 14px;
+    color: var(--secondary-text);
     line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.project-highlights li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0b5cff;
+    font-weight: 500;
 }
 
 .project-card .tech {
     margin-top: 12px;
     font-size: 14px;
-    color: #666;
+    color: var(--secondary-text);
 }
 
-.project-card a {
-    display: inline-block;
+.project-actions {
+    display: flex;
+    gap: 10px;
     margin-top: 16px;
-    color: #0b5cff;
-    text-decoration: underline;
-    transition: opacity 0.2s ease;
+    flex-wrap: wrap;
 }
 
-.project-card a:hover {
-    opacity: 0.7;
+@media (min-width: 1400px) {
+    .projects {
+        max-width: 1340px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -87,11 +118,7 @@
         gap: 32px;
     }
 
-    .project-card h3 {
+    .project-body h3 {
         font-size: 17px;
-    }
-
-    .project-card p {
-        font-size: 14px;
     }
 }

@@ -5,14 +5,14 @@
 }
 
 .contact h2 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
 .contact-intro {
     font-size: 16px;
-    color: #555;
+    color: var(--secondary-text);
     line-height: 1.6;
     margin-bottom: 40px;
     max-width: 600px;
@@ -21,7 +21,7 @@
 .contact-links p {
     font-size: 15px;
     margin-bottom: 16px;
-    color: #444;
+    color: var(--secondary-text);
 }
 
 .contact-links strong {
