@@ -27,7 +27,7 @@ const projects = [
     },
     {
         title: "random-walk — SDL2 Visualization in C",
-        image: "/hero.jpg",
+        image: "/output.gif",
         live: "#",
         highlights: [
             "Multi-threaded random-walk simulation with real-time SDL2 rendering",
