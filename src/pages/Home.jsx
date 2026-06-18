@@ -4,11 +4,11 @@ import "../styles/home.css";
 
 const featuredProjects = [
   {
-    title: "QuickBite — MERN Food Ordering Platform",
-    description:
-      "Full e-commerce flow with Stripe payments, role-based admin dashboard, and RESTful APIs.",
-    tech: "MongoDB · Express · React · Node.js · Stripe",
-    link: "https://github.com/devBuku/QuickBite",
+        title: "Tomato — MERN Food Ordering Platform",
+        description:
+            "Full e-commerce flow with Stripe payments, role-based admin dashboard, and RESTful APIs.",
+        tech: "MongoDB · Express · React · Node.js · Stripe",
+        link: "https://github.com/devBuku/Tomato",
   },
   {
     title: "Uber — MERN Ride Booking Platform",

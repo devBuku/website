@@ -14,8 +14,8 @@ const fullstack = [
         link: "https://github.com/devBuku/Uber",
     },
     {
-        title: "QuickBite — MERN Food Ordering Platform",
-        image: "/hero.jpg",
+        title: "Tomato — MERN Food Ordering Platform",
+        image: "/tomato.gif",
         live: "#",
         highlights: [
             "Full e-commerce flow: cart, checkout, Stripe payments, order tracking",
@@ -23,7 +23,7 @@ const fullstack = [
             "RESTful APIs with Express.js, MongoDB (Mongoose ODM), and JWT auth",
         ],
         tech: "MongoDB · Express.js · React · Node.js · Stripe · JWT · Multer · Context API",
-        link: "https://github.com/devBuku/QuickBite",
+        link: "https://github.com/devBuku/Tomato",
     },
     {
         title: "VagDevi.ai — AI Chat Application",
