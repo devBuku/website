@@ -27,10 +27,10 @@ function About() {
 
         <p>
           Outside of coding, I'm a Linux enthusiast who daily-drives{" "}
-          <a href="https://www.archlinux.org/" target="_blank" rel="noreferrer">
-            Arch Linux
-          </a>
-          . Most of my development happens inside{" "}
+          <a href="https://fedoraproject.org/" target="_blank" rel="noreferrer">
+            Fedora
+          </a>{" "}
+          with GNOME. Most of my development happens inside{" "}
           <a
             href="https://www.gnu.org/software/emacs/"
             target="_blank"
@@ -42,6 +42,20 @@ function About() {
           as much as building software.
         </p>
 
+        <div className="setup-image">
+          <img
+            src="/setup.png"
+            alt="Development setup — Fedora, GNOME, Doom Emacs"
+            loading="lazy"
+          />
+          <span className="setup-caption">
+            My daily dev environment —{" "}
+            <a href="https://github.com/devBuku/.dotfiles" target="_blank" rel="noreferrer">
+              dotfiles
+            </a>
+          </span>
+        </div>
+
         <p className="seeking">
           Currently seeking backend or full-stack engineering opportunities.
         </p>
@@ -52,8 +66,7 @@ function About() {
 
         <ul>
           <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Python, C, C++,
-            SQL
+            <strong>Languages:</strong> JavaScript, TypeScript, Python, C, SQL
           </li>
 
           <li>

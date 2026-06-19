@@ -1,6 +1,6 @@
 # website — devBuku portfolio
 
-React 19 + Vite 7 SPA. Plain CSS in `src/styles/`. No test framework.
+React 19 + Vite 7 SPA. Plain CSS, no TypeScript, no test framework.
 
 ## Commands
 
@@ -13,45 +13,40 @@ React 19 + Vite 7 SPA. Plain CSS in `src/styles/`. No test framework.
 
 ## Routes
 
-| Path | Page | Purpose |
-|------|------|---------|
-| `/` | Home | First impression, role, highlights, featured projects, CTA |
-| `/work` | Projects | Full project showcase with GitHub + Live Demo buttons |
-| `/about` | About | Personal story, engineering philosophy, dev environment |
-| `/contact` | Contact | Email, GitHub, LinkedIn, Twitter, location |
+| Path | Page |
+|------|------|
+| `/` | Home |
+| `/work` | Projects |
+| `/about` | About |
+| `/contact` | Contact |
 
 ## Structure
 
-```
-src/
-├── main.jsx           # Entrypoint (BrowserRouter wrapper, imports global.css)
-├── App.jsx            # Routes + layout (Navbar, Footer)
-├── components/        # Navbar, Footer, Hero, ServiceCard
-├── pages/             # Home, About, Projects, Contact
-└── styles/            # Plain CSS per component/page
-public/                # Static assets (images, resume.pdf)
-vercel.json            # Vercel deployment config with SPA rewrites
-```
+- Entrypoint: `src/main.jsx` — wraps App in `<BrowserRouter>`, imports `global.css`
+- Layout: `src/App.jsx` — `<Navbar>` / `<Routes>` / `<Footer>`
+- Components: `src/components/` — Navbar, Footer, Hero, ServiceCard
+- Pages: `src/pages/` — Home, About, Projects, Contact
+- Styles: `src/styles/` — plain CSS per component/page (no modules or preprocessors)
+- Static: `public/` — images served at root path (`/me.jpg`, `/resume.pdf`, etc.)
 
-## Key conventions
+## Style conventions
 
-- **No redundant content across pages.** Home: first impression + proof. Projects: full technical details. About: personal story only — no skill lists, no achievement repetition.
-- **Buttons** use global `.btn` classes defined in `global.css` (`.btn-primary`, `.btn-outline`, `.btn-secondary`). Available on every page.
-- **Project cards** on `/work` have two buttons each: `View on GitHub` (`.btn-outline`) and `Live Demo` (`.btn-primary`). Home featured projects have no per-card buttons — they link to `/work` via "View All Projects" CTA.
-- **Bullet lists** use `→` arrow style via `::before` pseudo-element (`.about-bullets`, `.project-highlights`). Consistent across About and Projects pages.
-- **Dark mode** uses `data-theme="dark"` on `<body>` with CSS custom properties (`--secondary-text`, `--border-color`, etc.). All page stylesheets use these vars; avoid hardcoded colors.
+- **Buttons** use global classes: `.btn-primary`, `.btn-outline`, `.btn-secondary`.
+- **Project cards** on `/work`: `View on GitHub` (`.btn-outline`) + `Live Demo` (`.btn-primary`). Home featured projects link to `/work` via "View All Projects".
+- **Bullet lists** on `/work` use `→` via `.project-highlights li::before`.
+- **Dark mode** toggled via `<body data-theme="dark">`, persisted in `localStorage`. Use CSS custom properties (`--secondary-text`, `--border-color`, etc.) — no hardcoded colors.
+- **Icons** from `react-icons` — `Fa*` (Font Awesome) and `HiOutline*` (Heroicons).
+- **No TypeScript.** All source is `.jsx`.
+
+## Quirks
+
+- Live Demo buttons on `/work` link to `"#"` (unreachable — not deployed).
+- Favicon is `/me.jpg` (portrait photo, not an icon file).
+- Prettier installed but unconfigured — not part of lint.
 
 ## Deployment
 
-- **Platform:** Vercel (auto-detects Vite, configured in `vercel.json`).
-- **SPA routing:** `vercel.json` rewrites all paths to `/index.html` so BrowserRouter works on refresh.
-- **Build output:** `dist/` (Vite default).
-- **Static assets** in `public/` (images, resume.pdf) are served at root-relative paths (e.g. `/me.jpg`, `/resume.pdf`).
-
-## Notes
-
-- **No generated code**, migrations, or build artifacts.
-- **No test infrastructure** — do not add tests without asking.
-- **Routing** uses `react-router-dom` v7 with `BrowserRouter`.
-- **Styling** is plain CSS imported in each page/component file. No CSS modules or preprocessors.
-- **Prettier** is installed but has no config file — format checks are not part of `lint`.
+- **Platform:** Vercel (auto-detects Vite, `vercel.json` config).
+- **SPA routing:** `vercel.json` rewrites all paths to `/index.html`.
+- **Build output:** `dist/`.
+- **Static assets** in `public/` served at root-relative paths.

@@ -45,6 +45,38 @@
     clear: both;
 }
 
+.setup-image {
+    margin: 32px 0 28px;
+    max-width: 680px;
+}
+
+.setup-image img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border-color, #eee);
+    border-radius: 6px;
+}
+
+.setup-caption {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+.setup-caption a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.setup-caption code {
+    font-size: 12px;
+    background: var(--border-color, #eee);
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
 .seeking {
     margin-top: 28px;
     padding-top: 20px;

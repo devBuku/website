@@ -123,6 +123,20 @@
     margin-bottom: 32px;
 }
 
+.project-card.ongoing .project-image img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.project-card.ongoing .project-body h3 {
+    color: var(--secondary-text);
+}
+
+.project-card.ongoing .project-highlights li,
+.project-card.ongoing .tech {
+    opacity: 0.7;
+}
+
 @media (max-width: 768px) {
     .projects {
         padding: 60px 24px;
