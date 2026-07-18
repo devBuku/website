@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import BlogCard from "../components/BlogCard";
 import SectionHeading from "../components/SectionHeading";
 import ScrollReveal from "../components/ScrollReveal";
-import { blogPosts } from "../content/blog/posts";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 
-export default function Blog() {
+export default function Experience() {
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <ScrollReveal>
@@ -18,33 +17,20 @@ export default function Blog() {
             <ArrowLeft size={14} />
             Back to home
           </Link>
-          <SectionHeading>Blog</SectionHeading>
+          <SectionHeading>Experience</SectionHeading>
           <p
             className="text-sm leading-relaxed max-w-lg"
             style={{ color: "rgb(var(--color-text-muted))" }}
           >
-            Thoughts on projects I&apos;ve built, technical decisions, and lessons learned along the
-            way.
+            A timeline of my professional experience — from leading a four-person team building a
+            College ERP to mentoring juniors as Coding Club Group Leader.
           </p>
         </section>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post, i) => (
-          <ScrollReveal key={post.slug} delay={i * 80}>
-            <BlogCard post={post} />
-          </ScrollReveal>
-        ))}
-      </div>
-
-      {blogPosts.length === 0 && (
-        <p
-          className="text-sm font-mono text-center py-12"
-          style={{ color: "rgb(var(--color-text-faint))" }}
-        >
-          No posts yet. Coming soon.
-        </p>
-      )}
+      <ScrollReveal delay={50}>
+        <ExperienceTimeline />
+      </ScrollReveal>
     </div>
   );
 }

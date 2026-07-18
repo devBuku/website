@@ -29,8 +29,6 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.6s ease-out forwards',
-        'typewriter': 'typewriter 1.5s steps(30) forwards',
-        'blink': 'blink 1s step-end infinite',
       },
       keyframes: {
         fadeIn: {
@@ -40,14 +38,6 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(16px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        typewriter: {
-          '0%': { width: '0' },
-          '100%': { width: '100%' },
-        },
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
         },
       },
     },

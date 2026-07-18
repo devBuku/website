@@ -67,20 +67,22 @@
   }
 
   .tag {
-    @apply inline-flex items-center px-3 py-1 text-xs font-mono font-medium
+    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-mono font-medium
       rounded border transition-colors duration-200;
     border-color: rgb(var(--color-border));
-    color: rgb(var(--color-accent));
+    color: rgb(var(--color-text-muted));
   }
 
   .tag:hover {
     border-color: rgb(var(--color-accent) / 0.5);
+    color: rgb(var(--color-accent));
   }
 
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium
-      rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2
+      rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2
       focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    --tw-ring-color: rgb(var(--color-accent));
   }
 
   .btn-primary {
@@ -102,8 +104,16 @@
     color: rgb(var(--color-accent));
   }
 
+  .btn-ghost {
+    color: rgb(var(--color-text-muted));
+  }
+
+  .btn-ghost:hover {
+    color: rgb(var(--color-text));
+  }
+
   .card {
-    @apply rounded-lg border transition-all duration-200;
+    @apply rounded-xl border transition-all duration-200;
     background-color: rgb(var(--color-bg-raised));
     border-color: rgb(var(--color-border));
   }
@@ -112,21 +122,10 @@
     border-color: rgb(var(--color-accent) / 0.3);
   }
 
-  .terminal-prompt::before {
-    content: '> ';
-    color: rgb(var(--color-accent));
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-  }
-
-  .neofetch-ascii {
-    @apply font-mono text-xs leading-tight whitespace-pre;
-    color: rgb(var(--color-accent));
-  }
-
   .prose-custom {
     max-width: 70ch;
     line-height: 1.75;
+    color: rgb(var(--color-text-muted));
   }
 
   .prose-custom p {
@@ -134,11 +133,18 @@
   }
 
   .prose-custom h2 {
-    @apply text-xl font-bold mt-10 mb-4;
+    @apply text-xl font-bold mt-12 mb-4;
+    color: rgb(var(--color-text));
   }
 
   .prose-custom h3 {
     @apply text-lg font-semibold mt-8 mb-3;
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom h4 {
+    @apply text-base font-semibold mt-6 mb-2;
+    color: rgb(var(--color-text));
   }
 
   .prose-custom code:not(pre code) {
@@ -150,6 +156,7 @@
   .prose-custom pre {
     @apply rounded-lg p-4 overflow-x-auto my-6 text-sm;
     background-color: rgb(var(--color-bg-overlay));
+    border: 1px solid rgb(var(--color-border));
   }
 
   .prose-custom pre code {
@@ -157,7 +164,11 @@
   }
 
   .prose-custom ul {
-    @apply list-disc pl-6 mb-4 space-y-1;
+    @apply list-disc pl-6 mb-4 space-y-1.5;
+  }
+
+  .prose-custom ol {
+    @apply list-decimal pl-6 mb-4 space-y-1.5;
   }
 
   .prose-custom a {
@@ -170,6 +181,38 @@
     @apply border-l-2 pl-4 my-6 italic;
     border-color: rgb(var(--color-accent));
     color: rgb(var(--color-text-muted));
+  }
+
+  .prose-custom strong {
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom hr {
+    @apply my-8;
+    border-color: rgb(var(--color-border));
+  }
+
+  .prose-custom table {
+    @apply w-full text-sm my-6;
+  }
+
+  .prose-custom th,
+  .prose-custom td {
+    @apply border px-3 py-2 text-left;
+    border-color: rgb(var(--color-border));
+  }
+
+  .prose-custom th {
+    color: rgb(var(--color-text));
+    @apply font-semibold;
+  }
+
+  .prose-custom img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose-custom .hljs {
+    background: transparent !important;
   }
 }
 
