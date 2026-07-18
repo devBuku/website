@@ -17,7 +17,7 @@ import BlogCard from "../components/BlogCard";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 
 const featuredProjects = projects.filter((p) =>
-  ["vagdevi"].includes(p.id)
+  ["vagdevi", "uber-clone"].includes(p.id)
 );
 
 const collegeERP = projects.find((p) => p.id === "quickbute");
