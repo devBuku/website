@@ -1,216 +1,82 @@
-import "../styles/projects.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { HiOutlineArrowLeft } from "react-icons/hi";
+import { projects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
+import SectionHeading from "../components/SectionHeading";
+import ScrollReveal from "../components/ScrollReveal";
 
-const fullstack = [
-    {
-        title: "Tomato — MERN Food Ordering Platform",
-        image: "/tomato.gif",
-        live: "#",
-        highlights: [
-            "Full e-commerce flow: cart, checkout, Stripe payments, order tracking",
-            "Role-based admin dashboard with Multer image uploads",
-            "RESTful APIs with Express.js, MongoDB (Mongoose ODM), and JWT auth",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · Stripe · JWT · Multer · Context API",
-        link: "https://github.com/devBuku/Tomato",
-    },
+const tabs = [
+  { key: "all", label: "All" },
+  { key: "production", label: "Production" },
+  { key: "ongoing", label: "In Development" },
+  { key: "experiments", label: "Experiments" },
 ];
 
-const ongoing = [
-    {
-        title: "Swarlipi — AI Video Dubbing Assistant",
-        image: "/hero.jpg",
-        highlights: [
-            "Smart India Hackathon 2023 finalist — AI-powered video dubbing across languages",
-            "Uses OpenAI Whisper for speech-to-text, gTTS for text-to-speech, OpenCV for video processing",
-            "Built with React.js frontend and Flask backend translation pipeline",
-        ],
-        tech: "React · Flask · OpenAI Whisper · gTTS · OpenCV",
-        link: "#",
-    },
-    {
-        title: "VagDevi.ai — AI Chat Application",
-        image: "/hero.jpg",
-        highlights: [
-            "College tech fest winning project — text-to-text and image-to-text generation",
-            "Multilingual response translation via Gemini API with JWT auth",
-            "Modular React.js frontend, Flask backend, MongoDB storage",
-        ],
-        tech: "React · Flask · MongoDB · Gemini API · JWT",
-        link: "https://github.com/devBuku/VagDevi.ai",
-    },
-    {
-        title: "Uber — MERN Ride Booking Platform",
-        image: "/hero.jpg",
-        highlights: [
-            "Role-based authentication (Rider & Captain) with JWT cookie-based sessions",
-            "Complete ride lifecycle: booking requests, acceptance, and status tracking",
-            "Mobile-first responsive UI with React.js and Tailwind CSS",
-        ],
-        tech: "React · Tailwind CSS · Express.js · MongoDB · JWT · REST APIs",
-        link: "https://github.com/devBuku/Uber",
-    },
-    {
-        title: "Spotify MERN — Music Streaming Web App",
-        image: "/hero.jpg",
-        highlights: [
-            "Full-stack music streaming platform with playlist management and search",
-            "User authentication with personalized recommendations",
-            "Built with the MERN stack following RESTful architecture",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · JWT",
-        link: "#",
-    },
-    {
-        title: "Real-Time Chat Application",
-        image: "/hero.jpg",
-        highlights: [
-            "Real-time messaging with WebSocket-based instant communication",
-            "User authentication, room creation, and message history",
-            "Built with MERN stack and Socket.io for live updates",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · Socket.io · JWT",
-        link: "#",
-    },
-    {
-        title: "Ledger — Banking Transaction System",
-        image: "/hero.jpg",
-        highlights: [
-            "Secure transaction ledger with balance tracking and history",
-            "Role-based access with transaction logs and audit trails",
-            "Built with MERN stack following financial data best practices",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · JWT",
-        link: "#",
-    },
-    {
-        title: "Real-Time Device Tracker",
-        image: "/hero.jpg",
-        highlights: [
-            "Live device location tracking with real-time map updates",
-            "WebSocket-based communication for continuous data streaming",
-            "Built with MERN stack and mapping visualization",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · Socket.io",
-        link: "#",
-    },
-    {
-        title: "Instacart — E-Commerce Web App",
-        image: "/hero.jpg",
-        highlights: [
-            "Full e-commerce flow: product catalog, cart, checkout, order tracking",
-            "User authentication, admin dashboard, and payment integration",
-            "Built with MERN stack following scalable architecture",
-        ],
-        tech: "MongoDB · Express.js · React · Node.js · JWT · Stripe",
-        link: "#",
-    },
-];
+export default function Projects() {
+  const [activeTab, setActiveTab] = useState("all");
 
-const fun = [
-    {
-        title: "random-walk — SDL2 Visualization in C",
-        image: "/output.gif",
-        highlights: [
-            "Multi-threaded random-walk simulation with real-time SDL2 rendering",
-            "Graphics pipeline and concurrency fundamentals in C",
-            "Rainbow-colored agents demonstrating systems-level programming",
-        ],
-        tech: "C · SDL2",
-        link: "https://github.com/devBuku/random-walk",
-    },
-];
+  const filtered = activeTab === "all"
+    ? projects
+    : projects.filter((p) => p.category === activeTab);
 
-function ProjectCard({ project, showLive, ongoing }) {
-    return (
-        <div className={`project-card${ongoing ? ' ongoing' : ''}`}>
-            <div className="project-image">
-                <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    width="800"
-                    height="450"
-                />
-            </div>
-            <div className="project-body">
-                <h3>{project.title}</h3>
-                <ul className="project-highlights">
-                    {project.highlights.map((h, i) => (
-                        <li key={i}>{h}</li>
-                    ))}
-                </ul>
-                <p className="tech">
-                    <strong>Stack:</strong> {project.tech}
-                </p>
-                <div className="project-actions">
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-outline"
-                    >
-                        View on GitHub
-                    </a>
-                    {showLive && (
-                        <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn btn-primary"
-                        >
-                            Live Demo
-                        </a>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function Projects() {
-    return (
-        <section className="projects">
-            <div className="projects-section">
-                <h2 className="projects-subtitle">Production</h2>
-                <div className="projects-grid">
-                    {fullstack.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            project={project}
-                            showLive={true}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <div className="projects-section">
-                <h2 className="projects-subtitle">In Development</h2>
-                <div className="projects-grid">
-                    {ongoing.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            project={project}
-                            showLive={false}
-                            ongoing={true}
-                        />
-                    ))}
-                </div>
-            </div>
-
-            <div className="projects-section">
-                <h2 className="projects-subtitle">Experiments</h2>
-                <div className="projects-grid">
-                    {fun.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            project={project}
-                            showLive={false}
-                        />
-                    ))}
-                </div>
-            </div>
+  return (
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <ScrollReveal>
+        <section className="mb-12">
+          <Link to="/" className="inline-flex items-center gap-1.5 font-mono text-xs opacity-50 hover:opacity-100 transition-opacity mb-6">
+            <HiOutlineArrowLeft size={14} />
+            Back to home
+          </Link>
+          <SectionHeading>Projects</SectionHeading>
+          <p className="text-sm leading-relaxed opacity-70 max-w-lg">
+            A selection of things I&apos;ve built — from production-grade platforms to experimental side projects.
+          </p>
         </section>
-    );
-}
+      </ScrollReveal>
 
-export default Projects;
+      <ScrollReveal delay={50}>
+        <div className="flex flex-wrap gap-2 mb-8">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-3 py-1.5 text-xs font-mono rounded-md border transition-all duration-200 ${
+                activeTab === tab.key
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-80"
+              }`}
+              style={{
+                borderColor: activeTab === tab.key
+                  ? "rgb(var(--color-accent))"
+                  : "rgb(var(--color-border))",
+                color: activeTab === tab.key
+                  ? "rgb(var(--color-accent))"
+                  : "inherit",
+                backgroundColor: activeTab === tab.key
+                  ? "rgb(var(--color-accent-muted) / 0.1)"
+                  : "transparent",
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </ScrollReveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {filtered.map((project, i) => (
+          <ScrollReveal key={project.id} delay={i * 50}>
+            <ProjectCard project={project} />
+          </ScrollReveal>
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <p className="text-sm opacity-50 font-mono text-center py-12">
+          No projects in this category yet.
+        </p>
+      )}
+    </div>
+  );
+}

@@ -1,137 +1,123 @@
-import "../styles/about.css";
+import { Link } from "react-router-dom";
+import { HiOutlineArrowLeft } from "react-icons/hi";
+import { personal } from "../data/personal";
+import { skillCategories } from "../data/skills";
+import Tag from "../components/Tag";
+import Card from "../components/Card";
+import NeofetchCard from "../components/NeofetchCard";
+import SectionHeading from "../components/SectionHeading";
+import ScrollReveal from "../components/ScrollReveal";
 
-function About() {
+export default function About() {
   return (
-    <section className="about">
-      <div className="about-left">
-        <h2>About</h2>
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <ScrollReveal>
+        <section className="mb-16">
+          <Link to="/" className="inline-flex items-center gap-1.5 font-mono text-xs opacity-50 hover:opacity-100 transition-opacity mb-6">
+            <HiOutlineArrowLeft size={14} />
+            Back to home
+          </Link>
+          <SectionHeading>About</SectionHeading>
 
-        <div className="about-image">
-          <img src="/me.jpg" alt="Shubhayan Bagchi" />
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3 space-y-4">
+              {personal.about.intro.map((p, i) => (
+                <p key={i} className="text-sm leading-relaxed opacity-80">
+                  {p}
+                </p>
+              ))}
 
-        <p>
-          I'm a final-year Computer Science student from Kolkata focused on
-          backend engineering and full-stack development. I enjoy building
-          scalable web applications, designing APIs, and working with
-          database-driven systems.
-        </p>
+              <div className="mt-6 pt-6 border-t" style={{ borderColor: "rgb(var(--color-border))" }}>
+                <h3 className="font-mono text-xs uppercase tracking-wider opacity-50 mb-3">
+                  Education
+                </h3>
+                <p className="text-sm font-medium">{personal.about.education.degree}</p>
+                <p className="text-sm opacity-60 mt-0.5">{personal.about.education.institution}</p>
+                <p className="font-mono text-xs opacity-40 mt-0.5">{personal.about.education.period}</p>
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {personal.about.education.coursework.map((c) => (
+                    <Tag key={c}>{c}</Tag>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-        <p>
-          Over the past few years, I've built projects involving real-time
-          features, AI integrations, authentication systems, and
-          production-oriented backend services. I was a Smart India Hackathon
-          2023 Finalist and currently serve as Group Leader of my institute's
-          Coding Club, mentoring students and helping guide project development.
-        </p>
+            <div className="lg:col-span-2 space-y-6">
+              <NeofetchCard setup={personal.about.devSetup} />
 
-        <p>
-          Outside of coding, I'm a Linux enthusiast who daily-drives{" "}
-          <a href="https://fedoraproject.org/" target="_blank" rel="noreferrer">
-            Fedora
-          </a>{" "}
-          with GNOME. Most of my development happens inside{" "}
-          <a
-            href="https://www.gnu.org/software/emacs/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GNU Emacs
-          </a>{" "}
-          (Doom), alongside tmux and Docker. I enjoy optimizing workflows almost
-          as much as building software.
-        </p>
+              <Card className="p-4">
+                <h3 className="font-mono text-xs uppercase tracking-wider opacity-50 mb-3">
+                  Currently Seeking
+                </h3>
+                <p className="text-sm leading-relaxed opacity-80">
+                  Backend or full-stack engineering opportunities — internships and entry-level SDE roles.
+                </p>
+              </Card>
 
-        <div className="setup-image">
-          <img
-            src="/setup.png"
-            alt="Development setup — Fedora, GNOME, Doom Emacs"
-            loading="lazy"
-          />
-          <span className="setup-caption">
-            My daily dev environment —{" "}
-            <a href="https://github.com/devBuku/.dotfiles" target="_blank" rel="noreferrer">
-              dotfiles
-            </a>
-          </span>
-        </div>
+              <Card className="p-4">
+                <h3 className="font-mono text-xs uppercase tracking-wider opacity-50 mb-3">
+                  Quick Links
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <a href={personal.resume} download className="btn btn-primary text-xs px-3 py-1.5">
+                    Download Resume
+                  </a>
+                  <a href={`mailto:${personal.email}`} className="btn btn-outline text-xs px-3 py-1.5">
+                    Send Email
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
 
-        <p className="seeking">
-          Currently seeking backend or full-stack engineering opportunities.
-        </p>
-      </div>
+      <ScrollReveal delay={100}>
+        <section className="mb-16">
+          <SectionHeading>Full Stack</SectionHeading>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skillCategories.map((cat) => (
+              <Card key={cat.name} className="p-4">
+                <h3 className="font-mono text-xs uppercase tracking-wider mb-2.5 opacity-50">
+                  {cat.name}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {cat.skills.map((skill) => (
+                    <Tag key={skill}>{skill}</Tag>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
-      <div className="about-right">
-        <h3>Tech Stack</h3>
-
-        <ul>
-          <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Python, C, SQL
-          </li>
-
-          <li>
-            <strong>Backend:</strong> Node.js, Express.js, Flask, FastAPI, REST
-            APIs
-          </li>
-
-          <li>
-            <strong>Frontend:</strong> React.js, Tailwind CSS, Shadcn UI, MUI,
-            Bootstrap
-          </li>
-
-          <li>
-            <strong>Databases:</strong> PostgreSQL, MongoDB, MySQL
-          </li>
-
-          <li>
-            <strong>Authentication:</strong> JWT, Cookie-based Authentication
-          </li>
-
-          <li>
-            <strong>ORMs:</strong> Prisma, Mongoose
-          </li>
-
-          <li>
-            <strong>Tools:</strong> Docker, Git, GitHub, Linux, Postman
-          </li>
-        </ul>
-
-        <h3>Experience</h3>
-
-        <div className="experience-item">
-          <p>
-            <strong>Group Leader</strong>
-            <br />
-            Coding Club
-            <br />
-            Swami Vivekananda Institute of Science & Technology
-            <br />
-            2023 – Present
-          </p>
-        </div>
-
-        <div className="experience-item">
-          <p>
-            <strong>Smart India Hackathon 2023 Finalist</strong>
-            <br />
-            December 2023
-          </p>
-        </div>
-
-        <h3>Education</h3>
-
-        <p>
-          <strong>B.Tech in Computer Science & Engineering</strong>
-          <br />
-          Swami Vivekananda Institute of Science & Technology
-          <br />
-          MAKAUT
-          <br />
-          2022 – Present
-        </p>
-      </div>
-    </section>
+      <ScrollReveal delay={150}>
+        <section>
+          <SectionHeading>Achievements</SectionHeading>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {personal.achievements.map((ach, i) => (
+              <Card key={i} className="p-5">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-md flex items-center justify-center shrink-0 font-mono text-xs"
+                    style={{ backgroundColor: "rgb(var(--color-accent-muted) / 0.2)", color: "rgb(var(--color-accent))" }}>
+                    {ach.icon === "Trophy" ? "SIH" : "CLB"}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold">{ach.title}</h3>
+                    <p className="font-mono text-[10px] uppercase tracking-wider opacity-40 mt-0.5">
+                      {ach.date}
+                    </p>
+                    <p className="text-xs leading-relaxed opacity-70 mt-1.5">
+                      {ach.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
+    </div>
   );
 }
-
-export default About;
