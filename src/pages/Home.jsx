@@ -36,7 +36,7 @@ export default function Home() {
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       {/* Hero */}
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6 items-start">
           {/* Left */}
           <motion.div
             className="lg:col-span-3"
@@ -137,9 +137,11 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="relative">
+            <div
+              className="relative lg:mt-8"
+            >
               <div
-                className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] rounded-full overflow-hidden border-2"
+                className="w-[220px] h-[220px] sm:w-[240px] sm:h-[240px] rounded-full overflow-hidden border-2"
                 style={{
                   borderColor: "rgb(var(--color-border))",
                   boxShadow: "0 0 0 1px rgb(var(--color-accent) / 0.15), 0 8px 32px rgb(0 0 0 / 0.25)",
