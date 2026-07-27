@@ -5,28 +5,32 @@
 @layer base {
   :root {
     --color-bg: 9 9 11;
-    --color-bg-raised: 24 24 27;
+    --color-bg-raised: 17 17 19;
+    --color-bg-hover: 22 22 26;
     --color-bg-overlay: 39 39 42;
-    --color-text: 250 250 250;
-    --color-text-muted: 161 161 170;
-    --color-text-faint: 113 113 122;
-    --color-accent: 161 161 170;
-    --color-accent-hover: 212 212 216;
-    --color-accent-muted: 63 63 70;
+    --color-text: 245 245 245;
+    --color-text-muted: 212 212 216;
+    --color-text-faint: 161 161 170;
+    --color-accent: 59 130 246;
+    --color-accent-hover: 37 99 235;
+    --color-accent-muted: 30 64 175;
     --color-border: 39 39 42;
+    --color-border-subtle: 42 42 42;
   }
 
   .light {
-    --color-bg: 255 255 255;
-    --color-bg-raised: 244 244 245;
-    --color-bg-overlay: 228 228 231;
-    --color-text: 24 24 27;
-    --color-text-muted: 82 82 91;
-    --color-text-faint: 161 161 170;
-    --color-accent: 113 113 122;
-    --color-accent-hover: 82 82 91;
-    --color-accent-muted: 228 228 231;
-    --color-border: 228 228 231;
+    --color-bg: 250 250 250;
+    --color-bg-raised: 255 255 255;
+    --color-bg-hover: 243 244 246;
+    --color-bg-overlay: 243 244 246;
+    --color-text: 17 24 39;
+    --color-text-muted: 55 65 81;
+    --color-text-faint: 107 114 128;
+    --color-accent: 59 130 246;
+    --color-accent-hover: 37 99 235;
+    --color-accent-muted: 219 234 254;
+    --color-border: 229 231 235;
+    --color-border-subtle: 229 231 235;
   }
 
   html {
@@ -87,7 +91,7 @@
 
   .btn-primary {
     background-color: rgb(var(--color-accent));
-    color: rgb(9 9 11);
+    color: rgb(255 255 255);
   }
 
   .btn-primary:hover {

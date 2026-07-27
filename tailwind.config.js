@@ -11,18 +11,19 @@ export default {
       colors: {
         surface: {
           DEFAULT: '#09090b',
-          raised: '#18181b',
+          raised: '#111113',
+          hover: '#16161a',
           overlay: '#27272a',
         },
         accent: {
-          DEFAULT: '#22c55e',
-          hover: '#16a34a',
-          muted: '#166534',
+          DEFAULT: '#3b82f6',
+          hover: '#2563eb',
+          muted: '#1e40af',
         },
         ink: {
-          DEFAULT: '#fafafa',
-          muted: '#a1a1aa',
-          faint: '#71717a',
+          DEFAULT: '#f5f5f5',
+          muted: '#d4d4d8',
+          faint: '#a1a1aa',
         },
         border: '#27272a',
       },
