@@ -4,25 +4,25 @@ React 19 + Vite 7 SPA. Tailwind CSS, no TypeScript, no test framework.
 
 ## Commands
 
-| Action | Command |
-|--------|---------|
-| Dev server | `npm run dev` |
-| Build | `npm run build` |
+| Action        | Command           |
+| ------------- | ----------------- |
+| Dev server    | `npm run dev`     |
+| Build         | `npm run build`   |
 | Preview build | `npm run preview` |
-| Lint | `npm run lint` |
+| Lint          | `npm run lint`    |
 
 ## Routes
 
-| Path | Page |
-|------|------|
-| `/` | Home (Hero, About, Experience, Projects, Skills, Blog, Achievements, Contact) |
-| `/work` | Projects (with category tabs) |
-| `/experience` | Experience timeline |
-| `/about` | About (bio, education, skills, achievements) |
-| `/blog` | Blog listing |
-| `/blog/:slug` | Blog post (Markdown) |
-| `/resume` | Resume (embedded PDF viewer) |
-| `/contact` | Contact (form + social links) |
+| Path          | Page                                                                          |
+| ------------- | ----------------------------------------------------------------------------- |
+| `/`           | Home (Hero, About, Experience, Projects, Skills, Blog, Achievements, Contact) |
+| `/work`       | Projects (with category tabs)                                                 |
+| `/experience` | Experience timeline                                                           |
+| `/about`      | About (bio, education, skills, achievements)                                  |
+| `/blog`       | Blog listing                                                                  |
+| `/blog/:slug` | Blog post (Markdown)                                                          |
+| `/resume`     | Resume (embedded PDF viewer)                                                  |
+| `/contact`    | Contact (form + social links)                                                 |
 
 ## Structure
 

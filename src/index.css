@@ -45,8 +45,15 @@
   body {
     background-color: rgb(var(--color-bg));
     color: rgb(var(--color-text));
-    font-family: 'Geist', 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family:
+      'Geist',
+      'IBM Plex Sans',
+      system-ui,
+      -apple-system,
+      sans-serif;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
@@ -67,12 +74,11 @@
 
 @layer components {
   .section-heading {
-    @apply text-2xl sm:text-3xl font-bold tracking-tight;
+    @apply text-2xl font-bold tracking-tight sm:text-3xl;
   }
 
   .tag {
-    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-mono font-medium
-      rounded border transition-colors duration-200;
+    @apply inline-flex items-center rounded border px-2.5 py-0.5 font-mono text-xs font-medium transition-colors duration-200;
     border-color: rgb(var(--color-border));
     color: rgb(var(--color-text-muted));
   }
@@ -83,9 +89,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium
-      rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2
-      focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
     --tw-ring-color: rgb(var(--color-accent));
   }
 
@@ -137,28 +141,28 @@
   }
 
   .prose-custom h2 {
-    @apply text-xl font-bold mt-12 mb-4;
+    @apply mb-4 mt-12 text-xl font-bold;
     color: rgb(var(--color-text));
   }
 
   .prose-custom h3 {
-    @apply text-lg font-semibold mt-8 mb-3;
+    @apply mb-3 mt-8 text-lg font-semibold;
     color: rgb(var(--color-text));
   }
 
   .prose-custom h4 {
-    @apply text-base font-semibold mt-6 mb-2;
+    @apply mb-2 mt-6 text-base font-semibold;
     color: rgb(var(--color-text));
   }
 
   .prose-custom code:not(pre code) {
-    @apply font-mono text-sm px-1.5 py-0.5 rounded;
+    @apply rounded px-1.5 py-0.5 font-mono text-sm;
     background-color: rgb(var(--color-bg-overlay));
     color: rgb(var(--color-accent));
   }
 
   .prose-custom pre {
-    @apply rounded-lg p-4 overflow-x-auto my-6 text-sm;
+    @apply my-6 overflow-x-auto rounded-lg p-4 text-sm;
     background-color: rgb(var(--color-bg-overlay));
     border: 1px solid rgb(var(--color-border));
   }
@@ -168,11 +172,11 @@
   }
 
   .prose-custom ul {
-    @apply list-disc pl-6 mb-4 space-y-1.5;
+    @apply mb-4 list-disc space-y-1.5 pl-6;
   }
 
   .prose-custom ol {
-    @apply list-decimal pl-6 mb-4 space-y-1.5;
+    @apply mb-4 list-decimal space-y-1.5 pl-6;
   }
 
   .prose-custom a {
@@ -182,7 +186,7 @@
   }
 
   .prose-custom blockquote {
-    @apply border-l-2 pl-4 my-6 italic;
+    @apply my-6 border-l-2 pl-4 italic;
     border-color: rgb(var(--color-accent));
     color: rgb(var(--color-text-muted));
   }
@@ -197,7 +201,7 @@
   }
 
   .prose-custom table {
-    @apply w-full text-sm my-6;
+    @apply my-6 w-full text-sm;
   }
 
   .prose-custom th,
@@ -212,7 +216,7 @@
   }
 
   .prose-custom img {
-    @apply rounded-lg my-6;
+    @apply my-6 rounded-lg;
   }
 
   .prose-custom .hljs {
@@ -224,7 +228,9 @@
   .scroll-reveal {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
   }
 
   .scroll-reveal.revealed {

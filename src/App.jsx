@@ -1,18 +1,18 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollProgressBar from "./components/ScrollProgressBar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import Experience from "./pages/Experience";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import Resume from "./pages/Resume";
-import Contact from "./pages/Contact";
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
+import Experience from './pages/Experience';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,7 +28,7 @@ function PageTransition({ children }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
@@ -37,15 +37,18 @@ function PageTransition({ children }) {
 
 function NotFound() {
   return (
-    <div className="flex-1 flex items-center justify-center">
-      <div className="text-center space-y-4">
-        <p className="font-mono text-sm" style={{ color: "rgb(var(--color-text-faint))" }}>
+    <div className="flex flex-1 items-center justify-center">
+      <div className="space-y-4 text-center">
+        <p
+          className="font-mono text-sm"
+          style={{ color: 'rgb(var(--color-text-faint))' }}
+        >
           404 — page not found
         </p>
         <div>
           <a
             href="/"
-            className="btn-outline inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg"
+            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium"
           >
             Back to home
           </a>
@@ -61,7 +64,7 @@ export default function App() {
   return (
     <div
       className="flex min-h-screen flex-col transition-colors duration-300"
-      style={{ backgroundColor: "rgb(var(--color-bg))" }}
+      style={{ backgroundColor: 'rgb(var(--color-bg))' }}
     >
       <ScrollToTop />
       <ScrollProgressBar />

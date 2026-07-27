@@ -1,20 +1,20 @@
-import { skillCategories } from "../data/skills";
-import { motion } from "framer-motion";
+import { skillCategories } from '../data/skills';
+import { motion } from 'framer-motion';
 
 export default function SkillSection() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
       {skillCategories.map((cat, i) => (
         <motion.div
           key={cat.name}
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
+          viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.4, delay: i * 0.05 }}
         >
           <h3
-            className="text-xs font-mono uppercase tracking-wider mb-3"
-            style={{ color: "rgb(var(--color-text-faint))" }}
+            className="mb-3 font-mono text-xs uppercase tracking-wider"
+            style={{ color: 'rgb(var(--color-text-faint))' }}
           >
             {cat.name}
           </h3>
@@ -23,7 +23,7 @@ export default function SkillSection() {
               <p
                 key={skill}
                 className="text-sm"
-                style={{ color: "rgb(var(--color-text-muted))" }}
+                style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {skill}
               </p>

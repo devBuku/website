@@ -1,18 +1,21 @@
-import { Helmet } from "react-helmet-async";
-import { personal } from "../data/personal";
-import ScrollReveal from "../components/ScrollReveal";
-import PageHeader from "../components/PageHeader";
+import { Helmet } from 'react-helmet-async';
+import { personal } from '../data/personal';
+import ScrollReveal from '../components/ScrollReveal';
+import PageHeader from '../components/PageHeader';
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <Helmet>
         <title>Contact — Shubhayan Bagchi (devBuku)</title>
         <meta
           name="description"
           content="Get in touch with Shubhayan Bagchi (devBuku) — open to SDE internships and entry-level roles. Based in Kolkata, India."
         />
-        <meta property="og:title" content="Contact — Shubhayan Bagchi (devBuku)" />
+        <meta
+          property="og:title"
+          content="Contact — Shubhayan Bagchi (devBuku)"
+        />
         <meta
           property="og:description"
           content="Open to SDE internships and entry-level roles. Based in Kolkata, India."
@@ -25,23 +28,23 @@ export default function Contact() {
         <div className="space-y-3">
           <div>
             <p
-              className="text-xs font-mono"
-              style={{ color: "rgb(var(--color-text-faint))" }}
+              className="font-mono text-xs"
+              style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               email
             </p>
             <a
               href={`mailto:${personal.email}`}
               className="text-sm transition-opacity hover:opacity-70"
-              style={{ color: "rgb(var(--color-text-muted))" }}
+              style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.email}
             </a>
           </div>
           <div>
             <p
-              className="text-xs font-mono"
-              style={{ color: "rgb(var(--color-text-faint))" }}
+              className="font-mono text-xs"
+              style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               github
             </p>
@@ -50,15 +53,15 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm transition-opacity hover:opacity-70"
-              style={{ color: "rgb(var(--color-text-muted))" }}
+              style={{ color: 'rgb(var(--color-text-muted))' }}
             >
-              {personal.social.github.url.replace("https://", "")}
+              {personal.social.github.url.replace('https://', '')}
             </a>
           </div>
           <div>
             <p
-              className="text-xs font-mono"
-              style={{ color: "rgb(var(--color-text-faint))" }}
+              className="font-mono text-xs"
+              style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               linkedin
             </p>
@@ -67,21 +70,21 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm transition-opacity hover:opacity-70"
-              style={{ color: "rgb(var(--color-text-muted))" }}
+              style={{ color: 'rgb(var(--color-text-muted))' }}
             >
-              {personal.social.linkedin.url.replace("https://", "")}
+              {personal.social.linkedin.url.replace('https://', '')}
             </a>
           </div>
           <div>
             <p
-              className="text-xs font-mono"
-              style={{ color: "rgb(var(--color-text-faint))" }}
+              className="font-mono text-xs"
+              style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               location
             </p>
             <p
               className="text-sm"
-              style={{ color: "rgb(var(--color-text-muted))" }}
+              style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.location}
             </p>

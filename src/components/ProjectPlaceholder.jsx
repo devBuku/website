@@ -11,47 +11,52 @@ import {
   ShoppingCart,
   Activity,
   Code2,
-} from "lucide-react";
+} from 'lucide-react';
 
 const iconLookup = {
-  "college-erp": GraduationCap,
+  'college-erp': GraduationCap,
   vagdevi: Sparkles,
   swarlipi: Mic,
-  "uber-clone": Car,
+  'uber-clone': Car,
   quickbute: ShoppingBag,
-  "spotify-mern": Music,
-  "realtime-chat": MessageSquare,
+  'spotify-mern': Music,
+  'realtime-chat': MessageSquare,
   ledger: Landmark,
-  "device-tracker": Compass,
+  'device-tracker': Compass,
   instacart: ShoppingCart,
-  "random-walk": Activity,
+  'random-walk': Activity,
 };
 
-export default function ProjectPlaceholder({ project, className = "", size = "large" }) {
+export default function ProjectPlaceholder({
+  project,
+  className = '',
+  size = 'large',
+}) {
   const IconComponent = iconLookup[project.id] || Code2;
-  const isCompact = size === "compact";
+  const isCompact = size === 'compact';
 
   return (
     <div
-      className={`${isCompact ? "w-full h-full rounded-none border-none" : "rounded-xl border"} flex flex-col items-center justify-center relative overflow-hidden ${isCompact ? "" : "py-8 px-6"} ${className}`}
+      className={`${isCompact ? 'h-full w-full rounded-none border-none' : 'rounded-xl border'} relative flex flex-col items-center justify-center overflow-hidden ${isCompact ? '' : 'px-6 py-8'} ${className}`}
       style={{
-        borderColor: "rgb(var(--color-border))",
-        background: "linear-gradient(135deg, rgb(var(--color-bg-raised)), rgb(var(--color-bg)))",
+        borderColor: 'rgb(var(--color-border))',
+        background:
+          'linear-gradient(135deg, rgb(var(--color-bg-raised)), rgb(var(--color-bg)))',
       }}
     >
       <div
-        className="absolute w-36 h-36 rounded-full blur-2xl opacity-25 pointer-events-none"
-        style={{ backgroundColor: "rgb(var(--color-accent))" }}
+        className="pointer-events-none absolute h-36 w-36 rounded-full opacity-25 blur-2xl"
+        style={{ backgroundColor: 'rgb(var(--color-accent))' }}
       />
 
       <div
-        className={`rounded-2xl flex items-center justify-center mb-2 transition-transform duration-300 group-hover:scale-110 ${
-          isCompact ? "w-10 h-10" : "w-14 h-14 sm:w-16 sm:h-16"
+        className={`mb-2 flex items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${
+          isCompact ? 'h-10 w-10' : 'h-14 w-14 sm:h-16 sm:w-16'
         }`}
         style={{
-          backgroundColor: "rgb(var(--color-accent-muted) / 0.15)",
-          color: "rgb(var(--color-accent))",
-          border: "1px solid rgb(var(--color-accent) / 0.25)",
+          backgroundColor: 'rgb(var(--color-accent-muted) / 0.15)',
+          color: 'rgb(var(--color-accent))',
+          border: '1px solid rgb(var(--color-accent) / 0.25)',
         }}
       >
         <IconComponent size={isCompact ? 20 : 28} />
@@ -59,8 +64,8 @@ export default function ProjectPlaceholder({ project, className = "", size = "la
 
       {!isCompact && (
         <span
-          className="text-xs sm:text-sm font-semibold tracking-tight text-center px-4"
-          style={{ color: "rgb(var(--color-text-muted))" }}
+          className="px-4 text-center text-xs font-semibold tracking-tight sm:text-sm"
+          style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           {project.title}
         </span>

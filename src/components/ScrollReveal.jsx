@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-export default function ScrollReveal({ children, className = "", delay = 0 }) {
+export default function ScrollReveal({ children, className = '', delay = 0 }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -10,11 +10,11 @@ export default function ScrollReveal({ children, className = "", delay = 0 }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add("revealed"), delay);
+          setTimeout(() => el.classList.add('revealed'), delay);
           observer.unobserve(el);
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
     );
 
     observer.observe(el);

@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist', 'IBM Plex Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: [
+          'Geist',
+          'IBM Plex Sans',
+          'system-ui',
+          '-apple-system',
+          'sans-serif',
+        ],
         mono: ['"JetBrains Mono"', 'Fira Code', 'monospace'],
       },
       colors: {
@@ -44,4 +50,4 @@ export default {
     },
   },
   plugins: [],
-}
+};
