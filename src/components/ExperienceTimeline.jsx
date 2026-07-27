@@ -2,25 +2,25 @@ import { experience } from "../data/experience";
 
 export default function ExperienceTimeline() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       {experience.map((exp, i) => (
         <div key={i} className="relative pl-8 sm:pl-10">
           <div
-            className="absolute left-0 top-1 w-3 h-3 rounded-full border-2"
+            className="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full border"
             style={{
-              borderColor: "rgb(var(--color-accent))",
+              borderColor: "rgb(var(--color-text-faint) / 0.5)",
               backgroundColor: "rgb(var(--color-bg))",
             }}
           />
           {i < experience.length - 1 && (
             <div
-              className="absolute left-[5px] top-4 bottom-0 w-px"
+              className="absolute left-[4.5px] top-4 bottom-0 w-px"
               style={{ backgroundColor: "rgb(var(--color-border))" }}
             />
           )}
           <div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-1">
-              <h3 className="text-lg font-bold">{exp.role}</h3>
+            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
+              <h3 className="text-lg font-bold tracking-tight">{exp.role}</h3>
               <span
                 className="font-mono text-xs"
                 style={{ color: "rgb(var(--color-text-faint))" }}
@@ -29,18 +29,18 @@ export default function ExperienceTimeline() {
               </span>
             </div>
             <p
-              className="text-sm font-semibold mb-3"
-              style={{ color: "rgb(var(--color-accent))" }}
+              className="text-sm font-medium mb-4"
+              style={{ color: "rgb(var(--color-text-muted))" }}
             >
               {exp.company}
             </p>
             <p
-              className="text-sm leading-relaxed mb-4 max-w-2xl"
+              className="text-sm leading-relaxed mb-5 max-w-2xl"
               style={{ color: "rgb(var(--color-text-muted))" }}
             >
               {exp.description}
             </p>
-            <ul className="space-y-1.5 mb-4">
+            <ul className="space-y-1.5 mb-5">
               {exp.highlights.map((h, j) => (
                 <li
                   key={j}
@@ -48,8 +48,8 @@ export default function ExperienceTimeline() {
                   style={{ color: "rgb(var(--color-text-muted))" }}
                 >
                   <span
-                    className="shrink-0 mt-0.5"
-                    style={{ color: "rgb(var(--color-accent))" }}
+                    className="shrink-0 mt-0.5 font-mono text-xs"
+                    style={{ color: "rgb(var(--color-text-faint))" }}
                   >
                     &rarr;
                   </span>
@@ -61,11 +61,10 @@ export default function ExperienceTimeline() {
               {exp.tech.map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center px-2.5 py-1 text-xs font-mono rounded-md border"
+                  className="inline-flex items-center px-2 py-0.5 text-[10px] font-mono rounded border"
                   style={{
                     borderColor: "rgb(var(--color-border))",
-                    color: "rgb(var(--color-text-muted))",
-                    backgroundColor: "rgb(var(--color-bg-overlay) / 0.5)",
+                    color: "rgb(var(--color-text-faint))",
                   }}
                 >
                   {t}

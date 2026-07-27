@@ -10,9 +10,9 @@
     --color-text: 250 250 250;
     --color-text-muted: 161 161 170;
     --color-text-faint: 113 113 122;
-    --color-accent: 34 197 94;
-    --color-accent-hover: 22 163 74;
-    --color-accent-muted: 22 101 52;
+    --color-accent: 161 161 170;
+    --color-accent-hover: 212 212 216;
+    --color-accent-muted: 63 63 70;
     --color-border: 39 39 42;
   }
 
@@ -23,9 +23,9 @@
     --color-text: 24 24 27;
     --color-text-muted: 82 82 91;
     --color-text-faint: 161 161 170;
-    --color-accent: 22 163 74;
-    --color-accent-hover: 21 128 61;
-    --color-accent-muted: 187 247 208;
+    --color-accent: 113 113 122;
+    --color-accent-hover: 82 82 91;
+    --color-accent-muted: 228 228 231;
     --color-border: 228 228 231;
   }
 
@@ -41,7 +41,7 @@
   body {
     background-color: rgb(var(--color-bg));
     color: rgb(var(--color-text));
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Geist', 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 

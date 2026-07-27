@@ -1,31 +1,26 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import SectionHeading from "../components/SectionHeading";
+import { Helmet } from "react-helmet-async";
 import ScrollReveal from "../components/ScrollReveal";
 import ExperienceTimeline from "../components/ExperienceTimeline";
+import PageHeader from "../components/PageHeader";
 
 export default function Experience() {
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <Helmet>
+        <title>Experience — Shubhayan Bagchi (devBuku)</title>
+        <meta
+          name="description"
+          content="Shubhayan Bagchi's experience: backend developer on a College ERP system, SIH 2023 Finalist (Swarlipi AI dubbing), and Coding Club Group Leader at SVIST."
+        />
+        <meta property="og:title" content="Experience — Shubhayan Bagchi (devBuku)" />
+        <meta
+          property="og:description"
+          content="Backend developer on a College ERP system, SIH 2023 Finalist, and Coding Club Group Leader."
+        />
+      </Helmet>
+
       <ScrollReveal>
-        <section className="mb-12">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 text-sm transition-opacity hover:opacity-70 mb-6"
-            style={{ color: "rgb(var(--color-text-muted))" }}
-          >
-            <ArrowLeft size={14} />
-            Back to home
-          </Link>
-          <SectionHeading>Experience</SectionHeading>
-          <p
-            className="text-sm leading-relaxed max-w-lg"
-            style={{ color: "rgb(var(--color-text-muted))" }}
-          >
-            A timeline of my professional experience — from leading a four-person team building a
-            College ERP to mentoring juniors as Coding Club Group Leader.
-          </p>
-        </section>
+        <PageHeader>Experience</PageHeader>
       </ScrollReveal>
 
       <ScrollReveal delay={50}>

@@ -1,8 +1,8 @@
 export const personal = {
   name: "Shubhayan Bagchi",
   alias: "devBuku",
-  role: "Full-Stack Developer & CSE Undergrad",
-  tagline: "Backend-first engineering — I design REST APIs, model databases, implement auth, and build full-stack web applications.",
+  role: "Backend-focused Full-Stack Developer",
+  tagline: "I build the parts of the internet you don't see — and make sure they don't fall over.",
   email: "shubhayanbagchi30@gmail.com",
   location: "Kolkata, India",
   resume: "/resume.pdf",

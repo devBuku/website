@@ -1,26 +1,19 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  ExternalLink,
-  MapPin,
-  Mail,
-} from "lucide-react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { personal } from "../data/personal";
 import { projects } from "../data/projects";
+import { experience } from "../data/experience";
 import { blogPosts } from "../content/blog/posts";
 import SectionHeading from "../components/SectionHeading";
-import ProjectCard from "../components/ProjectCard";
-import SkillSection from "../components/SkillSection";
 import BlogCard from "../components/BlogCard";
-import ExperienceTimeline from "../components/ExperienceTimeline";
+import ProjectRow from "../components/ProjectRow";
 
-const featuredProjects = projects.filter((p) =>
-  ["vagdevi", "uber-clone"].includes(p.id)
-);
-
-const collegeERP = projects.find((p) => p.id === "quickbute");
+const teaserIds = ["college-erp", "vagdevi", "swarlipi"];
+const teaserProjects = teaserIds
+  .map((id) => projects.find((p) => p.id === id))
+  .filter(Boolean);
 
 const recentPosts = blogPosts.slice(0, 3);
 
@@ -34,101 +27,56 @@ const fadeUp = {
 export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>Shubhayan Bagchi (devBuku) — Backend-Focused Developer</title>
+        <meta
+          name="description"
+          content="Shubhayan Bagchi (devBuku) — backend-focused full-stack developer from Kolkata. REST APIs, databases, auth — I design them, model them, and implement them."
+        />
+        <meta property="og:title" content="Shubhayan Bagchi (devBuku) — Backend-Focused Developer" />
+        <meta
+          property="og:description"
+          content="Backend-focused full-stack developer. I build the parts of the internet you don't see — and make sure they don't fall over."
+        />
+        <meta property="og:url" content="https://devbuku.vercel.app" />
+      </Helmet>
+
       {/* Hero */}
-      <section className="py-16 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-6 items-start">
-          {/* Left */}
+      <section className="py-20 sm:py-28 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-center">
           <motion.div
             className="lg:col-span-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p
-              className="text-sm font-medium mb-2"
-              style={{ color: "rgb(var(--color-accent))" }}
-            >
-              Hi, I&apos;m
-            </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15]">
               {personal.name}
             </h1>
             <p
-              className="text-lg sm:text-xl mt-2 font-medium"
+              className="text-base sm:text-lg mt-2"
               style={{ color: "rgb(var(--color-text-muted))" }}
             >
               {personal.role}
             </p>
             <p
-              className="mt-4 text-sm leading-relaxed max-w-md"
+              className="mt-5 text-sm leading-relaxed max-w-md"
               style={{ color: "rgb(var(--color-text-muted))" }}
             >
-              {personal.tagline}
+              I build reliable backend systems, REST APIs, authentication, and production-ready web applications.
             </p>
             <p
-              className="mt-2 text-sm"
+              className="mt-3 text-sm leading-relaxed"
               style={{ color: "rgb(var(--color-text-faint))" }}
             >
-              Currently preparing for SDE internships while building full-stack applications and solving DSA.
+              Currently preparing for Software Engineering internships while building projects and documenting what I learn.
             </p>
-
-            <div
-              className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-sm"
+            <p
+              className="mt-4 text-sm"
               style={{ color: "rgb(var(--color-text-faint))" }}
             >
-              <span className="flex items-center gap-1.5">
-                <MapPin size={14} />
-                {personal.location}
-              </span>
-              <span className="flex items-center gap-1.5">
-                Final-year CSE Student
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 mt-6">
-              <Link
-                to="/work"
-                className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg"
-              >
-                View Projects <ArrowRight size={14} />
-              </Link>
-              <a
-                href={personal.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg"
-              >
-                Resume
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4 mt-5">
-              <a
-                href={personal.social.github.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 transition-opacity"
-                aria-label={personal.social.github.label}
-              >
-                <FaGithub size={18} />
-              </a>
-              <a
-                href={personal.social.linkedin.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-50 hover:opacity-100 transition-opacity"
-                aria-label={personal.social.linkedin.label}
-              >
-                <FaLinkedinIn size={18} />
-              </a>
-              <a
-                href={`mailto:${personal.email}`}
-                className="opacity-50 hover:opacity-100 transition-opacity"
-                aria-label="Email"
-              >
-                <Mail size={18} />
-              </a>
-            </div>
+              Kolkata, India &bull; Final-year CSE Student
+            </p>
           </motion.div>
 
           <motion.div
@@ -138,248 +86,138 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div
-              className="relative lg:mt-8"
+              className="w-[160px] h-[160px] sm:w-[180px] sm:h-[180px] rounded-full overflow-hidden border"
+              style={{ borderColor: "rgb(var(--color-border))" }}
             >
-              <div
-                className="w-[220px] h-[220px] sm:w-[240px] sm:h-[240px] rounded-full overflow-hidden border-2"
-                style={{
-                  borderColor: "rgb(var(--color-border))",
-                  boxShadow: "0 0 0 1px rgb(var(--color-accent) / 0.15), 0 8px 32px rgb(0 0 0 / 0.25)",
-                }}
-              >
-                <img
-                  src="/me.jpg"
-                  alt={personal.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src="/me.jpg"
+                alt="Shubhayan Bagchi — backend-focused developer and CSE student from Kolkata"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20">
-        <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-px rounded-xl overflow-hidden border"
-          style={{
-            borderColor: "rgb(var(--color-border))",
-            backgroundColor: "rgb(var(--color-border))",
-          }}
+      {/* Featured Projects — clickable blocks */}
+      <motion.section {...fadeUp} className="pb-14" id="projects">
+        <p
+          className="text-xs font-mono uppercase tracking-widest mb-5"
+          style={{ color: "rgb(var(--color-text-faint))" }}
         >
-          {[
-            { value: "10+", label: "Projects" },
-            { value: "SIH 2023", label: "Finalist" },
-            { value: "Team Lead", label: "Experience" },
-            { value: "Open", label: "to Internships" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="py-5 text-center"
-              style={{ backgroundColor: "rgb(var(--color-bg))" }}
-            >
-              <p className="text-sm font-bold">{stat.value}</p>
+          * featured projects
+        </p>
+        <div className="space-y-2">
+          {teaserProjects.map((project) => (
+            <ProjectRow key={project.id} project={project} />
+          ))}
+        </div>
+        <div className="mt-5">
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-1 text-xs font-mono transition-opacity hover:opacity-70"
+            style={{ color: "rgb(var(--color-text-faint))" }}
+          >
+            all projects &rarr;
+          </Link>
+        </div>
+      </motion.section>
+
+      {/* Experience — minimal list */}
+      <motion.section {...fadeUp} className="pb-10" id="experience">
+        <p
+          className="text-xs font-mono uppercase tracking-widest mb-5"
+          style={{ color: "rgb(var(--color-text-faint))" }}
+        >
+          * experience
+        </p>
+        <div className="space-y-4">
+          {experience.map((entry, i) => (
+            <div key={i}>
+              <div className="flex items-baseline justify-between gap-2">
+                <p className="text-sm font-medium">
+                  {entry.role}
+                </p>
+                <span
+                  className="text-[11px] font-mono shrink-0"
+                  style={{ color: "rgb(var(--color-text-faint))" }}
+                >
+                  {entry.period}
+                </span>
+              </div>
               <p
-                className="text-xs mt-0.5"
+                className="text-sm mt-0.5"
                 style={{ color: "rgb(var(--color-text-muted))" }}
               >
-                {stat.label}
+                {entry.company}
+              </p>
+              <p
+                className="text-sm mt-0.5 leading-relaxed"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                {entry.description?.split(".")[0] ?? ""}.
               </p>
             </div>
           ))}
         </div>
-      </motion.section>
-
-      {/* Currently Building */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="building">
-        <SectionHeading>Currently Building</SectionHeading>
-        <div className="card p-6 sm:p-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "Solving LeetCode daily — building DSA consistency",
-              "Revising Core CS — OS, DBMS, Networks, OOP",
-              "Building full-stack projects with React & Node.js",
-              "Learning Docker, AWS, and deployment workflows",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex gap-3 text-sm"
-                style={{ color: "rgb(var(--color-text-muted))" }}
-              >
-                <span
-                  className="shrink-0 mt-0.5"
-                  style={{ color: "rgb(var(--color-accent))" }}
-                >
-                  &rarr;
-                </span>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Featured Projects */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="projects">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <div className="lg:col-span-2">
-            <SectionHeading>Featured Projects</SectionHeading>
-          </div>
-          <div className="lg:col-span-2">
-            <ProjectCard project={collegeERP} variant="showcase" />
-          </div>
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-        <Link
-          to="/work"
-          className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-          style={{ color: "rgb(var(--color-accent))" }}
-        >
-          View all projects <ArrowRight size={12} />
-        </Link>
-      </motion.section>
-
-      {/* Experience */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="experience">
-        <SectionHeading>Experience</SectionHeading>
-        <ExperienceTimeline />
-        <div className="mt-6">
+        <div className="mt-5">
           <Link
             to="/experience"
-            className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-            style={{ color: "rgb(var(--color-accent))" }}
+            className="inline-flex items-center gap-1 text-xs font-mono transition-opacity hover:opacity-70"
+            style={{ color: "rgb(var(--color-text-faint))" }}
           >
-            View full experience <ArrowRight size={12} />
+            All Experience &rarr;
           </Link>
         </div>
-      </motion.section>
-
-      {/* Skills */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="skills">
-        <SectionHeading>Skills</SectionHeading>
-        <SkillSection />
       </motion.section>
 
       {/* Blog */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="blog">
-        <SectionHeading>Blog</SectionHeading>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recentPosts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
-        <div className="mt-6">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
-            style={{ color: "rgb(var(--color-accent))" }}
-          >
-            Read all posts <ArrowRight size={12} />
-          </Link>
-        </div>
-      </motion.section>
+      {recentPosts.length > 0 && (
+        <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="blog">
+          <SectionHeading>Blog</SectionHeading>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recentPosts.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+              style={{ color: "rgb(var(--color-accent))" }}
+            >
+              Read all posts <ArrowRight size={12} />
+            </Link>
+          </div>
+        </motion.section>
+      )}
 
       {/* Achievements */}
-      <motion.section {...fadeUp} className="pb-16 sm:pb-20" id="achievements">
-        <SectionHeading>Achievements</SectionHeading>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <motion.section {...fadeUp} className="pb-20 sm:pb-24" id="achievements">
+        <p
+          className="text-xs font-mono uppercase tracking-widest mb-5"
+          style={{ color: "rgb(var(--color-text-faint))" }}
+        >
+          * achievements
+        </p>
+        <div className="space-y-5">
           {personal.achievements.map((ach, i) => (
-            <div key={i} className="card p-6">
-              <div className="flex items-start gap-3">
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 font-mono text-xs font-semibold"
-                  style={{
-                    backgroundColor: "rgb(var(--color-accent-muted) / 0.2)",
-                    color: "rgb(var(--color-accent))",
-                  }}
-                >
-                  {ach.icon === "Trophy" ? "SIH" : "CLB"}
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-semibold">{ach.title}</h3>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-wider mt-0.5"
-                    style={{ color: "rgb(var(--color-text-faint))" }}
-                  >
-                    {ach.date}
-                  </p>
-                  <p
-                    className="text-xs leading-relaxed mt-1.5"
-                    style={{ color: "rgb(var(--color-text-muted))" }}
-                  >
-                    {ach.description}
-                  </p>
-                </div>
-              </div>
+            <div key={i}>
+              <p className="text-sm font-medium">{ach.title}</p>
+              <p
+                className="text-sm mt-0.5"
+                style={{ color: "rgb(var(--color-text-muted))" }}
+              >
+                {ach.subtitle}
+              </p>
+              <p
+                className="text-sm mt-0.5 leading-relaxed"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                {ach.description}
+              </p>
             </div>
           ))}
-        </div>
-      </motion.section>
-
-      {/* Contact */}
-      <motion.section {...fadeUp} className="pb-20 sm:pb-24" id="contact">
-        <div className="card p-8 sm:p-10 text-center">
-          <h2 className="text-xl sm:text-2xl font-bold mb-3">
-            Let&apos;s Connect
-          </h2>
-          <p
-            className="text-sm mb-6 max-w-md mx-auto"
-            style={{ color: "rgb(var(--color-text-muted))" }}
-          >
-            I&apos;m currently looking for SDE internships starting August 1.
-            If you&apos;d like to discuss opportunities or projects, feel free to reach out.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-            <a
-              href={`mailto:${personal.email}`}
-              className="btn-primary inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-lg"
-            >
-              <Mail size={15} />
-              Get In Touch
-            </a>
-            <a
-              href={personal.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-lg"
-            >
-              <ExternalLink size={14} />
-              Resume
-            </a>
-          </div>
-          <div
-            className="flex items-center justify-center gap-4 text-sm"
-            style={{ color: "rgb(var(--color-text-faint))" }}
-          >
-            <a
-              href={personal.social.github.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-70"
-            >
-              GitHub
-            </a>
-            <span className="opacity-30">&middot;</span>
-            <a
-              href={personal.social.linkedin.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-70"
-            >
-              LinkedIn
-            </a>
-            <span className="opacity-30">&middot;</span>
-            <a
-              href={`mailto:${personal.email}`}
-              className="transition-opacity hover:opacity-70"
-            >
-              Email
-            </a>
-            <span className="opacity-30">&middot;</span>
-            <span>{personal.location}</span>
-          </div>
         </div>
       </motion.section>
     </div>

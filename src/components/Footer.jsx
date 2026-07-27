@@ -1,5 +1,3 @@
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { Mail, FileText } from "lucide-react";
 import { personal } from "../data/personal";
 
 export default function Footer() {
@@ -10,64 +8,45 @@ export default function Footer() {
       className="border-t transition-colors duration-300"
       style={{ borderColor: "rgb(var(--color-border))" }}
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-10">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-sm font-semibold">{personal.name}</p>
-            <p
-              className="text-xs mt-0.5"
-              style={{ color: "rgb(var(--color-text-muted))" }}
-            >
-              Full-Stack Developer
-            </p>
-          </div>
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm font-medium">{personal.name}</p>
 
-          <div className="flex items-center gap-3">
-            <a
-              href={`mailto:${personal.email}`}
-              className="opacity-50 hover:opacity-100 transition-opacity p-2 rounded-lg hover:bg-gray-800/50"
-              aria-label="Email"
-            >
-              <Mail size={16} />
-            </a>
+          <div
+            className="flex items-center gap-4 text-xs"
+            style={{ color: "rgb(var(--color-text-faint))" }}
+          >
             <a
               href={personal.social.github.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-50 hover:opacity-100 transition-opacity p-2 rounded-lg hover:bg-gray-800/50"
-              aria-label={personal.social.github.label}
+              className="transition-opacity hover:opacity-70"
             >
-              <FaGithub size={16} />
+              GitHub
             </a>
             <a
               href={personal.social.linkedin.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-50 hover:opacity-100 transition-opacity p-2 rounded-lg hover:bg-gray-800/50"
-              aria-label={personal.social.linkedin.label}
+              className="transition-opacity hover:opacity-70"
             >
-              <FaLinkedinIn size={16} />
+              LinkedIn
             </a>
             <a
-              href={personal.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-50 hover:opacity-100 transition-opacity p-2 rounded-lg hover:bg-gray-800/50"
-              aria-label="Resume"
+              href={`mailto:${personal.email}`}
+              className="transition-opacity hover:opacity-70"
             >
-              <FileText size={16} />
+              Email
             </a>
           </div>
         </div>
 
-        <div
-          className="mt-6 pt-6 text-center border-t"
-          style={{ borderColor: "rgb(var(--color-border))" }}
+        <p
+          className="text-[10px] mt-6 text-center"
+          style={{ color: "rgb(var(--color-text-faint) / 0.6)" }}
         >
-          <p className="text-xs" style={{ color: "rgb(var(--color-text-faint))" }}>
-            &copy; {year} {personal.name} &mdash; Built with React & Tailwind
-          </p>
-        </div>
+          &copy; {year} {personal.name}
+        </p>
       </div>
     </footer>
   );

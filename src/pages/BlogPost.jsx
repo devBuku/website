@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -13,6 +14,9 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <Helmet>
+          <title>Post Not Found — devBuku</title>
+        </Helmet>
         <p className="text-sm font-mono" style={{ color: "rgb(var(--color-text-faint))" }}>
           Post not found.
         </p>
@@ -29,6 +33,29 @@ export default function BlogPost() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <Helmet>
+        <title>{post.title} — devBuku Blog</title>
+        <meta
+          name="description"
+          content={post.excerpt || `${post.title} — a blog post by Shubhayan Bagchi (devBuku).`}
+        />
+        <meta property="og:title" content={`${post.title} — devBuku Blog`} />
+        <meta
+          property="og:description"
+          content={post.excerpt || `${post.title} — a blog post by Shubhayan Bagchi (devBuku).`}
+        />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:url"
+          content={`https://devbuku.vercel.app/blog/${post.slug}`}
+        />
+        <meta name="twitter:title" content={`${post.title} — devBuku Blog`} />
+        <meta
+          name="twitter:description"
+          content={post.excerpt || `${post.title} — a blog post by Shubhayan Bagchi (devBuku).`}
+        />
+      </Helmet>
+
       <ScrollReveal>
         <Link
           to="/blog"
@@ -45,6 +72,7 @@ export default function BlogPost() {
               <time
                 className="flex items-center gap-1 font-mono text-xs"
                 style={{ color: "rgb(var(--color-text-faint))" }}
+                dateTime={post.date}
               >
                 <Calendar size={10} />
                 {post.date}
