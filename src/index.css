@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: 9 9 11;
+    --color-bg-raised: 24 24 27;
+    --color-bg-overlay: 39 39 42;
+    --color-text: 250 250 250;
+    --color-text-muted: 161 161 170;
+    --color-text-faint: 113 113 122;
+    --color-accent: 161 161 170;
+    --color-accent-hover: 212 212 216;
+    --color-accent-muted: 63 63 70;
+    --color-border: 39 39 42;
+  }
+
+  .light {
+    --color-bg: 255 255 255;
+    --color-bg-raised: 244 244 245;
+    --color-bg-overlay: 228 228 231;
+    --color-text: 24 24 27;
+    --color-text-muted: 82 82 91;
+    --color-text-faint: 161 161 170;
+    --color-accent: 113 113 122;
+    --color-accent-hover: 82 82 91;
+    --color-accent-muted: 228 228 231;
+    --color-border: 228 228 231;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: rgb(var(--color-bg));
+    color: rgb(var(--color-text));
+    font-family: 'Geist', 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: rgb(var(--color-accent) / 0.3);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-mono font-medium
+      rounded border transition-colors duration-200;
+    border-color: rgb(var(--color-border));
+    color: rgb(var(--color-text-muted));
+  }
+
+  .tag:hover {
+    border-color: rgb(var(--color-accent) / 0.5);
+    color: rgb(var(--color-accent));
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium
+      rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2
+      focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    --tw-ring-color: rgb(var(--color-accent));
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--color-accent));
+    color: rgb(9 9 11);
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(var(--color-accent-hover));
+  }
+
+  .btn-outline {
+    border: 1px solid rgb(var(--color-border));
+    color: rgb(var(--color-text));
+  }
+
+  .btn-outline:hover {
+    border-color: rgb(var(--color-accent));
+    color: rgb(var(--color-accent));
+  }
+
+  .btn-ghost {
+    color: rgb(var(--color-text-muted));
+  }
+
+  .btn-ghost:hover {
+    color: rgb(var(--color-text));
+  }
+
+  .card {
+    @apply rounded-xl border transition-all duration-200;
+    background-color: rgb(var(--color-bg-raised));
+    border-color: rgb(var(--color-border));
+  }
+
+  .card:hover {
+    border-color: rgb(var(--color-accent) / 0.3);
+  }
+
+  .prose-custom {
+    max-width: 70ch;
+    line-height: 1.75;
+    color: rgb(var(--color-text-muted));
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-custom h2 {
+    @apply text-xl font-bold mt-12 mb-4;
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom h3 {
+    @apply text-lg font-semibold mt-8 mb-3;
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom h4 {
+    @apply text-base font-semibold mt-6 mb-2;
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom code:not(pre code) {
+    @apply font-mono text-sm px-1.5 py-0.5 rounded;
+    background-color: rgb(var(--color-bg-overlay));
+    color: rgb(var(--color-accent));
+  }
+
+  .prose-custom pre {
+    @apply rounded-lg p-4 overflow-x-auto my-6 text-sm;
+    background-color: rgb(var(--color-bg-overlay));
+    border: 1px solid rgb(var(--color-border));
+  }
+
+  .prose-custom pre code {
+    @apply font-mono leading-relaxed;
+  }
+
+  .prose-custom ul {
+    @apply list-disc pl-6 mb-4 space-y-1.5;
+  }
+
+  .prose-custom ol {
+    @apply list-decimal pl-6 mb-4 space-y-1.5;
+  }
+
+  .prose-custom a {
+    color: rgb(var(--color-accent));
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-2 pl-4 my-6 italic;
+    border-color: rgb(var(--color-accent));
+    color: rgb(var(--color-text-muted));
+  }
+
+  .prose-custom strong {
+    color: rgb(var(--color-text));
+  }
+
+  .prose-custom hr {
+    @apply my-8;
+    border-color: rgb(var(--color-border));
+  }
+
+  .prose-custom table {
+    @apply w-full text-sm my-6;
+  }
+
+  .prose-custom th,
+  .prose-custom td {
+    @apply border px-3 py-2 text-left;
+    border-color: rgb(var(--color-border));
+  }
+
+  .prose-custom th {
+    color: rgb(var(--color-text));
+    @apply font-semibold;
+  }
+
+  .prose-custom img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose-custom .hljs {
+    background: transparent !important;
+  }
+}
+
+@layer utilities {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

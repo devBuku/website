@@ -1,54 +1,93 @@
-import "../styles/contact.css";
+import { Helmet } from "react-helmet-async";
+import { personal } from "../data/personal";
+import ScrollReveal from "../components/ScrollReveal";
+import PageHeader from "../components/PageHeader";
 
-function Contact() {
+export default function Contact() {
   return (
-    <section className="contact">
-      <h2>Get in Touch</h2>
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <Helmet>
+        <title>Contact — Shubhayan Bagchi (devBuku)</title>
+        <meta
+          name="description"
+          content="Get in touch with Shubhayan Bagchi (devBuku) — open to SDE internships and entry-level roles. Based in Kolkata, India."
+        />
+        <meta property="og:title" content="Contact — Shubhayan Bagchi (devBuku)" />
+        <meta
+          property="og:description"
+          content="Open to SDE internships and entry-level roles. Based in Kolkata, India."
+        />
+      </Helmet>
 
-      <p className="contact-intro">
-        If you'd like to collaborate, discuss opportunities, or talk about
-        backend systems and engineering — feel free to reach out.
-      </p>
+      <ScrollReveal>
+        <PageHeader>Contact</PageHeader>
 
-      <div className="contact-links">
-        <p>
-          <strong>Email:</strong>{" "}
-          <a href="mailto:shubhayanbagchi30@gmail.com">
-            shubhayanbagchi30@gmail.com
-          </a>
-        </p>
-
-        <p>
-          <strong>GitHub:</strong>{" "}
-          <a href="https://github.com/devBuku" target="_blank" rel="noreferrer">
-            github.com/devBuku
-          </a>
-        </p>
-
-        <p>
-          <strong>LinkedIn:</strong>{" "}
-          <a
-            href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275"
-            target="_blank"
-            rel="noreferrer"
-          >
-            linkedin.com/in/shubhayan-bagchi
-          </a>
-        </p>
-
-        <p>
-          <strong>Twitter:</strong>{" "}
-          <a href="https://x.com/devBuku" target="_blank" rel="noreferrer">
-            @devBuku
-          </a>
-        </p>
-
-        <p>
-          <strong>Location:</strong> Kolkata, India
-        </p>
-      </div>
-    </section>
+        <div className="space-y-3">
+          <div>
+            <p
+              className="text-xs font-mono"
+              style={{ color: "rgb(var(--color-text-faint))" }}
+            >
+              email
+            </p>
+            <a
+              href={`mailto:${personal.email}`}
+              className="text-sm transition-opacity hover:opacity-70"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              {personal.email}
+            </a>
+          </div>
+          <div>
+            <p
+              className="text-xs font-mono"
+              style={{ color: "rgb(var(--color-text-faint))" }}
+            >
+              github
+            </p>
+            <a
+              href={personal.social.github.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm transition-opacity hover:opacity-70"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              {personal.social.github.url.replace("https://", "")}
+            </a>
+          </div>
+          <div>
+            <p
+              className="text-xs font-mono"
+              style={{ color: "rgb(var(--color-text-faint))" }}
+            >
+              linkedin
+            </p>
+            <a
+              href={personal.social.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm transition-opacity hover:opacity-70"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              {personal.social.linkedin.url.replace("https://", "")}
+            </a>
+          </div>
+          <div>
+            <p
+              className="text-xs font-mono"
+              style={{ color: "rgb(var(--color-text-faint))" }}
+            >
+              location
+            </p>
+            <p
+              className="text-sm"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              {personal.location}
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+    </div>
   );
 }
-
-export default Contact;

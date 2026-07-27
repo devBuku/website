@@ -1,137 +1,226 @@
-import "../styles/about.css";
+import { Helmet } from "react-helmet-async";
+import { personal } from "../data/personal";
+import SectionHeading from "../components/SectionHeading";
+import ScrollReveal from "../components/ScrollReveal";
+import SkillSection from "../components/SkillSection";
+import PageHeader from "../components/PageHeader";
 
-function About() {
+export default function About() {
   return (
-    <section className="about">
-      <div className="about-left">
-        <h2>About</h2>
+    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <Helmet>
+        <title>About — Shubhayan Bagchi (devBuku)</title>
+        <meta
+          name="description"
+          content="About Shubhayan Bagchi (devBuku) — final-year CSE student from Kolkata, backend-focused developer, SIH 2023 Finalist, and Coding Club Group Leader at SVIST."
+        />
+        <meta property="og:title" content="About — Shubhayan Bagchi (devBuku)" />
+        <meta
+          property="og:description"
+          content="Final-year CSE student from Kolkata. Backend-focused developer, SIH 2023 Finalist, Coding Club Group Leader."
+        />
+      </Helmet>
 
-        <div className="about-image">
-          <img src="/me.jpg" alt="Shubhayan Bagchi" />
+      <ScrollReveal>
+        <PageHeader>About</PageHeader>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-3 space-y-4">
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              I&apos;m a final-year Computer Science &amp; Engineering student at
+              Swami Vivekananda Institute of Science &amp; Technology (MAKAUT),
+              Kolkata. I&apos;ve completed my 8th semester (result pending) and am
+              actively preparing for software engineering internships and
+              full-time roles.
+            </p>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              I focus on backend engineering, full-stack development, and
+              building production-ready systems. My final-year project was a
+              comprehensive College ERP — something my team built specifically
+              to solve problems we lived through ourselves: fragmented
+              systems, manual attendance and fee processes, and poor
+              communication between departments. That project shaped how I
+              think about backend design and API architecture more than
+              anything else I&apos;ve worked on.
+            </p>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "rgb(var(--color-text-muted))" }}
+            >
+              I was a Smart India Hackathon 2023 Finalist and currently serve
+              as Group Leader of my institute&apos;s Coding Club, where I mentor
+              juniors and organize technical workshops. I daily-drive Arch
+              Linux with i3wm, develop in Neovim, and enjoy optimizing my
+              workflow as much as building software.
+            </p>
+
+            <div
+              className="mt-6 pt-6 border-t"
+              style={{ borderColor: "rgb(var(--color-border))" }}
+            >
+              <p
+                className="text-xs font-mono uppercase tracking-wider mb-3"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                education
+              </p>
+              <p className="text-sm font-medium">
+                {personal.about.education.degree}
+              </p>
+              <p
+                className="text-sm mt-0.5"
+                style={{ color: "rgb(var(--color-text-muted))" }}
+              >
+                {personal.about.education.institution}
+              </p>
+              <p
+                className="font-mono text-xs mt-0.5"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                {personal.about.education.period}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {personal.about.education.coursework.map((c) => (
+                  <span
+                    key={c}
+                    className="inline-flex items-center px-2 py-0.5 text-xs font-mono rounded border"
+                    style={{
+                      borderColor: "rgb(var(--color-border))",
+                      color: "rgb(var(--color-text-muted))",
+                    }}
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div
+              className="pt-6 border-t"
+              style={{ borderColor: "rgb(var(--color-border))" }}
+            >
+              <p
+                className="text-xs font-mono uppercase tracking-wider mb-3"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                currently
+              </p>
+              <ul className="space-y-1.5">
+                {[
+                  "Solving LeetCode daily for DSA consistency",
+                  "Revising Core CS — OS, DBMS, Networks, OOP",
+                  "Building full-stack projects with React & Node.js",
+                  "Learning Docker, AWS, and deployment workflows",
+                  "Preparing for SDE internship interviews",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-sm"
+                    style={{ color: "rgb(var(--color-text-muted))" }}
+                  >
+                    <span
+                      className="shrink-0 font-mono text-xs"
+                      style={{ color: "rgb(var(--color-text-faint))" }}
+                    >
+                      &rarr;
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="lg:col-span-2 space-y-4">
+            <div
+              className="rounded-xl border p-5"
+              style={{
+                borderColor: "rgb(var(--color-border))",
+                backgroundColor: "rgb(var(--color-bg-raised))",
+              }}
+            >
+              <p
+                className="text-xs font-mono uppercase tracking-wider mb-3"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                dev setup
+              </p>
+              <div className="space-y-1.5">
+                {Object.entries(personal.about.devSetup).map(([key, val]) => (
+                  <div key={key} className="flex justify-between text-sm">
+                    <span style={{ color: "rgb(var(--color-text-faint))" }}>
+                      {key}
+                    </span>
+                    <span style={{ color: "rgb(var(--color-text-muted))" }}>
+                      {val}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div
+              className="rounded-xl border p-5"
+              style={{
+                borderColor: "rgb(var(--color-border))",
+                backgroundColor: "rgb(var(--color-bg-raised))",
+              }}
+            >
+              <p
+                className="text-xs font-mono uppercase tracking-wider mb-3"
+                style={{ color: "rgb(var(--color-text-faint))" }}
+              >
+                seeking
+              </p>
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "rgb(var(--color-text-muted))" }}
+              >
+                Software engineering internships and entry-level SDE roles.
+                Open to backend, full-stack, and systems-related positions.
+              </p>
+            </div>
+          </div>
         </div>
+      </ScrollReveal>
 
-        <p>
-          I'm a final-year Computer Science student from Kolkata focused on
-          backend engineering and full-stack development. I enjoy building
-          scalable web applications, designing APIs, and working with
-          database-driven systems.
-        </p>
+      <ScrollReveal delay={100}>
+        <section className="mt-14">
+          <SectionHeading>Skills</SectionHeading>
+          <SkillSection />
+        </section>
+      </ScrollReveal>
 
-        <p>
-          Over the past few years, I've built projects involving real-time
-          features, AI integrations, authentication systems, and
-          production-oriented backend services. I was a Smart India Hackathon
-          2023 Finalist and currently serve as Group Leader of my institute's
-          Coding Club, mentoring students and helping guide project development.
-        </p>
-
-        <p>
-          Outside of coding, I'm a Linux enthusiast who daily-drives{" "}
-          <a href="https://fedoraproject.org/" target="_blank" rel="noreferrer">
-            Fedora
-          </a>{" "}
-          with GNOME. Most of my development happens inside{" "}
-          <a
-            href="https://www.gnu.org/software/emacs/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GNU Emacs
-          </a>{" "}
-          (Doom), alongside tmux and Docker. I enjoy optimizing workflows almost
-          as much as building software.
-        </p>
-
-        <div className="setup-image">
-          <img
-            src="/setup.png"
-            alt="Development setup — Fedora, GNOME, Doom Emacs"
-            loading="lazy"
-          />
-          <span className="setup-caption">
-            My daily dev environment —{" "}
-            <a href="https://github.com/devBuku/.dotfiles" target="_blank" rel="noreferrer">
-              dotfiles
-            </a>
-          </span>
-        </div>
-
-        <p className="seeking">
-          Currently seeking backend or full-stack engineering opportunities.
-        </p>
-      </div>
-
-      <div className="about-right">
-        <h3>Tech Stack</h3>
-
-        <ul>
-          <li>
-            <strong>Languages:</strong> JavaScript, TypeScript, Python, C, SQL
-          </li>
-
-          <li>
-            <strong>Backend:</strong> Node.js, Express.js, Flask, FastAPI, REST
-            APIs
-          </li>
-
-          <li>
-            <strong>Frontend:</strong> React.js, Tailwind CSS, Shadcn UI, MUI,
-            Bootstrap
-          </li>
-
-          <li>
-            <strong>Databases:</strong> PostgreSQL, MongoDB, MySQL
-          </li>
-
-          <li>
-            <strong>Authentication:</strong> JWT, Cookie-based Authentication
-          </li>
-
-          <li>
-            <strong>ORMs:</strong> Prisma, Mongoose
-          </li>
-
-          <li>
-            <strong>Tools:</strong> Docker, Git, GitHub, Linux, Postman
-          </li>
-        </ul>
-
-        <h3>Experience</h3>
-
-        <div className="experience-item">
-          <p>
-            <strong>Group Leader</strong>
-            <br />
-            Coding Club
-            <br />
-            Swami Vivekananda Institute of Science & Technology
-            <br />
-            2023 – Present
-          </p>
-        </div>
-
-        <div className="experience-item">
-          <p>
-            <strong>Smart India Hackathon 2023 Finalist</strong>
-            <br />
-            December 2023
-          </p>
-        </div>
-
-        <h3>Education</h3>
-
-        <p>
-          <strong>B.Tech in Computer Science & Engineering</strong>
-          <br />
-          Swami Vivekananda Institute of Science & Technology
-          <br />
-          MAKAUT
-          <br />
-          2022 – Present
-        </p>
-      </div>
-    </section>
+      <ScrollReveal delay={150}>
+        <section className="mt-14">
+          <SectionHeading>Achievements</SectionHeading>
+          <div className="space-y-5">
+            {personal.achievements.map((ach, i) => (
+              <div key={i}>
+                <p className="text-sm font-medium">{ach.title}</p>
+                <p
+                  className="text-sm mt-0.5"
+                  style={{ color: "rgb(var(--color-text-muted))" }}
+                >
+                  {ach.subtitle}
+                </p>
+                <p
+                  className="text-sm mt-0.5 leading-relaxed"
+                  style={{ color: "rgb(var(--color-text-faint))" }}
+                >
+                  {ach.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
+    </div>
   );
 }
-
-export default About;

@@ -1,24 +1,53 @@
-import "../styles/footer.css";
+import { personal } from "../data/personal";
 
-function Footer() {
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="footer">
-      <div className="footer-inner">
-        <div className="footer-left">
-          <p>
-            <a href="mailto:shubhayanbagchi30@gmail.com">
-              shubhayanbagchi30@gmail.com
+    <footer
+      className="border-t transition-colors duration-300"
+      style={{ borderColor: "rgb(var(--color-border))" }}
+    >
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm font-medium">{personal.name}</p>
+
+          <div
+            className="flex items-center gap-4 text-xs"
+            style={{ color: "rgb(var(--color-text-faint))" }}
+          >
+            <a
+              href={personal.social.github.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-70"
+            >
+              GitHub
             </a>
-          </p>
-          <p>Kolkata, India</p>
+            <a
+              href={personal.social.linkedin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-70"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:${personal.email}`}
+              className="transition-opacity hover:opacity-70"
+            >
+              Email
+            </a>
+          </div>
         </div>
 
-        <div className="footer-right">
-          <p>© {new Date().getFullYear()} Shubhayan Bagchi</p>
-        </div>
+        <p
+          className="text-[10px] mt-6 text-center"
+          style={{ color: "rgb(var(--color-text-faint) / 0.6)" }}
+        >
+          &copy; {year} {personal.name}
+        </p>
       </div>
     </footer>
   );
 }
-
-export default Footer;
