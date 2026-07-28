@@ -2,7 +2,7 @@ export default function NeofetchCard({ setup }) {
   const entries = Object.entries(setup);
 
   return (
-    <div className="card p-4 font-mono text-xs leading-relaxed sm:p-5">
+    <div className="card p-4 font-mono text-[13px] leading-relaxed sm:p-5">
       <div className="flex items-start gap-4">
         <pre className="neofetch-ascii shrink-0 select-none leading-[1.4]">
           {`     .---.
@@ -19,7 +19,7 @@ export default function NeofetchCard({ setup }) {
 
         <div className="min-w-0 space-y-0.5">
           <p
-            className="text-sm font-semibold"
+            className="text-base font-semibold"
             style={{ color: 'rgb(var(--color-accent))' }}
           >
             shubhayan@devbuku

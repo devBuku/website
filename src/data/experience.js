@@ -3,6 +3,8 @@ export const experience = [
     role: 'Backend Developer',
     company: 'College ERP System (Final-Year Project)',
     period: '2024 – 2025',
+    teaser:
+      'Backend modules for a College ERP system — solving the problems we lived through for four years',
     description:
       'Contributed backend modules to a comprehensive College ERP system built by a student team to centralize academic and administrative workflows — covering authentication & RBAC, admissions, academics, faculty management, attendance, examination & results, routines/timetables, fee management, and library management. We built it specifically to solve problems we personally ran into during four years at college: fragmented systems, manual attendance/fee/library processes, and poor inter-department communication. Deployed and demoed on a VPS during development (later taken down due to hosting costs); the college is currently evaluating it for production use.',
     highlights: [
@@ -30,6 +32,8 @@ export const experience = [
     role: 'Backend Developer',
     company: 'Swarlipi — AI Video Dubbing (SIH 2023 Finalist)',
     period: 'Aug 2023 – Dec 2023',
+    teaser:
+      'Backend pipeline for an AI video dubbing platform — selected for SIH 2023 national finale',
     description:
       'Built the backend processing pipeline for an AI-powered video dubbing platform as part of a 5-member team selected for the Smart India Hackathon 2023 national finale. Transcribes speech with OpenAI Whisper, translates via Google Translate, generates dubbed audio with gTTS, and re-syncs audio back into the video using moviepy and pydub.',
     highlights: [
@@ -52,6 +56,8 @@ export const experience = [
     role: 'Coding Club Group Leader',
     company: 'Swami Vivekananda Institute of Science & Technology',
     period: '2023 – Present',
+    teaser:
+      'Leading the college coding club — mentoring juniors and organizing technical workshops',
     description:
       'Leading the college coding club, mentoring juniors in full-stack development, and organizing technical workshops.',
     highlights: [

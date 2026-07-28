@@ -18,14 +18,14 @@ export default function BlogPost() {
           <title>Post Not Found — devBuku</title>
         </Helmet>
         <p
-          className="font-mono text-sm"
+          className="font-mono text-base"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           Post not found.
         </p>
         <Link
           to="/blog"
-          className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200"
+          className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium transition-all duration-200"
         >
           <ArrowLeft size={14} />
           Back to blog
@@ -71,7 +71,7 @@ export default function BlogPost() {
       <ScrollReveal>
         <Link
           to="/blog"
-          className="mb-8 inline-flex items-center gap-1.5 text-sm transition-opacity hover:opacity-70"
+          className="mb-8 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           <ArrowLeft size={14} />
@@ -82,7 +82,7 @@ export default function BlogPost() {
           <div className="mb-3 flex items-center gap-3">
             {post.date && (
               <time
-                className="flex items-center gap-1 font-mono text-xs"
+                className="flex items-center gap-1 font-mono text-[13px]"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
                 dateTime={post.date}
               >
@@ -92,7 +92,7 @@ export default function BlogPost() {
             )}
             {post.readTime && (
               <span
-                className="flex items-center gap-1 font-mono text-xs"
+                className="flex items-center gap-1 font-mono text-[13px]"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 <Clock size={10} />
@@ -108,7 +108,7 @@ export default function BlogPost() {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-xs"
+                  className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-[13px]"
                   style={{
                     borderColor: 'rgb(var(--color-border))',
                     color: 'rgb(var(--color-text-muted))',

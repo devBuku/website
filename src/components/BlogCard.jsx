@@ -40,7 +40,7 @@ export default function BlogCard({ post }) {
         >
           {post.date && (
             <span
-              className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider"
+              className="flex items-center gap-1 font-mono text-[13px] uppercase tracking-wider"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               <Calendar size={10} />
@@ -49,7 +49,7 @@ export default function BlogCard({ post }) {
           )}
           {post.readTime && (
             <span
-              className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider"
+              className="flex items-center gap-1 font-mono text-[13px] uppercase tracking-wider"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               <Clock size={10} />
@@ -64,7 +64,7 @@ export default function BlogCard({ post }) {
           className="group my-2 block"
           style={{ minHeight: '2.5rem' }}
         >
-          <h3 className="line-clamp-2 text-sm font-bold leading-snug transition-colors group-hover:opacity-70">
+          <h3 className="line-clamp-2 text-base font-bold leading-snug transition-colors group-hover:opacity-70">
             {post.title}
           </h3>
         </Link>
@@ -72,7 +72,7 @@ export default function BlogCard({ post }) {
         {/* Excerpt - fixed 2-line container */}
         <div className="flex-1" style={{ minHeight: '2.5rem' }}>
           <p
-            className="line-clamp-2 text-xs leading-relaxed"
+            className="line-clamp-2 text-sm leading-relaxed"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             {post.excerpt}
@@ -82,7 +82,7 @@ export default function BlogCard({ post }) {
         {/* Read link - always at bottom */}
         <Link
           to={`/blog/${post.slug}`}
-          className="mt-auto inline-flex items-center gap-1 pt-3 text-xs font-medium transition-opacity hover:opacity-70"
+          className="mt-auto inline-flex items-center gap-1 pt-3 text-sm font-medium transition-opacity hover:opacity-70"
           style={{ color: 'rgb(var(--color-accent))' }}
         >
           Read <ArrowRight size={11} />

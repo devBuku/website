@@ -53,31 +53,31 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-2xl font-bold leading-[1.15] tracking-tight sm:text-3xl lg:text-4xl">
+            <h1 className="text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl">
               {personal.name}
             </h1>
             <p
-              className="mt-2 text-base sm:text-lg"
+              className="mt-2 text-lg sm:text-xl"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.role}
             </p>
             <p
-              className="mt-5 max-w-md text-sm leading-relaxed"
+              className="mt-5 max-w-md text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               I build reliable backend systems, REST APIs, authentication, and
               production-ready web applications.
             </p>
             <p
-              className="mt-3 text-sm leading-relaxed"
+              className="mt-3 text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               Currently preparing for Software Engineering internships while
               building projects and documenting what I learn.
             </p>
             <p
-              className="mt-4 text-sm"
+              className="mt-4 text-base"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               Kolkata, India &bull; Final-year CSE Student
@@ -107,7 +107,7 @@ export default function Home() {
       {/* Featured Projects — clickable blocks */}
       <motion.section {...fadeUp} className="pb-14" id="projects">
         <p
-          className="mb-5 font-mono text-xs uppercase tracking-widest"
+          className="mb-5 font-mono text-[13px] uppercase tracking-widest"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           * featured projects
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="mt-5">
           <Link
             to="/work"
-            className="inline-flex items-center gap-1 font-mono text-xs transition-opacity hover:opacity-70"
+            className="inline-flex items-center gap-1 font-mono text-[13px] transition-opacity hover:opacity-70"
             style={{ color: 'rgb(var(--color-text-faint))' }}
           >
             all projects &rarr;
@@ -131,7 +131,7 @@ export default function Home() {
       {/* Experience — minimal list */}
       <motion.section {...fadeUp} className="pb-10" id="experience">
         <p
-          className="mb-5 font-mono text-xs uppercase tracking-widest"
+          className="mb-5 font-mono text-[13px] uppercase tracking-widest"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           * experience
@@ -140,25 +140,25 @@ export default function Home() {
           {experience.map((entry, i) => (
             <div key={i}>
               <div className="flex items-baseline justify-between gap-2">
-                <p className="text-sm font-medium">{entry.role}</p>
+                <p className="text-base font-medium">{entry.role}</p>
                 <span
-                  className="shrink-0 font-mono text-[11px]"
+                  className="shrink-0 font-mono text-[13px]"
                   style={{ color: 'rgb(var(--color-text-faint))' }}
                 >
                   {entry.period}
                 </span>
               </div>
               <p
-                className="mt-0.5 text-sm"
+                className="mt-0.5 text-base"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {entry.company}
               </p>
               <p
-                className="mt-0.5 text-sm leading-relaxed"
+                className="mt-0.5 text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
-                {entry.description?.split('.')[0] ?? ''}.
+                {entry.teaser ?? entry.description?.split('.')[0] ?? ''}.
               </p>
             </div>
           ))}
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="mt-5">
           <Link
             to="/experience"
-            className="inline-flex items-center gap-1 font-mono text-xs transition-opacity hover:opacity-70"
+            className="inline-flex items-center gap-1 font-mono text-[13px] transition-opacity hover:opacity-70"
             style={{ color: 'rgb(var(--color-text-faint))' }}
           >
             All Experience &rarr;
@@ -186,7 +186,7 @@ export default function Home() {
           <div className="mt-6">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
+              className="inline-flex items-center gap-1.5 text-base font-medium transition-opacity hover:opacity-70"
               style={{ color: 'rgb(var(--color-accent))' }}
             >
               Read all posts <ArrowRight size={12} />
@@ -198,7 +198,7 @@ export default function Home() {
       {/* Achievements */}
       <motion.section {...fadeUp} className="pb-20 sm:pb-24" id="achievements">
         <p
-          className="mb-5 font-mono text-xs uppercase tracking-widest"
+          className="mb-5 font-mono text-[13px] uppercase tracking-widest"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           * achievements
@@ -206,15 +206,15 @@ export default function Home() {
         <div className="space-y-5">
           {personal.achievements.map((ach, i) => (
             <div key={i}>
-              <p className="text-sm font-medium">{ach.title}</p>
+              <p className="text-base font-medium">{ach.title}</p>
               <p
-                className="mt-0.5 text-sm"
+                className="mt-0.5 text-base"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {ach.subtitle}
               </p>
               <p
-                className="mt-0.5 text-sm leading-relaxed"
+                className="mt-0.5 text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 {ach.description}

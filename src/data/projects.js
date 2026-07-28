@@ -3,7 +3,7 @@ export const projects = [
     id: 'college-erp',
     title: 'College ERP System',
     tagline:
-      'Full-stack ERP system for academic & administrative workflows — final-year project',
+      'One system to manage attendance, fees, exams, and library — built to fix problems we lived through.',
     description:
       'A comprehensive College ERP system built by a student team to centralize academic and administrative workflows — covering authentication & RBAC, admissions, academics, faculty management, attendance, examination & results, routines/timetables, fee management, and library management. Built to solve problems we personally ran into during four years at college. Deployed and demoed on a VPS during development (later taken down due to hosting costs); the college is currently evaluating it for production use.',
     highlights: [
@@ -67,7 +67,8 @@ export const projects = [
   {
     id: 'vagdevi',
     title: 'VagDevi.ai',
-    tagline: 'Gemini-powered multilingual chatbot — College Tech Fest Winner',
+    tagline:
+      'Gemini-powered chatbot that speaks your language — college tech fest winner',
     description:
       "An AI chatbot leveraging Google's Gemini API for text and image understanding with multilingual translation support. Recognized with 1st prize at the college tech fest for technical innovation and practical utility.",
     highlights: [
@@ -85,7 +86,8 @@ export const projects = [
   {
     id: 'swarlipi',
     title: 'Swarlipi',
-    tagline: 'AI Video Dubbing Pipeline — SIH 2023 Finalist',
+    tagline:
+      'Auto-dubs videos into other languages using AI — national hackathon finalist',
     description:
       'An AI-driven video dubbing pipeline built for Smart India Hackathon 2023. Transcribes speech with OpenAI Whisper, translates it via Google Translate, and generates dubbed audio with gTTS — then uses moviepy and pydub to re-sync and stitch the translated audio back into the original video, segment by segment.',
     highlights: [
@@ -136,7 +138,8 @@ export const projects = [
   {
     id: 'uber-clone',
     title: 'Uber Clone',
-    tagline: 'Mobile-first MERN ride-booking application',
+    tagline:
+      'Book rides, track captains, and ride in real-time — ride-booking from scratch',
     description:
       'A responsive ride-booking web application featuring role-based authentication (Rider and Captain interfaces), cookie-based sessions, location-based workflows, and live state updates across ride requests.',
     highlights: [
@@ -177,7 +180,8 @@ export const projects = [
   {
     id: 'quickbute',
     title: 'Quickbute',
-    tagline: 'MERN food ordering platform with full e-commerce flow',
+    tagline:
+      'Order food online with a full cart-to-delivery flow — e-commerce for restaurants',
     description:
       'A full-stack food ordering platform featuring JWT authentication, role-based access control (RBAC), Stripe payment integration, and a complete order lifecycle from cart management to delivery tracking, accompanied by an admin portal.',
     highlights: [
@@ -195,7 +199,8 @@ export const projects = [
   {
     id: 'spotify-mern',
     title: 'Spotify MERN',
-    tagline: 'Music streaming web app with playlist management',
+    tagline:
+      'Stream music, build playlists, and discover tracks — your personal jukebox',
     description:
       'A MERN-stack music streaming platform offering user registration, custom playlist creation, audio playback controls, and a responsive media player UI.',
     highlights: [
@@ -212,7 +217,8 @@ export const projects = [
   {
     id: 'realtime-chat',
     title: 'Real-Time Chat',
-    tagline: 'WebSocket-powered chat application',
+    tagline:
+      'Instant group chat with custom rooms and history — real-time messaging',
     description:
       'A real-time web chat application utilizing Socket.io for instant bi-directional communication, custom room creation, and persistent message logs stored in MongoDB.',
     highlights: [
@@ -229,7 +235,7 @@ export const projects = [
   {
     id: 'ledger',
     title: 'Ledger',
-    tagline: 'Banking transaction system with audit trails',
+    tagline: 'Track transactions with full audit trails — banking-grade ledger',
     description:
       'A secure banking transaction ledger implementing role-based authorization, account balance calculation logic, transaction logging, and immutable audit trails.',
     highlights: [
@@ -246,7 +252,7 @@ export const projects = [
   {
     id: 'device-tracker',
     title: 'Real-Time Device Tracker',
-    tagline: 'Live location tracking with WebSocket streaming',
+    tagline: 'Watch devices move on a live map — real-time geolocation',
     description:
       'A real-time location tracking system that streams device geolocation coordinates over WebSockets for live visualization on an interactive map.',
     highlights: [
@@ -263,7 +269,7 @@ export const projects = [
   {
     id: 'instacart',
     title: 'Instacart',
-    tagline: 'E-commerce web app with Stripe payments',
+    tagline: 'Browse, cart, checkout, pay — e-commerce end to end',
     description:
       'An e-commerce web platform featuring product catalog search, shopping cart management, Stripe checkout integration, user authentication, and an administrative panel.',
     highlights: [
@@ -280,7 +286,8 @@ export const projects = [
   {
     id: 'random-walk',
     title: 'random-walk',
-    tagline: 'SDL2 multi-threaded visualization in C',
+    tagline:
+      'See colorful random walks dance across the screen — multi-threaded C',
     description:
       'A multi-threaded C graphics application using SDL2 to render dynamic 2D random walk simulations with rainbow-colored agents executing concurrently.',
     highlights: [

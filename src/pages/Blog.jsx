@@ -34,7 +34,7 @@ export default function Blog() {
 
       {blogPosts.length === 0 && (
         <p
-          className="py-12 text-center font-mono text-sm"
+          className="py-12 text-center font-mono text-base"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           No posts yet. Coming soon.

@@ -4,7 +4,7 @@ export const personal = {
   role: 'Backend-focused Full-Stack Developer',
   tagline:
     "I build the parts of the internet you don't see — and make sure they don't fall over.",
-  email: 'shubhayanbagchi30@gmail.com',
+  email: 'shubhayanbagchi.work@gmail.com',
   location: 'Kolkata, India',
   resume: '/resume.pdf',
   social: {
@@ -22,9 +22,9 @@ export const personal = {
   },
   about: {
     intro: [
-      "I'm a final-year Computer Science student from Kolkata focused on backend engineering and full-stack development. I enjoy building scalable web applications, designing APIs, and working with database-driven systems.",
-      "Over the past few years, I've built projects involving real-time features, AI integrations, authentication systems, and production-oriented backend services. I was a Smart India Hackathon 2023 Finalist and currently serve as Group Leader of my institute's Coding Club, mentoring students and helping guide project development.",
-      "Outside of coding, I'm a Linux enthusiast who daily-drives Arch Linux with i3wm. Most of my development happens inside Neovim, alongside tmux and Docker. I enjoy optimizing workflows almost as much as building software.",
+      'Final-year CSE student at SVIST (MAKAUT), Kolkata — actively preparing for software engineering internships and full-time roles.',
+      'Focused on backend engineering and building production-ready systems. SIH 2023 Finalist, Coding Club Group Leader.',
+      'Daily-drives Arch Linux with i3wm and develops in Neovim.',
     ],
     education: {
       degree: 'B.Tech in Computer Science & Engineering',

@@ -1,7 +1,7 @@
 export default function PageHeader({ children }) {
   return (
     <div className="mb-8 sm:mb-10">
-      <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
         {children}
       </h1>
       <div

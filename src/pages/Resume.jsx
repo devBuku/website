@@ -28,7 +28,7 @@ export default function Resume() {
         <section className="mb-12">
           <Link
             to="/"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm transition-opacity hover:opacity-70"
+            className="mb-6 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             <ArrowLeft size={14} />
@@ -36,7 +36,7 @@ export default function Resume() {
           </Link>
           <SectionHeading as="h1">Resume</SectionHeading>
           <p
-            className="max-w-lg text-sm leading-relaxed"
+            className="max-w-lg text-base leading-relaxed"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             Download my resume to see the full details of my education,
@@ -47,7 +47,7 @@ export default function Resume() {
             <a
               href={personal.resume}
               download
-              className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200"
+              className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium transition-all duration-200"
             >
               <Download size={14} />
               Download PDF
@@ -56,7 +56,7 @@ export default function Resume() {
               href={personal.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200"
+              className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium transition-all duration-200"
             >
               <ExternalLink size={14} />
               Open in New Tab
@@ -83,7 +83,7 @@ export default function Resume() {
           {/* Fallback for browsers (e.g. mobile Safari) that block PDF iframes */}
           <noscript>
             <p
-              className="p-6 text-center text-sm"
+              className="p-6 text-center text-base"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               Your browser cannot display the PDF inline.{' '}
@@ -100,7 +100,7 @@ export default function Resume() {
         </div>
         {/* Visible fallback download link below iframe for mobile users */}
         <p
-          className="mt-4 text-center text-xs"
+          className="mt-4 text-center text-[13px]"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           If the PDF doesn&apos;t load,{' '}

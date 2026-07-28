@@ -41,7 +41,7 @@ function NotFound() {
     <div className="flex flex-1 items-center justify-center">
       <div className="space-y-4 text-center">
         <p
-          className="font-mono text-sm"
+          className="font-mono text-base"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           404 — page not found
@@ -49,7 +49,7 @@ function NotFound() {
         <div>
           <a
             href="/"
-            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium"
+            className="btn-outline inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium"
           >
             Back to home
           </a>

@@ -64,7 +64,7 @@ export default function ProjectPlaceholder({
 
       {!isCompact && (
         <span
-          className="px-4 text-center text-xs font-semibold tracking-tight sm:text-sm"
+          className="px-4 text-center text-[13px] font-semibold tracking-tight sm:text-base"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           {project.title}

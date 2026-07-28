@@ -13,7 +13,7 @@ export default function SkillSection() {
           transition={{ duration: 0.4, delay: i * 0.05 }}
         >
           <h3
-            className="mb-3 font-mono text-xs uppercase tracking-wider"
+            className="mb-3 font-mono text-[13px] uppercase tracking-wider"
             style={{ color: 'rgb(var(--color-text-faint))' }}
           >
             {cat.name}
@@ -22,7 +22,7 @@ export default function SkillSection() {
             {cat.skills.map((skill) => (
               <p
                 key={skill}
-                className="text-sm"
+                className="text-base"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {skill}

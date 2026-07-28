@@ -25,7 +25,7 @@ export default function ProjectRow({ project }) {
       <div className="mb-0.5 flex items-start justify-between gap-2">
         <div className="flex items-center gap-1.5">
           <h3
-            className="text-sm font-medium"
+            className="text-base font-semibold sm:font-medium"
             style={{ color: 'rgb(var(--color-text))' }}
           >
             {project.title}
@@ -38,7 +38,7 @@ export default function ProjectRow({ project }) {
         </div>
         {project.category && (
           <span
-            className="shrink-0 font-mono text-[10px] uppercase tracking-wider"
+            className="shrink-0 font-mono text-[13px] uppercase tracking-wider"
             style={{ color: 'rgb(var(--color-text-faint))' }}
           >
             {statusLabels[project.category] || project.category}
@@ -46,13 +46,13 @@ export default function ProjectRow({ project }) {
         )}
       </div>
       <p
-        className="mb-1 text-sm leading-relaxed"
+        className="mb-1.5 text-base leading-relaxed"
         style={{ color: 'rgb(var(--color-text-muted))' }}
       >
         {project.tagline}
       </p>
       <p
-        className="font-mono text-xs"
+        className="font-mono text-[13px]"
         style={{ color: 'rgb(var(--color-text-faint))' }}
       >
         {project.tech.slice(0, 4).join('  ·  ')}

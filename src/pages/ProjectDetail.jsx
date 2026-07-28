@@ -16,7 +16,7 @@ function StatusBadge({ project }) {
   if (!label) return null;
   return (
     <span
-      className="inline-flex items-center rounded border px-2.5 py-1 font-mono text-xs uppercase tracking-wider"
+      className="inline-flex items-center rounded border px-2.5 py-1 font-mono text-[13px] uppercase tracking-wider"
       style={{
         borderColor: 'rgb(var(--color-accent) / 0.3)',
         color: 'rgb(var(--color-accent))',
@@ -38,14 +38,14 @@ export default function ProjectDetail() {
           <title>Project Not Found — devBuku</title>
         </Helmet>
         <p
-          className="font-mono text-sm"
+          className="font-mono text-base"
           style={{ color: 'rgb(var(--color-text-faint))' }}
         >
           Project not found.
         </p>
         <Link
           to="/work"
-          className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium"
+          className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium"
         >
           <ArrowLeft size={14} />
           Back to projects
@@ -95,7 +95,7 @@ export default function ProjectDetail() {
       {/* Back */}
       <Link
         to="/work"
-        className="mb-8 inline-flex items-center gap-1.5 text-sm transition-opacity hover:opacity-70"
+        className="mb-8 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
         style={{ color: 'rgb(var(--color-text-muted))' }}
       >
         <ArrowLeft size={14} />
@@ -126,11 +126,11 @@ export default function ProjectDetail() {
       {/* Title + Status */}
       <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             {project.title}
           </h1>
           <p
-            className="mt-2 text-base"
+            className="mt-2 text-lg"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             {project.tagline}
@@ -141,45 +141,47 @@ export default function ProjectDetail() {
 
       {/* Action Buttons */}
       <div className="mb-10 flex flex-wrap items-center gap-3">
-        {project.githubBackend && (
+        {project.githubBackend && project.id !== 'college-erp' && (
           <a
             href={project.githubBackend}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium"
+            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
           >
             <FaGithub size={16} />
             Backend Repository
           </a>
         )}
-        {project.githubFrontend && (
+        {project.githubFrontend && project.id !== 'college-erp' && (
           <a
             href={project.githubFrontend}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium"
+            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
           >
             <FaGithub size={16} />
             Frontend Repository
           </a>
         )}
-        {project.github && project.github !== '#' && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium"
-          >
-            <FaGithub size={16} />
-            View on GitHub
-          </a>
-        )}
+        {project.github &&
+          project.github !== '#' &&
+          project.id !== 'college-erp' && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
+            >
+              <FaGithub size={16} />
+              View on GitHub
+            </a>
+          )}
         {project.live && project.live !== '#' && (
           <a
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium"
+            className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
           >
             <ExternalLink size={15} />
             Live Demo
@@ -193,13 +195,13 @@ export default function ProjectDetail() {
           {/* Overview */}
           <section>
             <p
-              className="mb-3 font-mono text-xs uppercase tracking-widest"
+              className="mb-3 font-mono text-[13px] uppercase tracking-widest"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               overview
             </p>
             <p
-              className="text-sm leading-relaxed"
+              className="text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {project.description}
@@ -210,13 +212,13 @@ export default function ProjectDetail() {
           {project.problem && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 problem
               </p>
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {project.problem}
@@ -228,13 +230,13 @@ export default function ProjectDetail() {
           {project.architecture && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 architecture
               </p>
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {project.architecture}
@@ -246,7 +248,7 @@ export default function ProjectDetail() {
           {project.highlights && project.highlights.length > 0 && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 contributions
@@ -255,11 +257,11 @@ export default function ProjectDetail() {
                 {project.highlights.map((h, i) => (
                   <li
                     key={i}
-                    className="flex gap-2.5 text-sm"
+                    className="flex gap-2.5 text-base"
                     style={{ color: 'rgb(var(--color-text-muted))' }}
                   >
                     <span
-                      className="mt-0.5 shrink-0 font-mono text-xs"
+                      className="mt-0.5 shrink-0 font-mono text-[13px]"
                       style={{ color: 'rgb(var(--color-text-faint))' }}
                     >
                       &rarr;
@@ -276,7 +278,7 @@ export default function ProjectDetail() {
             project.engineeringDecisions.length > 0 && (
               <section>
                 <p
-                  className="mb-3 font-mono text-xs uppercase tracking-widest"
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                   style={{ color: 'rgb(var(--color-text-faint))' }}
                 >
                   engineering decisions
@@ -284,9 +286,9 @@ export default function ProjectDetail() {
                 <div className="space-y-4">
                   {project.engineeringDecisions.map((d, i) => (
                     <div key={i}>
-                      <p className="mb-1 text-sm font-medium">{d.decision}</p>
+                      <p className="mb-1 text-base font-medium">{d.decision}</p>
                       <p
-                        className="text-sm leading-relaxed"
+                        className="text-base leading-relaxed"
                         style={{ color: 'rgb(var(--color-text-muted))' }}
                       >
                         {d.rationale}
@@ -301,7 +303,7 @@ export default function ProjectDetail() {
           {project.challenges && project.challenges.length > 0 && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 challenges
@@ -310,11 +312,11 @@ export default function ProjectDetail() {
                 {project.challenges.map((c, i) => (
                   <li
                     key={i}
-                    className="flex gap-2.5 text-sm"
+                    className="flex gap-2.5 text-base"
                     style={{ color: 'rgb(var(--color-text-muted))' }}
                   >
                     <span
-                      className="mt-0.5 shrink-0 font-mono text-xs"
+                      className="mt-0.5 shrink-0 font-mono text-[13px]"
                       style={{ color: 'rgb(var(--color-text-faint))' }}
                     >
                       &rarr;
@@ -330,13 +332,13 @@ export default function ProjectDetail() {
           {project.results && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 results
               </p>
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {project.results}
@@ -348,7 +350,7 @@ export default function ProjectDetail() {
           {project.lessonsLearned && project.lessonsLearned.length > 0 && (
             <section>
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-widest"
+                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 lessons learned
@@ -357,11 +359,11 @@ export default function ProjectDetail() {
                 {project.lessonsLearned.map((l, i) => (
                   <li
                     key={i}
-                    className="flex gap-2.5 text-sm"
+                    className="flex gap-2.5 text-base"
                     style={{ color: 'rgb(var(--color-text-muted))' }}
                   >
                     <span
-                      className="mt-0.5 shrink-0 font-mono text-xs"
+                      className="mt-0.5 shrink-0 font-mono text-[13px]"
                       style={{ color: 'rgb(var(--color-text-faint))' }}
                     >
                       &rarr;
@@ -385,7 +387,7 @@ export default function ProjectDetail() {
             }}
           >
             <p
-              className="mb-3 font-mono text-xs uppercase tracking-wider"
+              className="mb-3 font-mono text-[13px] uppercase tracking-wider"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               tech stack
@@ -394,7 +396,7 @@ export default function ProjectDetail() {
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-xs"
+                  className="inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-[13px]"
                   style={{
                     borderColor: 'rgb(var(--color-border))',
                     color: 'rgb(var(--color-text-muted))',
@@ -416,13 +418,13 @@ export default function ProjectDetail() {
             }}
           >
             <p
-              className="mb-3 font-mono text-xs uppercase tracking-wider"
+              className="mb-3 font-mono text-[13px] uppercase tracking-wider"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               status
             </p>
             <p
-              className="text-sm capitalize"
+              className="text-base capitalize"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {project.category}
@@ -430,78 +432,80 @@ export default function ProjectDetail() {
           </div>
 
           {/* Links */}
-          <div
-            className="rounded-xl border p-5"
-            style={{
-              borderColor: 'rgb(var(--color-border))',
-              backgroundColor: 'rgb(var(--color-bg-raised))',
-            }}
-          >
-            <p
-              className="mb-3 font-mono text-xs uppercase tracking-wider"
-              style={{ color: 'rgb(var(--color-text-faint))' }}
+          {project.id !== 'college-erp' && (
+            <div
+              className="rounded-xl border p-5"
+              style={{
+                borderColor: 'rgb(var(--color-border))',
+                backgroundColor: 'rgb(var(--color-bg-raised))',
+              }}
             >
-              links
-            </p>
-            <div className="space-y-2">
-              {project.githubBackend && (
-                <a
-                  href={project.githubBackend}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                  style={{ color: 'rgb(var(--color-text-muted))' }}
-                >
-                  <FaGithub size={14} />
-                  Backend Repository
-                </a>
-              )}
-              {project.githubFrontend && (
-                <a
-                  href={project.githubFrontend}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                  style={{ color: 'rgb(var(--color-text-muted))' }}
-                >
-                  <FaGithub size={14} />
-                  Frontend Repository
-                </a>
-              )}
-              {project.github && project.github !== '#' && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                  style={{ color: 'rgb(var(--color-text-muted))' }}
-                >
-                  <FaGithub size={14} />
-                  GitHub Repository
-                </a>
-              )}
-              {project.live && project.live !== '#' && (
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
-                  style={{ color: 'rgb(var(--color-text-muted))' }}
-                >
-                  <ExternalLink size={14} />
-                  Live Demo
-                </a>
-              )}
-              {!hasGithub && (!project.live || project.live === '#') && (
-                <p
-                  className="text-xs"
-                  style={{ color: 'rgb(var(--color-text-faint))' }}
-                >
-                  Repository not yet public.
-                </p>
-              )}
+              <p
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
+                style={{ color: 'rgb(var(--color-text-faint))' }}
+              >
+                links
+              </p>
+              <div className="space-y-2">
+                {project.githubBackend && (
+                  <a
+                    href={project.githubBackend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                    style={{ color: 'rgb(var(--color-text-muted))' }}
+                  >
+                    <FaGithub size={14} />
+                    Backend Repository
+                  </a>
+                )}
+                {project.githubFrontend && (
+                  <a
+                    href={project.githubFrontend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                    style={{ color: 'rgb(var(--color-text-muted))' }}
+                  >
+                    <FaGithub size={14} />
+                    Frontend Repository
+                  </a>
+                )}
+                {project.github && project.github !== '#' && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                    style={{ color: 'rgb(var(--color-text-muted))' }}
+                  >
+                    <FaGithub size={14} />
+                    GitHub Repository
+                  </a>
+                )}
+                {project.live && project.live !== '#' && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                    style={{ color: 'rgb(var(--color-text-muted))' }}
+                  >
+                    <ExternalLink size={14} />
+                    Live Demo
+                  </a>
+                )}
+                {!hasGithub && (!project.live || project.live === '#') && (
+                  <p
+                    className="text-[13px]"
+                    style={{ color: 'rgb(var(--color-text-faint))' }}
+                  >
+                    Repository not yet public.
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

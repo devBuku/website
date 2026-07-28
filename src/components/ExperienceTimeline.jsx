@@ -20,22 +20,22 @@ export default function ExperienceTimeline() {
           )}
           <div>
             <div className="mb-2 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-              <h3 className="text-lg font-bold tracking-tight">{exp.role}</h3>
+              <h3 className="text-xl font-bold tracking-tight">{exp.role}</h3>
               <span
-                className="font-mono text-xs"
+                className="font-mono text-[13px]"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 {exp.period}
               </span>
             </div>
             <p
-              className="mb-4 text-sm font-medium"
+              className="mb-4 text-base font-medium"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {exp.company}
             </p>
             <p
-              className="mb-5 max-w-2xl text-sm leading-relaxed"
+              className="mb-5 max-w-2xl text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {exp.description}
@@ -44,11 +44,11 @@ export default function ExperienceTimeline() {
               {exp.highlights.map((h, j) => (
                 <li
                   key={j}
-                  className="flex gap-2 text-sm"
+                  className="flex gap-2 text-base"
                   style={{ color: 'rgb(var(--color-text-muted))' }}
                 >
                   <span
-                    className="mt-0.5 shrink-0 font-mono text-xs"
+                    className="mt-0.5 shrink-0 font-mono text-[13px]"
                     style={{ color: 'rgb(var(--color-text-faint))' }}
                   >
                     &rarr;
@@ -61,7 +61,7 @@ export default function ExperienceTimeline() {
               {exp.tech.map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-[10px]"
+                  className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-[13px]"
                   style={{
                     borderColor: 'rgb(var(--color-border))',
                     color: 'rgb(var(--color-text-faint))',

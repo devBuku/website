@@ -28,14 +28,14 @@ export default function Contact() {
         <div className="space-y-3">
           <div>
             <p
-              className="font-mono text-xs"
+              className="font-mono text-[13px]"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               email
             </p>
             <a
               href={`mailto:${personal.email}`}
-              className="text-sm transition-opacity hover:opacity-70"
+              className="text-base transition-opacity hover:opacity-70"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.email}
@@ -43,7 +43,7 @@ export default function Contact() {
           </div>
           <div>
             <p
-              className="font-mono text-xs"
+              className="font-mono text-[13px]"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               github
@@ -52,7 +52,7 @@ export default function Contact() {
               href={personal.social.github.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-opacity hover:opacity-70"
+              className="text-base transition-opacity hover:opacity-70"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.social.github.url.replace('https://', '')}
@@ -60,7 +60,7 @@ export default function Contact() {
           </div>
           <div>
             <p
-              className="font-mono text-xs"
+              className="font-mono text-[13px]"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               linkedin
@@ -69,7 +69,7 @@ export default function Contact() {
               href={personal.social.linkedin.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-opacity hover:opacity-70"
+              className="text-base transition-opacity hover:opacity-70"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.social.linkedin.url.replace('https://', '')}
@@ -77,13 +77,13 @@ export default function Contact() {
           </div>
           <div>
             <p
-              className="font-mono text-xs"
+              className="font-mono text-[13px]"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               location
             </p>
             <p
-              className="text-sm"
+              className="text-base"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
               {personal.location}

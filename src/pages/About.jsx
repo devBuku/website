@@ -30,37 +30,28 @@ export default function About() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-3">
             <p
-              className="text-sm leading-relaxed"
+              className="text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
-              I&apos;m a final-year Computer Science &amp; Engineering student
-              at Swami Vivekananda Institute of Science &amp; Technology
-              (MAKAUT), Kolkata. I&apos;ve completed my 8th semester (result
-              pending) and am actively preparing for software engineering
-              internships and full-time roles.
+              Final-year CSE student at SVIST (MAKAUT), Kolkata — actively
+              preparing for software engineering internships and full-time
+              roles.
             </p>
             <p
-              className="text-sm leading-relaxed"
+              className="text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
-              I focus on backend engineering, full-stack development, and
-              building production-ready systems. My final-year project was a
-              comprehensive College ERP — something my team built specifically
-              to solve problems we lived through ourselves: fragmented systems,
-              manual attendance and fee processes, and poor communication
-              between departments. That project shaped how I think about backend
-              design and API architecture more than anything else I&apos;ve
-              worked on.
+              Focused on backend engineering and building production-ready
+              systems. My final-year project was a College ERP — built to solve
+              the fragmented-system problems we lived through across four years
+              of college.
             </p>
             <p
-              className="text-sm leading-relaxed"
+              className="text-base leading-relaxed"
               style={{ color: 'rgb(var(--color-text-muted))' }}
             >
-              I was a Smart India Hackathon 2023 Finalist and currently serve as
-              Group Leader of my institute&apos;s Coding Club, where I mentor
-              juniors and organize technical workshops. I daily-drive Arch Linux
-              with i3wm, develop in Neovim, and enjoy optimizing my workflow as
-              much as building software.
+              SIH 2023 Finalist, Coding Club Group Leader. I daily-drive Arch
+              Linux with i3wm and develop in Neovim.
             </p>
 
             <div
@@ -68,22 +59,22 @@ export default function About() {
               style={{ borderColor: 'rgb(var(--color-border))' }}
             >
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-wider"
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 education
               </p>
-              <p className="text-sm font-medium">
+              <p className="text-base font-medium">
                 {personal.about.education.degree}
               </p>
               <p
-                className="mt-0.5 text-sm"
+                className="mt-0.5 text-base"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 {personal.about.education.institution}
               </p>
               <p
-                className="mt-0.5 font-mono text-xs"
+                className="mt-0.5 font-mono text-[13px]"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 {personal.about.education.period}
@@ -92,7 +83,7 @@ export default function About() {
                 {personal.about.education.coursework.map((c) => (
                   <span
                     key={c}
-                    className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-xs"
+                    className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-[13px]"
                     style={{
                       borderColor: 'rgb(var(--color-border))',
                       color: 'rgb(var(--color-text-muted))',
@@ -109,7 +100,7 @@ export default function About() {
               style={{ borderColor: 'rgb(var(--color-border))' }}
             >
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-wider"
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 currently
@@ -124,11 +115,11 @@ export default function About() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex gap-2 text-sm"
+                    className="flex gap-2 text-base"
                     style={{ color: 'rgb(var(--color-text-muted))' }}
                   >
                     <span
-                      className="shrink-0 font-mono text-xs"
+                      className="shrink-0 font-mono text-[13px]"
                       style={{ color: 'rgb(var(--color-text-faint))' }}
                     >
                       &rarr;
@@ -149,14 +140,14 @@ export default function About() {
               }}
             >
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-wider"
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 dev setup
               </p>
               <div className="space-y-1.5">
                 {Object.entries(personal.about.devSetup).map(([key, val]) => (
-                  <div key={key} className="flex justify-between text-sm">
+                  <div key={key} className="flex justify-between text-base">
                     <span style={{ color: 'rgb(var(--color-text-faint))' }}>
                       {key}
                     </span>
@@ -176,13 +167,13 @@ export default function About() {
               }}
             >
               <p
-                className="mb-3 font-mono text-xs uppercase tracking-wider"
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
                 seeking
               </p>
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
                 Software engineering internships and entry-level SDE roles. Open
@@ -206,15 +197,15 @@ export default function About() {
           <div className="space-y-5">
             {personal.achievements.map((ach, i) => (
               <div key={i}>
-                <p className="text-sm font-medium">{ach.title}</p>
+                <p className="text-base font-medium">{ach.title}</p>
                 <p
-                  className="mt-0.5 text-sm"
+                  className="mt-0.5 text-base"
                   style={{ color: 'rgb(var(--color-text-muted))' }}
                 >
                   {ach.subtitle}
                 </p>
                 <p
-                  className="mt-0.5 text-sm leading-relaxed"
+                  className="mt-0.5 text-base leading-relaxed"
                   style={{ color: 'rgb(var(--color-text-faint))' }}
                 >
                   {ach.description}

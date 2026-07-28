@@ -74,11 +74,11 @@
 
 @layer components {
   .section-heading {
-    @apply text-2xl font-bold tracking-tight sm:text-3xl;
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
   }
 
   .tag {
-    @apply inline-flex items-center rounded border px-2.5 py-0.5 font-mono text-xs font-medium transition-colors duration-200;
+    @apply inline-flex items-center rounded border px-2.5 py-0.5 font-mono text-[13px] font-medium transition-colors duration-200;
     border-color: rgb(var(--color-border));
     color: rgb(var(--color-text-muted));
   }
@@ -236,5 +236,29 @@
   .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    scroll-margin-top: 1.5rem;
+  }
+
+  section + section {
+    margin-top: 1.5rem;
+  }
+
+  .prose-custom {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .prose-custom p {
+    margin-bottom: 1rem;
+  }
+
+  [class*='tracking-wider'],
+  [class*='tracking-widest'] {
+    letter-spacing: 0.12em;
   }
 }

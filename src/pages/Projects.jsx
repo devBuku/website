@@ -46,7 +46,7 @@ export default function Projects() {
         {grouped.map((group) => (
           <section key={group.label}>
             <p
-              className="mb-6 font-mono text-xs uppercase tracking-widest"
+              className="mb-6 font-mono text-[13px] uppercase tracking-widest"
               style={{ color: 'rgb(var(--color-text-faint))' }}
             >
               * {group.label}

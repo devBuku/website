@@ -35,13 +35,13 @@ export default function ContactForm() {
           style={{ color: 'rgb(var(--color-accent))' }}
         />
         <p
-          className="text-sm font-medium"
+          className="text-base font-medium"
           style={{ color: 'rgb(var(--color-accent))' }}
         >
           Message sent successfully
         </p>
         <p
-          className="text-xs"
+          className="text-[13px]"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           I&apos;ll get back to you soon.
@@ -56,7 +56,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="name"
-            className="mb-1.5 block text-xs font-medium"
+            className="mb-1.5 block text-[13px] font-medium"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             Name
@@ -66,7 +66,7 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
-            className="w-full rounded-lg border bg-transparent px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-1"
+            className="w-full rounded-lg border bg-transparent px-3 py-2 text-base transition-colors focus:outline-none focus:ring-1"
             style={{
               borderColor: 'rgb(var(--color-border))',
               '--tw-ring-color': 'rgb(var(--color-accent))',
@@ -77,7 +77,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-1.5 block text-xs font-medium"
+            className="mb-1.5 block text-[13px] font-medium"
             style={{ color: 'rgb(var(--color-text-muted))' }}
           >
             Email
@@ -87,7 +87,7 @@ export default function ContactForm() {
             id="email"
             name="email"
             required
-            className="w-full rounded-lg border bg-transparent px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-1"
+            className="w-full rounded-lg border bg-transparent px-3 py-2 text-base transition-colors focus:outline-none focus:ring-1"
             style={{
               borderColor: 'rgb(var(--color-border))',
               '--tw-ring-color': 'rgb(var(--color-accent))',
@@ -99,7 +99,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="subject"
-          className="mb-1.5 block text-xs font-medium"
+          className="mb-1.5 block text-[13px] font-medium"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           Subject
@@ -120,7 +120,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-1.5 block text-xs font-medium"
+          className="mb-1.5 block text-[13px] font-medium"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           Message
@@ -140,7 +140,7 @@ export default function ContactForm() {
       </div>
       {status === 'error' && (
         <p
-          className="text-xs"
+          className="text-[13px]"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >
           Something went wrong. You can email me directly at {personal.email}.
@@ -149,7 +149,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-all duration-200"
+        className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium transition-all duration-200"
       >
         <Send size={14} />
         {status === 'sending' ? 'Sending...' : 'Send Message'}
