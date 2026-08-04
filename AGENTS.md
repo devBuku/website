@@ -1,66 +1,68 @@
 # website — devBuku portfolio
 
-React 19 + Vite 7 SPA. Tailwind CSS, no TypeScript, no test framework.
+React 19 + Vite 7 SPA. Tailwind CSS v3, no TypeScript, no test framework.
 
-## Commands
+## Commands (pnpm — npm will not work)
 
-| Action        | Command           |
-| ------------- | ----------------- |
-| Dev server    | `npm run dev`     |
-| Build         | `npm run build`   |
-| Preview build | `npm run preview` |
-| Lint          | `npm run lint`    |
+| Action        | Command                        |
+| ------------- | ------------------------------ |
+| Dev server    | `pnpm dev`                     |
+| Build         | `pnpm build`                   |
+| Preview build | `pnpm preview`                 |
+| Lint          | `pnpm lint`                    |
+| Lint + fix    | `pnpm lint:fix`                |
+| Format        | `pnpm format` / `format:check` |
+
+- Vercel builds with pnpm (lockfile auto-detected) — install deps with `pnpm install`, not npm.
+- `pnpm-workspace.yaml` sets `allowBuilds: esbuild: false`. Do not remove this; esbuild builds fine without its postinstall script.
+- Prettier **is** configured (`.prettierrc` + `prettier-plugin-tailwindcss`) and enforced: husky pre-commit runs lint-staged (prettier + eslint --fix on staged files). Run `pnpm format` before committing or the hook will fail.
 
 ## Routes
 
-| Path          | Page                                                                          |
-| ------------- | ----------------------------------------------------------------------------- |
-| `/`           | Home (Hero, About, Experience, Projects, Skills, Blog, Achievements, Contact) |
-| `/work`       | Projects (with category tabs)                                                 |
-| `/experience` | Experience timeline                                                           |
-| `/about`      | About (bio, education, skills, achievements)                                  |
-| `/blog`       | Blog listing                                                                  |
-| `/blog/:slug` | Blog post (Markdown)                                                          |
-| `/resume`     | Resume (embedded PDF viewer)                                                  |
-| `/contact`    | Contact (form + social links)                                                 |
+Defined in `src/App.jsx` (React Router v7). All routes are wrapped in a framer-motion `AnimatePresence` + `PageTransition` keyed by pathname — new pages go in the `<Routes>` block.
+
+| Path              | Page                     |
+| ----------------- | ------------------------ |
+| `/`               | Home                     |
+| `/work`           | Projects                 |
+| `/projects/:slug` | ProjectDetail            |
+| `/experience`     | Experience               |
+| `/about`          | About                    |
+| `/blog`           | Blog                     |
+| `/blog/:slug`     | BlogPost (Markdown)      |
+| `/resume`         | Resume (PDF viewer)      |
+| `/contact`        | Contact                  |
+| `*`               | NotFound (inline in App) |
 
 ## Structure
 
-- **Entrypoint**: `src/main.jsx` — wraps App in `<BrowserRouter>`, imports `global.css`
-- **Layout**: `src/App.jsx` — `<Navbar>` / `<Routes>` / `<Footer>`
-- **Data**: `src/data/` — `personal.js`, `projects.js`, `skills.js`, `experience.js`, `navigation.js`
-- **Components**: `src/components/` — Navbar, Footer, ThemeToggle, ProjectCard, BlogCard, Card, Tag, SectionHeading, ContactForm, ExperienceTimeline, SkillSection, ScrollReveal
-- **Pages**: `src/pages/` — Home, About, Projects, Experience, Blog, BlogPost, Resume, Contact
-- **Blog content**: `src/content/blog/` — Markdown files with frontmatter, parsed by `posts.js`
-- **Styles**: `src/index.css` — Tailwind base + component layer + CSS custom properties
-- **Static**: `public/` — images served at root path (`/me.jpg`, `/resume.pdf`, etc.)
+- **Entrypoint**: `src/main.jsx` — `HelmetProvider` > `BrowserRouter` > `App`; imports `./index.css` and highlight.js styles
+- **Data**: `src/data/` — `personal.js`, `projects.js`, `skills.js`, `experience.js`, `navigation.js`. Almost all page copy lives here, not hardcoded in pages.
+- **Components**: `src/components/` — Navbar, Footer, ThemeToggle, ScrollProgressBar, ScrollReveal, Card, Tag, SectionHeading, PageHeader, ProjectCard/ProjectRow/ProjectPlaceholder, NeofetchCard, ContactForm, ExperienceTimeline, SkillSection, BlogCard
+- **Pages**: `src/pages/` — one per route
+- **Blog content**: `src/content/blog/posts.js` exports `blogPosts` (currently `[]`). **Not Markdown files.** Post shape: `slug, title, date, readTime, tags, excerpt, content` where `content` is a Markdown string rendered by react-markdown + remark-gfm + rehype-highlight.
+- **Styles**: `src/index.css` — Tailwind base/components/utilities + CSS custom properties
+- **Static**: `public/` served at root (`/me.jpg`, `/resume.pdf`, `/sitemap.xml`, `/robots.txt`)
 
 ## Design system
 
-- **Dark mode default** via `<html class="dark">`, toggled via `.light`/`.dark` classes on `<html>`
-- **Color system**: CSS custom properties (`--color-bg`, `--color-text`, etc.) defined in `index.css` for both themes
-- **Buttons**: `.btn-primary`, `.btn-outline`, `.btn-ghost` in CSS component layer
-- **Cards**: `.card` utility class with border + hover state
-- **Icons**: `lucide-react` for UI icons, `react-icons/fa` for brand icons (GitHub, LinkedIn, Twitter)
-- **No TypeScript**. All source is `.jsx`
-
-## Style conventions
-
-- **Project cards** on `/work`: `View on GitHub` + `Live Demo` buttons. Expanded view with highlights on click.
-- **Experience timeline** uses vertical timeline with dots, arrows, and tech tags.
-- **Skills** organized by category in a responsive grid.
-- **Blog posts** use Markdown with `react-markdown`, `remark-gfm`, `rehype-highlight`.
+- **Dark mode default**: `index.html` has `<html class="dark">`; ThemeToggle toggles `.light`/`.dark` on `<html>`.
+- **Colors**: RGB-triplet CSS variables in `index.css` (`:root` = dark, `.light` = light overrides), consumed as `rgb(var(--color-accent) / 0.5)`. New colors must be defined for both themes. Tailwind theme palette (`surface`, `accent`, `ink`, `border`) mirrors these.
+- **Reusable classes** in `@layer components`: `.btn`, `.btn-primary`, `.btn-outline`, `.btn-ghost`, `.tag`, `.card`, `.section-heading`, `.prose-custom` (blog/README rendering).
+- **Fonts**: Geist (sans) + JetBrains Mono (mono) loaded from Google Fonts in `index.html`; `font-mono` used for tags/labels/labels.
+- **Icons**: `lucide-react` for UI icons, `react-icons/fa` for brand (GitHub/LinkedIn/X).
+- **SEO**: per-page `<Helmet>` from `react-helmet-async` (Provider already in `main.jsx`); global meta in `index.html`.
 
 ## Quirks
 
-- Live Demo buttons on `/work` link to `"#"` (unreachable — not deployed).
+- Blog listing is empty until posts are added to `posts.js` — don't look for Markdown files.
+- Live Demo buttons are hidden when `project.live === '#'` (in `projects.js` and `ProjectDetail.jsx`).
+- Contact form POSTs to Formspree (`https://formspree.io/f/meoayaar`), falls back to `mailto:`.
 - Favicon is `/me.jpg` (portrait photo, not an icon file).
-- Prettier installed but unconfigured — not part of lint.
-- Contact form uses Formspree (`https://formspree.io/f/meoayaar`) with fallback to `mailto:`.
+- eslint `no-unused-vars` ignores uppercase-named vars and `motion`, so `import { motion }` can be unused.
+- `@vercel/analytics` is mounted in `App.jsx`.
 
 ## Deployment
 
-- **Platform:** Vercel (auto-detects Vite, `vercel.json` config).
-- **SPA routing:** `vercel.json` rewrites all paths to `/index.html`.
-- **Build output:** `dist/`.
-- **Static assets** in `public/` served at root-relative paths.
+- **Platform**: Vercel, configured in `vercel.json` (`framework: vite`, `outputDirectory: dist`, rewrite all paths → `/index.html` for SPA routing).
+- **Build output**: `dist/`. Static assets in `public/` served at root-relative paths.
