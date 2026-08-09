@@ -12,6 +12,8 @@ import ProjectDetail from './pages/ProjectDetail';
 import Experience from './pages/Experience';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Notes from './pages/Notes';
+import NoteDetail from './pages/NoteDetail';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 
@@ -81,6 +83,8 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/notes" element={<Notes />} />
+              <Route path="/notes/:slug" element={<NoteDetail />} />
               <Route path="/resume" element={<Resume />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />

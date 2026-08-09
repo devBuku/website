@@ -1,0 +1,4 @@
+- [ ] 5 DSA problems (from revise list)
+- [x] Hitesh backend from lecture 3 (cors) afternoon
+- [ ] Complete Kunal Kushwaha Networking (at evening)
+- [ ] Complete love babbar c++ (night) you can do it!

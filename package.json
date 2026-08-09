@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node scripts/generate-notes.js && vite",
+    "build": "node scripts/generate-notes.js && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.42.2",
+    "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "lucide-react": "^1.25.0",
     "react": "^19.2.0",
