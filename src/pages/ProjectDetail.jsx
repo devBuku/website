@@ -33,23 +33,28 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <Helmet>
-          <title>Project Not Found — devBuku</title>
-        </Helmet>
-        <p
-          className="font-mono text-base"
-          style={{ color: 'rgb(var(--color-text-faint))' }}
-        >
-          Project not found.
-        </p>
-        <Link
-          to="/work"
-          className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium"
-        >
-          <ArrowLeft size={14} />
-          Back to projects
-        </Link>
+      <div
+        className="flex min-h-screen items-center justify-center"
+        style={{ backgroundColor: 'rgb(var(--color-bg))' }}
+      >
+        <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+          <Helmet>
+            <title>Project Not Found — devBuku</title>
+          </Helmet>
+          <p
+            className="font-mono text-base"
+            style={{ color: 'rgb(var(--color-text-faint))' }}
+          >
+            Project not found.
+          </p>
+          <Link
+            to="/work"
+            className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium"
+          >
+            <ArrowLeft size={14} />
+            Back to projects
+          </Link>
+        </div>
       </div>
     );
   }
@@ -60,379 +65,333 @@ export default function ProjectDetail() {
     (project.github && project.github !== '#');
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <Helmet>
-        <title>{project.title} — devBuku Projects</title>
-        <meta
-          name="description"
-          content={project.tagline + ' — ' + project.description.slice(0, 120)}
-        />
-        <meta
-          property="og:title"
-          content={`${project.title} — devBuku Projects`}
-        />
-        <meta
-          property="og:description"
-          content={project.tagline + '. ' + project.description.slice(0, 120)}
-        />
-        {project.image && (
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: 'rgb(var(--color-bg))' }}
+    >
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <Helmet>
+          <title>{project.title} — devBuku Projects</title>
           <meta
-            property="og:image"
-            content={`https://devbuku.vercel.app${project.image}`}
+            name="description"
+            content={
+              project.tagline + ' — ' + project.description.slice(0, 120)
+            }
           />
-        )}
-        <meta
-          property="og:url"
-          content={`https://devbuku.vercel.app/projects/${project.id}`}
-        />
-        <meta
-          name="twitter:title"
-          content={`${project.title} — devBuku Projects`}
-        />
-        <meta name="twitter:description" content={project.tagline} />
-      </Helmet>
+          <meta
+            property="og:title"
+            content={`${project.title} — devBuku Projects`}
+          />
+          <meta
+            property="og:description"
+            content={project.tagline + '. ' + project.description.slice(0, 120)}
+          />
+          {project.image && (
+            <meta
+              property="og:image"
+              content={`https://devbuku.vercel.app${project.image}`}
+            />
+          )}
+          <meta
+            property="og:url"
+            content={`https://devbuku.vercel.app/projects/${project.id}`}
+          />
+          <meta
+            name="twitter:title"
+            content={`${project.title} — devBuku Projects`}
+          />
+          <meta name="twitter:description" content={project.tagline} />
+        </Helmet>
 
-      {/* Back */}
-      <Link
-        to="/work"
-        className="mb-8 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
-        style={{ color: 'rgb(var(--color-text-muted))' }}
-      >
-        <ArrowLeft size={14} />
-        Back to projects
-      </Link>
-
-      {/* Hero Image */}
-      {project.image ? (
-        <div
-          className="mb-10 overflow-hidden rounded-xl border"
-          style={{
-            borderColor: 'rgb(var(--color-border))',
-            boxShadow: '0 8px 40px rgb(0 0 0 / 0.25)',
-          }}
+        {/* Back */}
+        <Link
+          to="/work"
+          className="mb-8 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
+          style={{ color: 'rgb(var(--color-text-muted))' }}
         >
-          <img
-            src={project.image}
-            alt={`${project.title} — ${project.tagline}`}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-      ) : (
-        <div className="mb-10">
-          <ProjectPlaceholder project={project} />
-        </div>
-      )}
+          <ArrowLeft size={14} />
+          Back to projects
+        </Link>
 
-      {/* Title + Status */}
-      <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            {project.title}
-          </h1>
-          <p
-            className="mt-2 text-lg"
-            style={{ color: 'rgb(var(--color-text-muted))' }}
+        {/* Hero Image */}
+        {project.image ? (
+          <div
+            className="mb-10 overflow-hidden rounded-xl border"
+            style={{
+              borderColor: 'rgb(var(--color-border))',
+              boxShadow: '0 8px 40px rgb(0 0 0 / 0.25)',
+            }}
           >
-            {project.tagline}
-          </p>
-        </div>
-        <StatusBadge project={project} />
-      </div>
+            <img
+              src={project.image}
+              alt={`${project.title} — ${project.tagline}`}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className="mb-10">
+            <ProjectPlaceholder project={project} />
+          </div>
+        )}
 
-      {/* Action Buttons */}
-      <div className="mb-10 flex flex-wrap items-center gap-3">
-        {project.githubBackend && project.id !== 'college-erp' && (
-          <a
-            href={project.githubBackend}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
-          >
-            <FaGithub size={16} />
-            Backend Repository
-          </a>
-        )}
-        {project.githubFrontend && project.id !== 'college-erp' && (
-          <a
-            href={project.githubFrontend}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
-          >
-            <FaGithub size={16} />
-            Frontend Repository
-          </a>
-        )}
-        {project.github &&
-          project.github !== '#' &&
-          project.id !== 'college-erp' && (
+        {/* Title + Status */}
+        <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              {project.title}
+            </h1>
+            <p
+              className="mt-2 text-lg"
+              style={{ color: 'rgb(var(--color-text-muted))' }}
+            >
+              {project.tagline}
+            </p>
+          </div>
+          <StatusBadge project={project} />
+        </div>
+
+        {/* Action Buttons */}
+        <div className="mb-10 flex flex-wrap items-center gap-3">
+          {project.githubBackend && project.id !== 'college-erp' && (
             <a
-              href={project.github}
+              href={project.githubBackend}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
             >
               <FaGithub size={16} />
-              View on GitHub
+              Backend Repository
             </a>
           )}
-        {project.live && project.live !== '#' && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
-          >
-            <ExternalLink size={15} />
-            Live Demo
-          </a>
-        )}
-      </div>
-
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
-        {/* Main Content */}
-        <div className="space-y-10 lg:col-span-3">
-          {/* Overview */}
-          <section>
-            <p
-              className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-              style={{ color: 'rgb(var(--color-text-faint))' }}
+          {project.githubFrontend && project.id !== 'college-erp' && (
+            <a
+              href={project.githubFrontend}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
             >
-              overview
-            </p>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: 'rgb(var(--color-text-muted))' }}
+              <FaGithub size={16} />
+              Frontend Repository
+            </a>
+          )}
+          {project.github &&
+            project.github !== '#' &&
+            project.id !== 'college-erp' && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
+              >
+                <FaGithub size={16} />
+                View on GitHub
+              </a>
+            )}
+          {project.live && project.live !== '#' && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-base font-medium"
             >
-              {project.description}
-            </p>
-          </section>
+              <ExternalLink size={15} />
+              Live Demo
+            </a>
+          )}
+        </div>
 
-          {/* Problem */}
-          {project.problem && (
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
+          {/* Main Content */}
+          <div className="space-y-10 lg:col-span-3">
+            {/* Overview */}
             <section>
               <p
                 className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
-                problem
+                overview
               </p>
               <p
                 className="text-base leading-relaxed"
                 style={{ color: 'rgb(var(--color-text-muted))' }}
               >
-                {project.problem}
+                {project.description}
               </p>
             </section>
-          )}
 
-          {/* Architecture */}
-          {project.architecture && (
-            <section>
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                architecture
-              </p>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: 'rgb(var(--color-text-muted))' }}
-              >
-                {project.architecture}
-              </p>
-            </section>
-          )}
-
-          {/* Contributions */}
-          {project.highlights && project.highlights.length > 0 && (
-            <section>
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                contributions
-              </p>
-              <ul className="space-y-2">
-                {project.highlights.map((h, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2.5 text-base"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <span
-                      className="mt-0.5 shrink-0 font-mono text-[13px]"
-                      style={{ color: 'rgb(var(--color-text-faint))' }}
-                    >
-                      &rarr;
-                    </span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* Engineering Decisions */}
-          {project.engineeringDecisions &&
-            project.engineeringDecisions.length > 0 && (
+            {/* Problem */}
+            {project.problem && (
               <section>
                 <p
                   className="mb-3 font-mono text-[13px] uppercase tracking-widest"
                   style={{ color: 'rgb(var(--color-text-faint))' }}
                 >
-                  engineering decisions
+                  problem
                 </p>
-                <div className="space-y-4">
-                  {project.engineeringDecisions.map((d, i) => (
-                    <div key={i}>
-                      <p className="mb-1 text-base font-medium">{d.decision}</p>
-                      <p
-                        className="text-base leading-relaxed"
-                        style={{ color: 'rgb(var(--color-text-muted))' }}
-                      >
-                        {d.rationale}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: 'rgb(var(--color-text-muted))' }}
+                >
+                  {project.problem}
+                </p>
               </section>
             )}
 
-          {/* Challenges */}
-          {project.challenges && project.challenges.length > 0 && (
-            <section>
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                challenges
-              </p>
-              <ul className="space-y-2">
-                {project.challenges.map((c, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2.5 text-base"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <span
-                      className="mt-0.5 shrink-0 font-mono text-[13px]"
-                      style={{ color: 'rgb(var(--color-text-faint))' }}
-                    >
-                      &rarr;
-                    </span>
-                    <span>{c}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* Results */}
-          {project.results && (
-            <section>
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                results
-              </p>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: 'rgb(var(--color-text-muted))' }}
-              >
-                {project.results}
-              </p>
-            </section>
-          )}
-
-          {/* Lessons Learned */}
-          {project.lessonsLearned && project.lessonsLearned.length > 0 && (
-            <section>
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-widest"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                lessons learned
-              </p>
-              <ul className="space-y-2">
-                {project.lessonsLearned.map((l, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2.5 text-base"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <span
-                      className="mt-0.5 shrink-0 font-mono text-[13px]"
-                      style={{ color: 'rgb(var(--color-text-faint))' }}
-                    >
-                      &rarr;
-                    </span>
-                    <span>{l}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-        </div>
-
-        {/* Sidebar */}
-        <div className="space-y-6 lg:col-span-2">
-          {/* Tech Stack */}
-          <div
-            className="rounded-xl border p-5"
-            style={{
-              borderColor: 'rgb(var(--color-border))',
-              backgroundColor: 'rgb(var(--color-bg-raised))',
-            }}
-          >
-            <p
-              className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-              style={{ color: 'rgb(var(--color-text-faint))' }}
-            >
-              tech stack
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {project.tech.map((t) => (
-                <span
-                  key={t}
-                  className="inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-[13px]"
-                  style={{
-                    borderColor: 'rgb(var(--color-border))',
-                    color: 'rgb(var(--color-text-muted))',
-                    backgroundColor: 'rgb(var(--color-bg-overlay) / 0.5)',
-                  }}
+            {/* Architecture */}
+            {project.architecture && (
+              <section>
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
                 >
-                  {t}
-                </span>
-              ))}
-            </div>
+                  architecture
+                </p>
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: 'rgb(var(--color-text-muted))' }}
+                >
+                  {project.architecture}
+                </p>
+              </section>
+            )}
+
+            {/* Contributions */}
+            {project.highlights && project.highlights.length > 0 && (
+              <section>
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
+                >
+                  contributions
+                </p>
+                <ul className="space-y-2">
+                  {project.highlights.map((h, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-base"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <span
+                        className="mt-0.5 shrink-0 font-mono text-[13px]"
+                        style={{ color: 'rgb(var(--color-text-faint))' }}
+                      >
+                        &rarr;
+                      </span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* Engineering Decisions */}
+            {project.engineeringDecisions &&
+              project.engineeringDecisions.length > 0 && (
+                <section>
+                  <p
+                    className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                    style={{ color: 'rgb(var(--color-text-faint))' }}
+                  >
+                    engineering decisions
+                  </p>
+                  <div className="space-y-4">
+                    {project.engineeringDecisions.map((d, i) => (
+                      <div key={i}>
+                        <p className="mb-1 text-base font-medium">
+                          {d.decision}
+                        </p>
+                        <p
+                          className="text-base leading-relaxed"
+                          style={{ color: 'rgb(var(--color-text-muted))' }}
+                        >
+                          {d.rationale}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+            {/* Challenges */}
+            {project.challenges && project.challenges.length > 0 && (
+              <section>
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
+                >
+                  challenges
+                </p>
+                <ul className="space-y-2">
+                  {project.challenges.map((c, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-base"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <span
+                        className="mt-0.5 shrink-0 font-mono text-[13px]"
+                        style={{ color: 'rgb(var(--color-text-faint))' }}
+                      >
+                        &rarr;
+                      </span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* Results */}
+            {project.results && (
+              <section>
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
+                >
+                  results
+                </p>
+                <p
+                  className="text-base leading-relaxed"
+                  style={{ color: 'rgb(var(--color-text-muted))' }}
+                >
+                  {project.results}
+                </p>
+              </section>
+            )}
+
+            {/* Lessons Learned */}
+            {project.lessonsLearned && project.lessonsLearned.length > 0 && (
+              <section>
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-widest"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
+                >
+                  lessons learned
+                </p>
+                <ul className="space-y-2">
+                  {project.lessonsLearned.map((l, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-2.5 text-base"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <span
+                        className="mt-0.5 shrink-0 font-mono text-[13px]"
+                        style={{ color: 'rgb(var(--color-text-faint))' }}
+                      >
+                        &rarr;
+                      </span>
+                      <span>{l}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
 
-          {/* Status */}
-          <div
-            className="rounded-xl border p-5"
-            style={{
-              borderColor: 'rgb(var(--color-border))',
-              backgroundColor: 'rgb(var(--color-bg-raised))',
-            }}
-          >
-            <p
-              className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-              style={{ color: 'rgb(var(--color-text-faint))' }}
-            >
-              status
-            </p>
-            <p
-              className="text-base capitalize"
-              style={{ color: 'rgb(var(--color-text-muted))' }}
-            >
-              {project.category}
-            </p>
-          </div>
-
-          {/* Links */}
-          {project.id !== 'college-erp' && (
+          {/* Sidebar */}
+          <div className="space-y-6 lg:col-span-2">
+            {/* Tech Stack */}
             <div
               className="rounded-xl border p-5"
               style={{
@@ -444,68 +403,123 @@ export default function ProjectDetail() {
                 className="mb-3 font-mono text-[13px] uppercase tracking-wider"
                 style={{ color: 'rgb(var(--color-text-faint))' }}
               >
-                links
+                tech stack
               </p>
-              <div className="space-y-2">
-                {project.githubBackend && (
-                  <a
-                    href={project.githubBackend}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
+              <div className="flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-[13px]"
+                    style={{
+                      borderColor: 'rgb(var(--color-border))',
+                      color: 'rgb(var(--color-text-muted))',
+                      backgroundColor: 'rgb(var(--color-bg-overlay) / 0.5)',
+                    }}
                   >
-                    <FaGithub size={14} />
-                    Backend Repository
-                  </a>
-                )}
-                {project.githubFrontend && (
-                  <a
-                    href={project.githubFrontend}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <FaGithub size={14} />
-                    Frontend Repository
-                  </a>
-                )}
-                {project.github && project.github !== '#' && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <FaGithub size={14} />
-                    GitHub Repository
-                  </a>
-                )}
-                {project.live && project.live !== '#' && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <ExternalLink size={14} />
-                    Live Demo
-                  </a>
-                )}
-                {!hasGithub && (!project.live || project.live === '#') && (
-                  <p
-                    className="text-[13px]"
-                    style={{ color: 'rgb(var(--color-text-faint))' }}
-                  >
-                    Repository not yet public.
-                  </p>
-                )}
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
-          )}
+
+            {/* Status */}
+            <div
+              className="rounded-xl border p-5"
+              style={{
+                borderColor: 'rgb(var(--color-border))',
+                backgroundColor: 'rgb(var(--color-bg-raised))',
+              }}
+            >
+              <p
+                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
+                style={{ color: 'rgb(var(--color-text-faint))' }}
+              >
+                status
+              </p>
+              <p
+                className="text-base capitalize"
+                style={{ color: 'rgb(var(--color-text-muted))' }}
+              >
+                {project.category}
+              </p>
+            </div>
+
+            {/* Links */}
+            {project.id !== 'college-erp' && (
+              <div
+                className="rounded-xl border p-5"
+                style={{
+                  borderColor: 'rgb(var(--color-border))',
+                  backgroundColor: 'rgb(var(--color-bg-raised))',
+                }}
+              >
+                <p
+                  className="mb-3 font-mono text-[13px] uppercase tracking-wider"
+                  style={{ color: 'rgb(var(--color-text-faint))' }}
+                >
+                  links
+                </p>
+                <div className="space-y-2">
+                  {project.githubBackend && (
+                    <a
+                      href={project.githubBackend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <FaGithub size={14} />
+                      Backend Repository
+                    </a>
+                  )}
+                  {project.githubFrontend && (
+                    <a
+                      href={project.githubFrontend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <FaGithub size={14} />
+                      Frontend Repository
+                    </a>
+                  )}
+                  {project.github && project.github !== '#' && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <FaGithub size={14} />
+                      GitHub Repository
+                    </a>
+                  )}
+                  {project.live && project.live !== '#' && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-base transition-opacity hover:opacity-70"
+                      style={{ color: 'rgb(var(--color-text-muted))' }}
+                    >
+                      <ExternalLink size={14} />
+                      Live Demo
+                    </a>
+                  )}
+                  {!hasGithub && (!project.live || project.live === '#') && (
+                    <p
+                      className="text-[13px]"
+                      style={{ color: 'rgb(var(--color-text-faint))' }}
+                    >
+                      Repository not yet public.
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

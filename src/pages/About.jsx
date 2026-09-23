@@ -1,218 +1,92 @@
 import { Helmet } from 'react-helmet-async';
 import { personal } from '../data/personal';
-import SectionHeading from '../components/SectionHeading';
 import ScrollReveal from '../components/ScrollReveal';
 import SkillSection from '../components/SkillSection';
-import PageHeader from '../components/PageHeader';
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <Helmet>
-        <title>About — Shubhayan Bagchi (devBuku)</title>
-        <meta
-          name="description"
-          content="About Shubhayan Bagchi (devBuku) — final-year CSE student from Kolkata, backend-focused developer, SIH 2023 Finalist, and Coding Club Group Leader at SVIST."
-        />
-        <meta
-          property="og:title"
-          content="About — Shubhayan Bagchi (devBuku)"
-        />
-        <meta
-          property="og:description"
-          content="Final-year CSE student from Kolkata. Backend-focused developer, SIH 2023 Finalist, Coding Club Group Leader."
-        />
+        <title>About — Shubhayan Bagchi</title>
       </Helmet>
-
       <ScrollReveal>
-        <PageHeader>About</PageHeader>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
-          <div className="space-y-4 lg:col-span-3">
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: 'rgb(var(--color-text-muted))' }}
-            >
-              Final-year CSE student at SVIST (MAKAUT), Kolkata — actively
-              preparing for software engineering internships and full-time
-              roles.
+        <div className="mb-16 space-y-4 sm:mb-20">
+          <p className="eyebrow">a little more</p>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            About
+          </h1>
+          <p className="text-muted max-w-2xl text-lg">
+            Final-year CSE student, backend-focused developer, and curious
+            builder based in Kolkata.
+          </p>
+        </div>
+      </ScrollReveal>
+      <div className="grid gap-12 lg:grid-cols-5">
+        <ScrollReveal className="lg:col-span-3">
+          <div className="text-muted space-y-5 text-lg leading-relaxed">
+            <p>
+              I build production-ready systems and full-stack applications with
+              a focus on clear architecture, useful interfaces, and dependable
+              behavior.
             </p>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: 'rgb(var(--color-text-muted))' }}
-            >
-              Focused on backend engineering and building production-ready
-              systems. My final-year project was a College ERP — built to solve
-              the fragmented-system problems we lived through across four years
-              of college.
+            <p>
+              My final-year project is a College ERP designed to solve the
+              fragmented-system problems we experienced across four years of
+              college.
             </p>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: 'rgb(var(--color-text-muted))' }}
-            >
-              SIH 2023 Finalist, Coding Club Group Leader. I daily-drive Arch
-              Linux with i3wm and develop in Neovim.
+            <p>
+              Outside code, I daily-drive Arch Linux with i3wm, develop in
+              Neovim, solve DSA problems, and enjoy learning how systems work.
             </p>
-
-            <div
-              className="mt-6 border-t pt-6"
-              style={{ borderColor: 'rgb(var(--color-border))' }}
-            >
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                education
-              </p>
-              <p className="text-base font-medium">
-                {personal.about.education.degree}
-              </p>
-              <p
-                className="mt-0.5 text-base"
-                style={{ color: 'rgb(var(--color-text-muted))' }}
-              >
-                {personal.about.education.institution}
-              </p>
-              <p
-                className="mt-0.5 font-mono text-[13px]"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                {personal.about.education.period}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {personal.about.education.coursework.map((c) => (
-                  <span
-                    key={c}
-                    className="inline-flex items-center rounded border px-2 py-0.5 font-mono text-[13px]"
-                    style={{
-                      borderColor: 'rgb(var(--color-border))',
-                      color: 'rgb(var(--color-text-muted))',
-                    }}
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-
             <div
               className="border-t pt-6"
               style={{ borderColor: 'rgb(var(--color-border))' }}
             >
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                currently
+              <p className="eyebrow">education</p>
+              <p className="font-medium text-[rgb(var(--color-text))]">
+                {personal.about.education.degree}
               </p>
-              <ul className="space-y-1.5">
-                {[
-                  'Solving LeetCode daily for DSA consistency',
-                  'Revising Core CS — OS, DBMS, Networks, OOP',
-                  'Building full-stack projects with React & Node.js',
-                  'Learning Docker, AWS, and deployment workflows',
-                  'Preparing for SDE internship interviews',
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-2 text-base"
-                    style={{ color: 'rgb(var(--color-text-muted))' }}
-                  >
-                    <span
-                      className="shrink-0 font-mono text-[13px]"
-                      style={{ color: 'rgb(var(--color-text-faint))' }}
-                    >
-                      &rarr;
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="space-y-4 lg:col-span-2">
-            <div
-              className="rounded-xl border p-5"
-              style={{
-                borderColor: 'rgb(var(--color-border))',
-                backgroundColor: 'rgb(var(--color-bg-raised))',
-              }}
-            >
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                dev setup
-              </p>
-              <div className="space-y-1.5">
-                {Object.entries(personal.about.devSetup).map(([key, val]) => (
-                  <div key={key} className="flex justify-between text-base">
-                    <span style={{ color: 'rgb(var(--color-text-faint))' }}>
-                      {key}
-                    </span>
-                    <span style={{ color: 'rgb(var(--color-text-muted))' }}>
-                      {val}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="rounded-xl border p-5"
-              style={{
-                borderColor: 'rgb(var(--color-border))',
-                backgroundColor: 'rgb(var(--color-bg-raised))',
-              }}
-            >
-              <p
-                className="mb-3 font-mono text-[13px] uppercase tracking-wider"
-                style={{ color: 'rgb(var(--color-text-faint))' }}
-              >
-                seeking
-              </p>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: 'rgb(var(--color-text-muted))' }}
-              >
-                Software engineering internships and entry-level SDE roles. Open
-                to backend, full-stack, and systems-related positions.
+              <p>{personal.about.education.institution}</p>
+              <p className="text-faint font-mono text-sm">
+                {personal.about.education.period}
               </p>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
-
+        </ScrollReveal>
+        <ScrollReveal delay={80} className="lg:col-span-2">
+          <div className="space-y-4">
+            <div className="card">
+              <p className="eyebrow">dev setup</p>
+              {Object.entries(personal.about.devSetup).map(([key, val]) => (
+                <div
+                  key={key}
+                  className="flex justify-between border-b py-2 last:border-0"
+                  style={{ borderColor: 'rgb(var(--color-border-subtle))' }}
+                >
+                  <span className="text-faint">{key}</span>
+                  <span className="text-muted">{val}</span>
+                </div>
+              ))}
+            </div>
+            <div className="card">
+              <p className="eyebrow">seeking</p>
+              <p className="text-muted">
+                Software engineering internships and entry-level SDE roles in
+                backend, full-stack, and systems engineering.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
       <ScrollReveal delay={100}>
-        <section className="mt-14">
-          <SectionHeading>Skills</SectionHeading>
-          <SkillSection />
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal delay={150}>
-        <section className="mt-14">
-          <SectionHeading>Achievements</SectionHeading>
-          <div className="space-y-5">
-            {personal.achievements.map((ach, i) => (
-              <div key={i}>
-                <p className="text-base font-medium">{ach.title}</p>
-                <p
-                  className="mt-0.5 text-base"
-                  style={{ color: 'rgb(var(--color-text-muted))' }}
-                >
-                  {ach.subtitle}
-                </p>
-                <p
-                  className="mt-0.5 text-base leading-relaxed"
-                  style={{ color: 'rgb(var(--color-text-faint))' }}
-                >
-                  {ach.description}
-                </p>
-              </div>
-            ))}
+        <section className="section-block">
+          <div className="section-intro">
+            <div>
+              <p className="eyebrow">toolkit</p>
+              <h2>Skills</h2>
+            </div>
           </div>
+          <SkillSection />
         </section>
       </ScrollReveal>
     </div>

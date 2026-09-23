@@ -21,7 +21,10 @@ export default function Projects() {
     .filter((g) => g.items.length > 0);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: 'rgb(var(--color-bg))' }}
+    >
       <Helmet>
         <title>Projects — Shubhayan Bagchi (devBuku)</title>
         <meta
@@ -38,28 +41,58 @@ export default function Projects() {
         />
       </Helmet>
 
-      <ScrollReveal>
-        <PageHeader>Projects</PageHeader>
-      </ScrollReveal>
-
-      <div className="space-y-16 sm:space-y-20">
-        {grouped.map((group) => (
-          <section key={group.label}>
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <ScrollReveal>
+          <div className="mb-16 space-y-4 sm:mb-20">
             <p
-              className="mb-6 font-mono text-[13px] uppercase tracking-widest"
-              style={{ color: 'rgb(var(--color-text-faint))' }}
+              className="eyebrow"
+              style={{ color: 'rgb(var(--color-accent))' }}
             >
-              * {group.label}
+              portfolio
             </p>
-            <div className="space-y-1">
-              {group.items.map((project, i) => (
-                <ScrollReveal key={project.id} delay={i * 40}>
-                  <ProjectRow project={project} />
-                </ScrollReveal>
-              ))}
-            </div>
-          </section>
-        ))}
+            <h1
+              className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+              style={{ lineHeight: '1.1', letterSpacing: '-0.02em' }}
+            >
+              Projects
+            </h1>
+            <p
+              className="max-w-2xl text-lg"
+              style={{ color: 'rgb(var(--color-text-muted))' }}
+            >
+              Backend systems, full-stack applications, and production-ready web
+              projects built with modern technologies.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="space-y-20 sm:space-y-24">
+          {grouped.map((group, groupIndex) => (
+            <section key={group.label}>
+              <ScrollReveal delay={groupIndex * 50}>
+                <div className="section-intro mb-8 sm:mb-12">
+                  <h2
+                    className="eyebrow"
+                    style={{ color: 'rgb(var(--color-accent))' }}
+                  >
+                    {group.label}
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              <div className="project-grid">
+                {group.items.map((project, i) => (
+                  <ScrollReveal
+                    key={project.id}
+                    delay={groupIndex * 50 + i * 40}
+                  >
+                    <ProjectRow project={project} />
+                  </ScrollReveal>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );
