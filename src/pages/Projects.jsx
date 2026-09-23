@@ -29,16 +29,30 @@ export default function Projects() {
         />
       </Helmet>
       <ScrollReveal>
-        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
-          <p className="eyebrow">01 / selected work</p>
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+        <header className="projects-hero section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
+          <div className="projects-hero-top">
+            <p className="eyebrow">01 / selected work</p>
+            <span className="projects-count">
+              {String(projects.length).padStart(2, '0')} projects
+            </span>
+          </div>
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <h1 className="projects-title max-w-4xl">
               Things I&apos;ve built, shipped, and learned from.
             </h1>
             <p className="text-muted max-w-xs text-lg leading-relaxed">
               A collection of systems, experiments, and interfaces built from
               real problems.
             </p>
+          </div>
+          <div className="projects-toolbelt" aria-label="Project categories">
+            <span className="toolbelt-label">Browse by</span>
+            {grouped.map((group) => (
+              <span className="toolbelt-pill" key={group.label}>
+                {group.label}{' '}
+                <b>{String(group.items.length).padStart(2, '0')}</b>
+              </span>
+            ))}
           </div>
         </header>
       </ScrollReveal>
