@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { ArrowUpRight } from 'lucide-react';
 import { personal } from '../data/personal';
 import ScrollReveal from '../components/ScrollReveal';
 import SkillSection from '../components/SkillSection';
@@ -10,20 +11,23 @@ export default function About() {
         <title>About — Shubhayan Bagchi</title>
       </Helmet>
       <ScrollReveal>
-        <div className="mb-16 space-y-4 sm:mb-20">
-          <p className="eyebrow">a little more</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            About
+        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
+          <p className="eyebrow">01 / about</p>
+          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+            Building with curiosity, care, and a little terminal noise.
           </h1>
-          <p className="text-muted max-w-2xl text-lg">
+          <p className="text-muted mt-6 max-w-2xl text-lg leading-relaxed">
             Final-year CSE student, backend-focused developer, and curious
             builder based in Kolkata.
           </p>
-        </div>
+        </header>
       </ScrollReveal>
-      <div className="grid gap-12 lg:grid-cols-5">
-        <ScrollReveal className="lg:col-span-3">
-          <div className="text-muted space-y-5 text-lg leading-relaxed">
+      <div
+        className="grid gap-12 border-t pt-12 lg:grid-cols-[1.2fr_0.8fr]"
+        style={{ borderColor: 'rgb(var(--color-border))' }}
+      >
+        <ScrollReveal>
+          <div className="text-muted space-y-6 text-lg leading-relaxed">
             <p>
               I build production-ready systems and full-stack applications with
               a focus on clear architecture, useful interfaces, and dependable
@@ -38,35 +42,19 @@ export default function About() {
               Outside code, I daily-drive Arch Linux with i3wm, develop in
               Neovim, solve DSA problems, and enjoy learning how systems work.
             </p>
-            <div
-              className="border-t pt-6"
-              style={{ borderColor: 'rgb(var(--color-border))' }}
-            >
-              <p className="eyebrow">education</p>
-              <p className="font-medium text-[rgb(var(--color-text))]">
-                {personal.about.education.degree}
-              </p>
-              <p>{personal.about.education.institution}</p>
-              <p className="text-faint font-mono text-sm">
-                {personal.about.education.period}
-              </p>
-            </div>
           </div>
         </ScrollReveal>
-        <ScrollReveal delay={80} className="lg:col-span-2">
-          <div className="space-y-4">
+        <ScrollReveal delay={80}>
+          <div className="flex flex-col gap-4">
             <div className="card">
-              <p className="eyebrow">dev setup</p>
-              {Object.entries(personal.about.devSetup).map(([key, val]) => (
-                <div
-                  key={key}
-                  className="flex justify-between border-b py-2 last:border-0"
-                  style={{ borderColor: 'rgb(var(--color-border-subtle))' }}
-                >
-                  <span className="text-faint">{key}</span>
-                  <span className="text-muted">{val}</span>
-                </div>
-              ))}
+              <p className="eyebrow">education</p>
+              <p className="font-medium">{personal.about.education.degree}</p>
+              <p className="text-muted mt-1">
+                {personal.about.education.institution}
+              </p>
+              <p className="text-faint mt-3 font-mono text-sm">
+                {personal.about.education.period}
+              </p>
             </div>
             <div className="card">
               <p className="eyebrow">seeking</p>
@@ -74,6 +62,9 @@ export default function About() {
                 Software engineering internships and entry-level SDE roles in
                 backend, full-stack, and systems engineering.
               </p>
+              <a href="/contact" className="text-link mt-5">
+                Let&apos;s talk <ArrowUpRight data-icon="inline-end" />
+              </a>
             </div>
           </div>
         </ScrollReveal>
@@ -82,9 +73,12 @@ export default function About() {
         <section className="section-block">
           <div className="section-intro">
             <div>
-              <p className="eyebrow">toolkit</p>
+              <p className="eyebrow">02 / toolkit</p>
               <h2>Skills</h2>
             </div>
+            <span className="text-muted max-w-xs text-sm">
+              Tools I reach for when turning an idea into something useful.
+            </span>
           </div>
           <SkillSection />
         </section>

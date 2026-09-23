@@ -69,7 +69,7 @@ export default function ProjectDetail() {
       className="min-h-screen"
       style={{ backgroundColor: 'rgb(var(--color-bg))' }}
     >
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <Helmet>
           <title>{project.title} — devBuku Projects</title>
           <meta
@@ -137,7 +137,7 @@ export default function ProjectDetail() {
         {/* Title + Status */}
         <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
               {project.title}
             </h1>
             <p

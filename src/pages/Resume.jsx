@@ -10,33 +10,35 @@ export default function Resume() {
         <title>Resume — Shubhayan Bagchi</title>
       </Helmet>
       <ScrollReveal>
-        <div className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-          <div className="space-y-4">
-            <p className="eyebrow">the short version</p>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Resume
-            </h1>
-            <p className="text-muted max-w-xl text-lg">
-              Education, experience, projects, and the technologies I use to
-              build.
-            </p>
+        <header className="section-block !border-0 !pb-12 !pt-0 sm:!pb-16">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <div>
+              <p className="eyebrow">01 / the short version</p>
+              <h1 className="text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+                Resume
+              </h1>
+              <p className="text-muted mt-6 max-w-xl text-lg leading-relaxed">
+                Education, experience, projects, and the technologies I use to
+                build.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a href={personal.resume} download className="btn btn-primary">
+                <Download data-icon="inline-start" />
+                Download PDF
+              </a>
+              <a
+                href={personal.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                <ExternalLink data-icon="inline-start" />
+                Open
+              </a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <a href={personal.resume} download className="btn-primary">
-              <Download data-icon="inline-start" />
-              Download PDF
-            </a>
-            <a
-              href={personal.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              <ExternalLink data-icon="inline-start" />
-              Open
-            </a>
-          </div>
-        </div>
+        </header>
       </ScrollReveal>
       <ScrollReveal delay={80}>
         <div

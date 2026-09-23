@@ -13,19 +13,31 @@ export default function Experience() {
         />
       </Helmet>
       <ScrollReveal>
-        <div className="mb-16 space-y-4 sm:mb-20">
-          <p className="eyebrow">background</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Experience
+        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
+          <p className="eyebrow">01 / background</p>
+          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+            The work behind the work.
           </h1>
-          <p className="text-muted max-w-2xl text-lg">
+          <p className="text-muted mt-6 max-w-2xl text-lg leading-relaxed">
             A timeline of the teams, projects, and communities that shaped how I
             build software.
           </p>
-        </div>
+        </header>
       </ScrollReveal>
       <ScrollReveal delay={60}>
-        <ExperienceTimeline />
+        <section
+          className="border-t pt-10"
+          style={{ borderColor: 'rgb(var(--color-border))' }}
+        >
+          <div className="mb-10 flex items-center gap-4">
+            <p className="eyebrow !mb-0">02 / timeline</p>
+            <div
+              className="h-px flex-1"
+              style={{ backgroundColor: 'rgb(var(--color-border))' }}
+            />
+          </div>
+          <ExperienceTimeline />
+        </section>
       </ScrollReveal>
     </div>
   );

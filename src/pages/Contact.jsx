@@ -10,29 +10,34 @@ export default function Contact() {
         <title>Contact — Shubhayan Bagchi</title>
       </Helmet>
       <ScrollReveal>
-        <div className="mb-16 max-w-3xl space-y-5 sm:mb-20">
-          <p className="eyebrow">get in touch</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
+          <p className="eyebrow">01 / get in touch</p>
+          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
             Let&apos;s build something useful.
           </h1>
-          <p className="text-muted text-lg">
+          <p className="text-muted mt-6 max-w-2xl text-lg leading-relaxed">
             I&apos;m open to software engineering internships, entry-level
             roles, and thoughtful collaborations.
           </p>
-        </div>
+        </header>
       </ScrollReveal>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div
+        className="grid gap-4 border-t pt-10 md:grid-cols-2"
+        style={{ borderColor: 'rgb(var(--color-border))' }}
+      >
         <ScrollReveal>
           <a
             href={`mailto:${personal.email}`}
-            className="card group flex items-start justify-between"
+            className="card group flex min-h-56 flex-col justify-between"
           >
-            <span>
-              <Mail className="mb-8 text-accent" />
-              <span className="eyebrow">email</span>
-              <span className="text-muted block text-lg">{personal.email}</span>
-            </span>
-            <ArrowUpRight className="text-faint transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            <div className="flex items-start justify-between">
+              <Mail className="text-accent" />
+              <ArrowUpRight className="text-faint transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </div>
+            <div>
+              <p className="eyebrow">email</p>
+              <p className="text-muted text-lg">{personal.email}</p>
+            </div>
           </a>
         </ScrollReveal>
         <ScrollReveal delay={70}>
@@ -40,25 +45,27 @@ export default function Contact() {
             href={personal.social.github.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="card group flex items-start justify-between"
+            className="card group flex min-h-56 flex-col justify-between"
           >
-            <span>
-              <span className="mb-8 block font-mono text-2xl text-accent">
-                GH
-              </span>
-              <span className="eyebrow">github</span>
-              <span className="text-muted block text-lg">
+            <div className="flex items-start justify-between">
+              <span className="font-mono text-2xl text-accent">GH</span>
+              <ArrowUpRight className="text-faint transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+            </div>
+            <div>
+              <p className="eyebrow">github</p>
+              <p className="text-muted text-lg">
                 {personal.social.github.url.replace('https://', '')}
-              </span>
-            </span>
-            <ArrowUpRight className="text-faint transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </p>
+            </div>
           </a>
         </ScrollReveal>
-        <div className="card md:col-span-2">
-          <MapPin className="mb-8 text-accent" />
-          <p className="eyebrow">location</p>
-          <p className="text-muted text-lg">{personal.location}</p>
-        </div>
+        <ScrollReveal delay={100}>
+          <div className="card md:col-span-2">
+            <MapPin className="text-accent" />
+            <p className="eyebrow mt-12">location</p>
+            <p className="text-muted text-lg">{personal.location}</p>
+          </div>
+        </ScrollReveal>
       </div>
     </div>
   );

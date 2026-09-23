@@ -8,18 +8,22 @@ export default function Blog() {
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <Helmet>
         <title>Blog — Shubhayan Bagchi</title>
+        <meta
+          name="description"
+          content="Notes and learnings about software engineering, projects, and the web."
+        />
       </Helmet>
       <ScrollReveal>
-        <div className="mb-16 space-y-4 sm:mb-20">
-          <p className="eyebrow">notes & learnings</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Blog
+        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
+          <p className="eyebrow">01 / notes &amp; learnings</p>
+          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+            Thinking out loud about building software.
           </h1>
-          <p className="text-muted max-w-2xl text-lg">
+          <p className="text-muted mt-6 max-w-2xl text-lg leading-relaxed">
             Writing about projects, backend engineering, deployment, and the
             lessons hiding inside the work.
           </p>
-        </div>
+        </header>
       </ScrollReveal>
       {blogPosts.length ? (
         <div className="grid gap-5 md:grid-cols-2">
@@ -31,10 +35,14 @@ export default function Blog() {
         </div>
       ) : (
         <ScrollReveal>
-          <div className="card py-20 text-center">
+          <div className="card flex min-h-64 flex-col justify-center">
             <p className="eyebrow">coming soon</p>
-            <p className="text-muted text-lg">
-              No posts yet. I&apos;m collecting the first set of notes.
+            <p className="mt-2 text-2xl font-medium tracking-tight">
+              No posts yet.
+            </p>
+            <p className="text-muted mt-2 max-w-md">
+              I&apos;m collecting the first set of notes. Check back soon for
+              writing on systems, shipping, and the messy middle.
             </p>
           </div>
         </ScrollReveal>

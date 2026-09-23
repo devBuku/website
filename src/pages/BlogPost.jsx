@@ -35,7 +35,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
       <Helmet>
         <title>{post.title} — devBuku Blog</title>
         <meta
@@ -100,7 +100,7 @@ export default function BlogPost() {
               </span>
             )}
           </div>
-          <h1 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+          <h1 className="text-4xl font-semibold leading-tight tracking-[-0.05em] sm:text-5xl">
             {post.title}
           </h1>
           {post.tags && post.tags.length > 0 && (
