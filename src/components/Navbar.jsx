@@ -141,8 +141,10 @@ export default function Navbar() {
               <ThemeToggle dark={dark} onToggle={toggleTheme} />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="relative flex h-9 w-9 items-center justify-center rounded-lg opacity-60 transition-opacity hover:opacity-100"
-                aria-label="Toggle menu"
+                className="relative flex size-11 items-center justify-center rounded-lg opacity-60 transition-opacity hover:opacity-100"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                aria-controls="mobile-navigation"
               >
                 <div className="relative h-[18px] w-[18px]">
                   <Menu
@@ -179,6 +181,9 @@ export default function Navbar() {
 
       <div
         ref={drawerRef}
+        id="mobile-navigation"
+        role="dialog"
+        aria-label="Mobile navigation"
         className={`fixed inset-y-0 right-0 z-50 w-[80%] max-w-sm border-l transition-transform duration-[275ms] ease-out ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
