@@ -34,7 +34,7 @@ export default function Home() {
           property="og:description"
           content="Backend-focused full-stack developer building reliable systems and production-ready products."
         />
-        <meta property="og:image" content="/me.jpg" />
+        <meta property="og:image" content="/me.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
@@ -78,7 +78,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <div className="portrait-frame">
-            <img src="/me.jpg" alt="Shubhayan Bagchi" />
+            <img src="/me.png" alt="Shubhayan Bagchi" />
           </div>
           <div className="portrait-caption">
             <Sparkles size={14} /> Systems, APIs, and thoughtful interfaces
