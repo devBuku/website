@@ -521,8 +521,7 @@
   }
   .document-toc a:hover,
   .document-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-decoration: none;
   }
   .visual-notes {
     display: grid;
@@ -651,6 +650,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.85rem 1.25rem;
+  }
+  .contact-links a,
+  .contact-links a:hover {
+    text-decoration: none !important;
   }
   .document-cover {
     position: relative;
@@ -1032,7 +1035,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    border-top: 1px solid rgb(var(--color-border-subtle));
     margin-top: 0.9rem;
     padding-top: 0.9rem;
   }
@@ -1124,8 +1126,6 @@
     gap: 0.45rem;
   }
   .stack-list span {
-    border-bottom: 1px solid rgb(var(--color-border-subtle));
-    padding-bottom: 0.45rem;
     color: rgb(var(--color-text-muted));
     font-family: monospace;
     font-size: 0.75rem;
@@ -1262,7 +1262,7 @@
   }
   .project-detail-page .detail-status {
     padding-inline: 0;
-    border-width: 0 0 1px;
+    border: 0;
     padding-bottom: 0.3rem;
   }
   .project-detail-page .detail-media {
@@ -1383,6 +1383,10 @@
   }
   .project-detail-page .detail-section:first-child {
     padding-top: 3rem;
+    border-top: 0;
+  }
+  .project-detail-page .detail-section {
+    border-bottom: 0;
   }
   .project-detail-page .detail-meta-card {
     padding: 0;
