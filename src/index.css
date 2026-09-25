@@ -1247,9 +1247,19 @@
     border-bottom: 0;
   }
   .project-detail-page .detail-hero {
-    grid-template-columns: minmax(0, 1fr) 18rem;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 16rem);
     align-items: start;
+    gap: 2.5rem;
     padding-block: 3rem 2.5rem;
+  }
+  .project-detail-page .detail-hero-copy,
+  .project-detail-page .detail-meta-card {
+    min-width: 0;
+  }
+  .project-detail-page .detail-hero h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: clamp(3rem, 7vw, 5.5rem);
   }
   .project-detail-page .detail-kicker {
     margin-bottom: 1.25rem;
