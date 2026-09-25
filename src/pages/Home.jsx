@@ -75,7 +75,7 @@ export default function Home() {
           <div className="document-profile">
             <img src="/me.png" alt={`${personal.name} profile`} />
           </div>
-          <div>
+          <div className="document-identity-copy">
             <div className="document-kicker">Portfolio / 2026</div>
             <h1>{personal.name}</h1>
             <p className="document-role">{personal.role}</p>
@@ -114,7 +114,7 @@ export default function Home() {
             Resume
           </a>
         </nav>
-        <details className="document-jump">
+        <details className="document-jump" open>
           <summary>Jump to</summary>
           <nav aria-label="On this page">
             <a href="#skills">Skills</a>

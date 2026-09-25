@@ -1385,11 +1385,11 @@
       height: 7.5rem;
     }
     .document-identity {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin-top: 0.75rem;
+      margin-top: -1.5rem;
       padding-inline: 0.75rem;
+    }
+    .document-identity-copy {
+      margin-top: 0.5rem;
     }
     .document-identity h1 {
       font-size: clamp(2rem, 11vw, 3rem);
@@ -1407,7 +1407,7 @@
   }
 
   .document-cover {
-    height: 10rem;
+    height: 13rem;
     overflow: hidden;
     border: 1px solid rgb(var(--color-border));
     background: rgb(var(--color-bg-hover));
@@ -1422,15 +1422,13 @@
     content: '';
   }
   .document-identity {
-    display: flex;
-    align-items: flex-end;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: block;
+    margin-top: -2.25rem;
     padding-inline: 1.25rem;
   }
-  .document-identity > div:last-child {
+  .document-identity-copy {
     min-width: 0;
-    padding-bottom: 0.25rem;
+    margin-top: 0.65rem;
   }
   .document-profile {
     position: relative;
