@@ -1197,6 +1197,123 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* Monochrome editorial system: shared across every route. */
+  :root,
+  .light {
+    --color-bg: 250 250 250;
+    --color-bg-raised: 255 255 255;
+    --color-bg-hover: 240 240 240;
+    --color-bg-overlay: 232 232 232;
+    --color-text: 17 17 17;
+    --color-text-muted: 82 82 82;
+    --color-text-faint: 115 115 115;
+    --color-accent: 17 17 17;
+    --color-accent-hover: 82 82 82;
+    --color-accent-muted: 224 224 224;
+    --color-border: 205 205 205;
+    --color-border-subtle: 230 230 230;
+  }
+  html.dark {
+    --color-bg: 17 17 17;
+    --color-bg-raised: 25 25 25;
+    --color-bg-hover: 35 35 35;
+    --color-bg-overlay: 45 45 45;
+    --color-text: 245 245 245;
+    --color-text-muted: 178 178 178;
+    --color-text-faint: 125 125 125;
+    --color-accent: 245 245 245;
+    --color-accent-hover: 190 190 190;
+    --color-accent-muted: 58 58 58;
+    --color-border: 68 68 68;
+    --color-border-subtle: 45 45 45;
+  }
+  html.dark body,
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark p,
+  html.dark span,
+  html.dark strong,
+  html.dark a {
+    color: inherit;
+  }
+  html.dark body {
+    color: rgb(245 245 245);
+  }
+  html.light body {
+    color: rgb(17 17 17);
+  }
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+  }
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  .btn-ghost,
+  .document-action,
+  .document-action-secondary,
+  .back-link,
+  .text-link {
+    border-radius: 0 !important;
+  }
+  .btn-primary {
+    background: rgb(var(--color-text));
+    color: rgb(var(--color-bg));
+  }
+  .btn-primary:hover {
+    background: rgb(var(--color-text-muted));
+  }
+  .btn-outline:hover,
+  .document-action:hover,
+  .document-action-secondary:hover {
+    border-color: rgb(var(--color-text));
+    color: rgb(var(--color-text));
+    background: transparent;
+  }
+  .portrait-frame,
+  .project-card,
+  .project-placeholder,
+  .detail-media,
+  .detail-meta-card,
+  .detail-aside-card,
+  .document-card,
+  .resume-frame {
+    border-radius: 0 !important;
+  }
+  .portrait-frame {
+    transform: none;
+    box-shadow: 1rem 1rem 0 rgb(var(--color-text) / 0.12);
+  }
+  .hero-portrait::before,
+  .hero-portrait::after {
+    border-radius: 0 !important;
+  }
+  .toolbelt-pill,
+  .tag,
+  .detail-status,
+  .status-dot {
+    border-radius: 0 !important;
+  }
+  .text-accent,
+  .eyebrow,
+  .project-index,
+  .document-link,
+  .back-link {
+    color: rgb(var(--color-text));
+  }
 }
 
 @layer utilities {
