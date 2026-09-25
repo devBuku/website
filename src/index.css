@@ -1710,8 +1710,15 @@
   .document-contact-row a:hover,
   .document-link:hover,
   .back-link:hover,
-  .recent-list a:hover {
+  .recent-list a:hover,
+  .footer-contact-link:hover {
     text-decoration-color: currentColor;
+  }
+  .footer-contact-link {
+    color: rgb(var(--color-accent));
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--color-accent-muted));
+    text-underline-offset: 0.18em;
   }
 }
 

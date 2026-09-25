@@ -11,6 +11,41 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-base font-medium">{personal.name}</p>
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm"
+            aria-label="Contact links"
+          >
+            <a
+              className="footer-contact-link"
+              href={`mailto:${personal.email}`}
+            >
+              Email
+            </a>
+            <a
+              className="footer-contact-link"
+              href={personal.social.github.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="footer-contact-link"
+              href={personal.social.linkedin.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="footer-contact-link"
+              href={personal.resume}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
+          </nav>
         </div>
 
         <p
