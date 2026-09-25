@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import Home from './pages/Home';
@@ -66,7 +65,6 @@ export default function App() {
     >
       <ScrollToTop />
       <ScrollProgressBar />
-      <Navbar />
       <main className="flex-1">
         <AnimatePresence mode="wait">
           <PageTransition key={location.pathname}>

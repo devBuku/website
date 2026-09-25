@@ -126,6 +126,32 @@ export default function Home() {
         </nav>
       </header>
 
+      <section className="visual-notes" aria-label="Selected visual notes">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80"
+            alt="Desk with design sketches and a laptop"
+          />
+          <figcaption>Systems, interfaces, and thoughtful details.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
+            alt="Laptop showing a software development workspace"
+          />
+          <figcaption>
+            Building reliable things from first principles.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+            alt="People collaborating around a laptop"
+          />
+          <figcaption>Collaborating clearly, shipping with care.</figcaption>
+        </figure>
+      </section>
+
       <main>
         <Section id="skills" number="01" title="Skills">
           <div className="skill-list">
