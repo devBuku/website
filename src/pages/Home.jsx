@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, MapPin } from 'lucide-react';
 import { personal } from '../data/personal';
 import { projects } from '../data/projects';
 import { experience } from '../data/experience';
@@ -18,14 +18,6 @@ function Section({ id, number, title, children }) {
       </div>
       {children}
     </section>
-  );
-}
-
-function ExternalLink({ href, children }) {
-  return (
-    <a className="document-link" href={href} target="_blank" rel="noreferrer">
-      {children} <ArrowUpRight size={14} aria-hidden="true" />
-    </a>
   );
 }
 
@@ -93,27 +85,6 @@ export default function Home() {
             <span className="status-dot" /> Open to software engineering roles
           </span>
         </div>
-        <nav className="document-contact-row" aria-label="Contact links">
-          <a href={`mailto:${personal.email}`}>
-            <Mail size={14} aria-hidden="true" /> Email
-          </a>
-          <span aria-hidden="true">/</span>
-          <a href={personal.social.github.url} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <span aria-hidden="true">/</span>
-          <a
-            href={personal.social.linkedin.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-          <span aria-hidden="true">/</span>
-          <a href={personal.resume} target="_blank" rel="noreferrer">
-            Resume
-          </a>
-        </nav>
         <details className="document-jump" open>
           <summary>Jump to</summary>
           <nav aria-label="On this page">
@@ -122,7 +93,6 @@ export default function Home() {
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
           </nav>
         </details>
         <div className="document-intro-block">
@@ -237,23 +207,6 @@ export default function Home() {
             {personal.about.education.institution} ·{' '}
             {personal.about.education.period}
           </p>
-        </Section>
-
-        <Section id="contact" number="05" title="Contact">
-          <p className="contact-intro">
-            If you are building something useful, I would be glad to hear about
-            it.
-          </p>
-          <div className="contact-links">
-            <a className="document-link" href={`mailto:${personal.email}`}>
-              {personal.email} <ArrowUpRight size={14} aria-hidden="true" />
-            </a>
-            {Object.values(personal.social).map((social) => (
-              <ExternalLink key={social.label} href={social.url}>
-                {social.label}
-              </ExternalLink>
-            ))}
-          </div>
         </Section>
       </main>
     </div>
