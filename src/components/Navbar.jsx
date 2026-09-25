@@ -1,5 +1,8 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { personal } from '../data/personal';
 import { navLinks } from '../data/navigation';
@@ -7,7 +10,7 @@ const MOBILE_BREAKPOINT = 768;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const drawerRef = useRef(null);
   const touchStartX = useRef(0);
 
@@ -75,7 +78,7 @@ export default function Navbar() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             <Link
-              to="/"
+              href="/"
               onClick={closeMenu}
               className="text-base font-semibold tracking-tight transition-opacity hover:opacity-70"
             >
@@ -86,7 +89,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
-                  to={link.to}
+                  href={link.to}
                   className={`rounded-lg px-3 py-1.5 text-base font-medium transition-all duration-200 ${
                     pathname === link.to ? '' : 'opacity-60 hover:opacity-100'
                   }`}
@@ -172,7 +175,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.to}
-              to={link.to}
+              href={link.to}
               onClick={closeMenu}
               className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${
                 pathname === link.to ? '' : 'opacity-60 hover:opacity-100'

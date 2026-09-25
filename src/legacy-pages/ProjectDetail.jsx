@@ -1,4 +1,7 @@
-import { useParams, Link } from 'react-router-dom';
+'use client';
+
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowUpRight, Check, ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
@@ -52,7 +55,7 @@ export default function ProjectDetail() {
           <h1 className="mt-3 text-4xl font-semibold tracking-[-0.06em]">
             Nothing here.
           </h1>
-          <Link to="/work" className="btn btn-outline mt-8">
+          <Link href="/work" className="btn btn-outline mt-8">
             <ArrowLeft data-icon="inline-start" /> Back to work
           </Link>
         </div>
@@ -83,7 +86,7 @@ export default function ProjectDetail() {
       </Helmet>
 
       <div className="detail-topline">
-        <Link to="/work" className="back-link">
+        <Link href="/work" className="back-link">
           <ArrowLeft data-icon="inline-start" /> All work
         </Link>
         <span className="mono-label">Case study / {project.id}</span>
@@ -206,7 +209,7 @@ export default function ProjectDetail() {
       </div>
 
       <footer className="detail-footer">
-        <Link to="/work" className="back-link">
+        <Link href="/work" className="back-link">
           <ArrowLeft data-icon="inline-start" /> Back to all work
         </Link>
       </footer>

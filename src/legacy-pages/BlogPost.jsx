@@ -1,4 +1,7 @@
-import { useParams, Link } from 'react-router-dom';
+'use client';
+
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
@@ -24,7 +27,7 @@ export default function BlogPost() {
           Post not found.
         </p>
         <Link
-          to="/blog"
+          href="/blog"
           className="btn-outline mt-4 inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-base font-medium transition-all duration-200"
         >
           <ArrowLeft size={14} />
@@ -70,7 +73,7 @@ export default function BlogPost() {
 
       <ScrollReveal>
         <Link
-          to="/blog"
+          href="/blog"
           className="mb-8 inline-flex items-center gap-1.5 text-base transition-opacity hover:opacity-70"
           style={{ color: 'rgb(var(--color-text-muted))' }}
         >

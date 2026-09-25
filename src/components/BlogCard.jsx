@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 function BlogPlaceholder({ title }) {
@@ -51,7 +51,7 @@ export default function BlogCard({ post }) {
 
         {/* Title - fixed 2-line container */}
         <Link
-          to={`/blog/${post.slug}`}
+          href={`/blog/${post.slug}`}
           className="group my-2 block"
           style={{ minHeight: '2.5rem' }}
         >
@@ -72,7 +72,7 @@ export default function BlogCard({ post }) {
 
         {/* Read link - always at bottom */}
         <Link
-          to={`/blog/${post.slug}`}
+          href={`/blog/${post.slug}`}
           className="mt-auto inline-flex items-center gap-1 pt-3 text-sm font-medium transition-opacity hover:opacity-70"
           style={{ color: 'rgb(var(--color-accent))' }}
         >

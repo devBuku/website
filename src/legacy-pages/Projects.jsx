@@ -1,6 +1,8 @@
+'use client';
+
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { projects } from '../data/projects';
 import ScrollReveal from '../components/ScrollReveal';
 
@@ -31,7 +33,7 @@ export default function Projects() {
       <ScrollReveal>
         <header className="projects-hero section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
           <div className="projects-hero-top">
-            <Link className="back-link" to="/">
+            <Link className="back-link" href="/">
               <ArrowLeft data-icon="inline-start" /> Home
             </Link>
             <span className="projects-count">
@@ -78,7 +80,7 @@ export default function Projects() {
                 >
                   <Link
                     className="work-project-item"
-                    to={`/projects/${project.id}`}
+                    href={`/projects/${project.id}`}
                   >
                     <span className="work-project-number">
                       {String(index + 1).padStart(2, '0')}
@@ -113,7 +115,7 @@ export default function Projects() {
         >
           <p className="eyebrow">more from the portfolio</p>
           <h2>Back to the beginning.</h2>
-          <Link to="/" className="btn btn-outline mt-8">
+          <Link href="/" className="btn btn-outline mt-8">
             Return home <ArrowUpRight data-icon="inline-end" />
           </Link>
         </div>

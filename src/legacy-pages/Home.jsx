@@ -1,3 +1,5 @@
+'use client';
+
 import { Helmet } from 'react-helmet-async';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { personal } from '../data/personal';

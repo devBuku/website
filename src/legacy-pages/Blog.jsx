@@ -1,3 +1,5 @@
+'use client';
+
 import { Helmet } from 'react-helmet-async';
 import BlogCard from '../components/BlogCard';
 import ScrollReveal from '../components/ScrollReveal';
