@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { ArrowUpRight, Code2, Library, MicVocal, Sparkles } from 'lucide-react';
 
 const statusLabels = {
@@ -10,15 +12,15 @@ const statusLabels = {
 const icons = { Library, Sparkles, MicVocal, Code2 };
 
 export default function ProjectRow({ project }) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const Icon = icons[project.icon] || Code2;
   return (
     <article
       className="project-card"
-      onClick={() => navigate(`/projects/${project.id}`)}
+      onClick={() => router.push(`/projects/${project.id}`)}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ')
-          navigate(`/projects/${project.id}`);
+          router.push(`/projects/${project.id}`);
       }}
       role="button"
       tabIndex={0}

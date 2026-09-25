@@ -11,34 +11,41 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-base font-medium">{personal.name}</p>
-
-          <div
-            className="flex items-center gap-4 text-[13px]"
-            style={{ color: 'rgb(var(--color-text-faint))' }}
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm"
+            aria-label="Contact links"
           >
             <a
+              className="footer-contact-link"
+              href={`mailto:${personal.email}`}
+            >
+              Email
+            </a>
+            <a
+              className="footer-contact-link"
               href={personal.social.github.url}
               target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-70"
+              rel="noreferrer"
             >
               GitHub
             </a>
             <a
+              className="footer-contact-link"
               href={personal.social.linkedin.url}
               target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-70"
+              rel="noreferrer"
             >
               LinkedIn
             </a>
             <a
-              href={`mailto:${personal.email}`}
-              className="transition-opacity hover:opacity-70"
+              className="footer-contact-link"
+              href={personal.resume}
+              target="_blank"
+              rel="noreferrer"
             >
-              Email
+              Resume
             </a>
-          </div>
+          </nav>
         </div>
 
         <p
