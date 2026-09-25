@@ -118,6 +118,7 @@ export default function Home() {
           <summary>Jump to</summary>
           <nav aria-label="On this page">
             <a href="#skills">Skills</a>
+            <a href="#recent">Recent</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
@@ -153,7 +154,17 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="experience" number="02" title="Experience">
+        <Section id="recent" number="02" title="Recent">
+          <ul className="recent-list">
+            <li>Building full-stack tools for real operational workflows.</li>
+            <li>Open to software engineering roles and collaborations.</li>
+            <li>
+              <a href="#projects">Review the latest project work</a>.
+            </li>
+          </ul>
+        </Section>
+
+        <Section id="experience" number="03" title="Experience">
           <div className="document-list">
             {experience.map((entry) => (
               <article

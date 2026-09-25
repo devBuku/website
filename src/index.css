@@ -150,7 +150,6 @@
     border: 1px solid rgb(var(--color-accent) / 0.35);
     border-radius: 38% 62% 54% 46% / 38% 38% 62% 62%;
     background: rgb(var(--color-accent-muted));
-    box-shadow: 1.5rem 1.5rem 0 rgb(var(--color-accent) / 0.1);
     transform: rotate(3deg);
   }
   .portrait-frame img {
@@ -172,7 +171,6 @@
     height: 0.5rem;
     border-radius: 999px;
     background: rgb(var(--color-accent));
-    box-shadow: 0 0 0 4px rgb(var(--color-accent) / 0.12);
   }
   .stats-strip {
     display: grid;
@@ -303,11 +301,7 @@
     align-items: center;
     justify-content: center;
     color: rgb(var(--color-accent));
-    background: linear-gradient(
-      135deg,
-      rgb(var(--color-accent-muted) / 0.35),
-      rgb(var(--color-bg-overlay))
-    );
+    background: rgb(var(--color-bg-hover));
   }
   .project-visual span {
     position: absolute;
@@ -1195,11 +1189,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1.25rem;
-    background: linear-gradient(
-      135deg,
-      rgb(var(--color-bg-hover)),
-      rgb(var(--color-bg-raised))
-    );
+    background: rgb(var(--color-bg-hover));
   }
   .home-project-placeholder span,
   .home-project-meta {
@@ -1569,7 +1559,39 @@
   }
   .portrait-frame {
     transform: none;
-    box-shadow: 1rem 1rem 0 rgb(var(--color-text) / 0.12);
+    box-shadow: none;
+  }
+  .hero-portrait::before,
+  .hero-portrait::after,
+  .status-dot {
+    box-shadow: none;
+  }
+  .recent-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    border: 1px solid rgb(var(--color-border));
+    padding: 1rem 1.25rem 1rem 2rem;
+    color: rgb(var(--color-text-muted));
+    line-height: 1.6;
+  }
+  .recent-list a {
+    color: rgb(var(--color-accent));
+  }
+  .projects-title,
+  .detail-hero h1 {
+    font-family: 'Geist', system-ui, sans-serif;
+  }
+  .toolbelt-pill,
+  .tag,
+  .document-kicker,
+  .entry-date,
+  .projects-count,
+  .toolbelt-label,
+  .toolbelt-pill b,
+  .home-project-placeholder span,
+  .home-project-meta {
+    font-family: 'Geist', system-ui, sans-serif;
   }
   .hero-portrait::before,
   .hero-portrait::after {
