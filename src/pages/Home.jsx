@@ -177,46 +177,58 @@ export default function Home() {
 
         <Section id="projects" number="03" title="Projects">
           <div className="home-project-previews">
-            {visibleProjects.map((project, index) => (
-              <article className="home-project-preview" key={project.id}>
-                <a
-                  className="home-project-media"
-                  href={`/projects/${project.id}`}
-                  aria-label={`View ${project.title} case study`}
-                >
-                  {project.image ? (
-                    <img src={project.image} alt={`${project.title} preview`} />
-                  ) : (
-                    <div
-                      className="home-project-placeholder"
-                      aria-hidden="true"
-                    >
-                      <span>
-                        Project / {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <strong>{project.title}</strong>
-                    </div>
-                  )}
-                </a>
-                <div className="home-project-info">
-                  <div className="home-project-meta">
-                    <span>{project.category}</span>
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </div>
-                  <h3>{project.title}</h3>
-                  {project.tagline && <p>{project.tagline}</p>}
-                  {Array.isArray(project.tech) && project.tech.length > 0 && (
-                    <p className="entry-stack">
-                      {project.tech.slice(0, 5).join(' · ')}
-                    </p>
-                  )}
-                  <a className="document-link" href={`/projects/${project.id}`}>
-                    Read case study{' '}
-                    <ArrowUpRight size={14} aria-hidden="true" />
+            {visibleProjects.map((project, index) => {
+              const tech = Array.isArray(project.tech)
+                ? project.tech.filter((item) => typeof item === 'string')
+                : [];
+
+              return (
+                <article className="home-project-preview" key={project.id}>
+                  <a
+                    className="home-project-media"
+                    href={`/projects/${project.id}`}
+                    aria-label={`View ${project.title} case study`}
+                  >
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                      />
+                    ) : (
+                      <div
+                        className="home-project-placeholder"
+                        aria-hidden="true"
+                      >
+                        <span>
+                          Project / {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <strong>{project.title}</strong>
+                      </div>
+                    )}
                   </a>
-                </div>
-              </article>
-            ))}
+                  <div className="home-project-info">
+                    <div className="home-project-meta">
+                      <span>{project.category}</span>
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                    </div>
+                    <h3>{project.title}</h3>
+                    {project.tagline && <p>{project.tagline}</p>}
+                    {tech.length > 0 && (
+                      <p className="entry-stack">
+                        {tech.slice(0, 5).join(' · ')}
+                      </p>
+                    )}
+                    <a
+                      className="document-link"
+                      href={`/projects/${project.id}`}
+                    >
+                      Read case study{' '}
+                      <ArrowUpRight size={14} aria-hidden="true" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </Section>
 
