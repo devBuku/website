@@ -8,14 +8,14 @@
     --color-bg-raised: 255 255 252;
     --color-bg-hover: 255 243 224;
     --color-bg-overlay: 255 236 204;
-    --color-text: 48 38 28;
-    --color-text-muted: 111 91 70;
-    --color-text-faint: 163 139 111;
-    --color-accent: 224 112 34;
-    --color-accent-hover: 184 78 22;
-    --color-accent-muted: 255 211 151;
-    --color-border: 232 211 183;
-    --color-border-subtle: 244 228 207;
+    --color-text: 44 34 24;
+    --color-text-muted: 92 70 48;
+    --color-text-faint: 137 108 78;
+    --color-accent: 210 82 20;
+    --color-accent-hover: 169 61 14;
+    --color-accent-muted: 255 191 112;
+    --color-border: 221 190 153;
+    --color-border-subtle: 239 216 187;
   }
 
   html {
@@ -25,7 +25,7 @@
   body {
     background: rgb(var(--color-bg));
     color: rgb(var(--color-text));
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
     background-image: radial-gradient(
       circle at 8% 4%,
       rgb(var(--color-accent-muted) / 0.28),
@@ -401,6 +401,7 @@
     margin-top: 1.25rem;
     color: rgb(var(--color-accent));
     font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 600;
   }
   .document-intro {
     max-width: 40rem;
@@ -1657,7 +1658,7 @@
   }
   .projects-title,
   .detail-hero h1 {
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
   .toolbelt-pill,
   .tag,
@@ -1668,7 +1669,7 @@
   .toolbelt-pill b,
   .home-project-placeholder span,
   .home-project-meta {
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
   .hero-portrait::before,
   .hero-portrait::after {
@@ -1684,8 +1685,33 @@
   .eyebrow,
   .project-index,
   .document-link,
-  .back-link {
-    color: rgb(var(--color-text));
+  .back-link,
+  .document-contact-row a,
+  .work-project-tech,
+  .recent-list a {
+    color: rgb(var(--color-accent));
+  }
+  .document-section-heading h2,
+  .work-project-title,
+  .entry-title,
+  .detail-hero h1,
+  .projects-title {
+    font-weight: 700;
+  }
+  .document-contact-row a,
+  .document-link,
+  .back-link,
+  .recent-list a {
+    text-decoration: underline !important;
+    text-decoration-color: rgb(var(--color-accent-muted));
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+  .document-contact-row a:hover,
+  .document-link:hover,
+  .back-link:hover,
+  .recent-list a:hover {
+    text-decoration-color: currentColor;
   }
 }
 
