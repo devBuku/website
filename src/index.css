@@ -1437,6 +1437,42 @@
     margin-top: 0.45rem;
     font-size: 0.9rem;
   }
+  .blog-preview-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .blog-preview {
+    border-top: 1px solid rgb(var(--color-border));
+    padding-top: 1rem;
+  }
+  .blog-preview-meta {
+    color: rgb(var(--color-text-faint));
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .blog-preview h3 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .blog-preview h3 a:hover {
+    color: rgb(var(--color-accent));
+  }
+  .blog-preview > p:not(.blog-preview-meta) {
+    margin-top: 0.4rem;
+    color: rgb(var(--color-text-muted));
+  }
+  .blog-preview .document-link {
+    display: inline-flex;
+    margin-top: 0.8rem;
+  }
+  .blog-empty-preview {
+    border: 1px dashed rgb(var(--color-border));
+    padding: 1.25rem;
+    color: rgb(var(--color-text-muted));
+  }
   .document-contact-row {
     display: flex;
     flex-wrap: wrap;
