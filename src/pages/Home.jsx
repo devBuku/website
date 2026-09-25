@@ -70,6 +70,14 @@ export default function Home() {
       </Helmet>
 
       <header className="document-header">
+        <div className="document-cover" aria-hidden="true">
+          <span className="cover-orb cover-orb-one" />
+          <span className="cover-orb cover-orb-two" />
+          <span className="cover-grid" />
+        </div>
+        <div className="document-profile">
+          <img src="/me.png" alt="" />
+        </div>
         <div className="document-kicker">Portfolio / 2026</div>
         <h1>{personal.name}</h1>
         <p className="document-role">{personal.role}</p>
