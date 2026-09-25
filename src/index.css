@@ -4,33 +4,20 @@
 
 @layer base {
   :root {
-    --color-bg: 247 247 244;
+    --color-bg: 255 252 246;
     --color-bg-raised: 255 255 252;
-    --color-bg-hover: 239 240 235;
-    --color-bg-overlay: 230 232 225;
-    --color-text: 28 31 29;
-    --color-text-muted: 91 98 91;
-    --color-text-faint: 133 141 132;
-    --color-accent: 49 102 84;
-    --color-accent-hover: 35 78 64;
-    --color-accent-muted: 197 220 207;
-    --color-border: 216 220 211;
-    --color-border-subtle: 230 232 226;
+    --color-bg-hover: 255 243 224;
+    --color-bg-overlay: 255 236 204;
+    --color-text: 48 38 28;
+    --color-text-muted: 111 91 70;
+    --color-text-faint: 163 139 111;
+    --color-accent: 224 112 34;
+    --color-accent-hover: 184 78 22;
+    --color-accent-muted: 255 211 151;
+    --color-border: 232 211 183;
+    --color-border-subtle: 244 228 207;
   }
-  .light {
-    --color-bg: 247 247 244;
-    --color-bg-raised: 255 255 252;
-    --color-bg-hover: 239 240 235;
-    --color-bg-overlay: 230 232 225;
-    --color-text: 28 31 29;
-    --color-text-muted: 91 98 91;
-    --color-text-faint: 133 141 132;
-    --color-accent: 49 102 84;
-    --color-accent-hover: 35 78 64;
-    --color-accent-muted: 197 220 207;
-    --color-border: 216 220 211;
-    --color-border-subtle: 230 232 226;
-  }
+
   .dark {
     --color-bg: 20 24 22;
     --color-bg-raised: 28 34 30;
@@ -48,9 +35,6 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
-  }
-  html.dark {
-    color-scheme: dark;
   }
   body {
     background: rgb(var(--color-bg));
@@ -1410,15 +1394,15 @@
     height: 13rem;
     overflow: hidden;
     border: 1px solid rgb(var(--color-border));
-    background: rgb(var(--color-bg-hover));
+    background: rgb(var(--color-accent-muted));
   }
   .document-cover::after {
     display: block;
     width: 52%;
     height: 100%;
     margin-left: 48%;
-    border-left: 1px solid rgb(var(--color-border));
-    background: rgb(var(--color-bg-raised));
+    border-left: 1px solid rgb(var(--color-accent) / 0.3);
+    background: rgb(var(--color-bg-raised) / 0.82);
     content: '';
   }
   .document-identity {

@@ -3,27 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { personal } from '../data/personal';
 import { navLinks } from '../data/navigation';
-import ThemeToggle from './ThemeToggle';
-
-function getInitialTheme() {
-  const stored = localStorage.getItem('theme');
-  if (stored) return stored === 'dark';
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
 const MOBILE_BREAKPOINT = 768;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(getInitialTheme);
   const { pathname } = useLocation();
   const drawerRef = useRef(null);
   const touchStartX = useRef(0);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('light', !dark);
-    document.documentElement.classList.toggle('dark', dark);
-  }, [dark]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -75,14 +61,6 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  const toggleTheme = () => {
-    setDark((prev) => {
-      const next = !prev;
-      localStorage.setItem('theme', next ? 'dark' : 'light');
-      return next;
-    });
-  };
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -123,12 +101,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden items-center gap-2 md:flex">
-              <ThemeToggle dark={dark} onToggle={toggleTheme} />
-            </div>
-
             <div className="flex items-center gap-2 md:hidden">
-              <ThemeToggle dark={dark} onToggle={toggleTheme} />
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="relative flex size-11 items-center justify-center rounded-lg opacity-60 transition-opacity hover:opacity-100"
