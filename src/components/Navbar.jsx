@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FileText, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { personal } from '../data/personal';
 import { navLinks } from '../data/navigation';
 import ThemeToggle from './ThemeToggle';
@@ -124,16 +124,6 @@ export default function Navbar() {
             </div>
 
             <div className="hidden items-center gap-2 md:flex">
-              <a
-                href={personal.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-base font-medium transition-colors duration-200"
-                aria-label="View Resume"
-              >
-                <FileText size={14} />
-                Resume
-              </a>
               <ThemeToggle dark={dark} onToggle={toggleTheme} />
             </div>
 
@@ -226,22 +216,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-        </div>
-
-        <div
-          className="mx-6 mt-2 border-t pt-4"
-          style={{ borderColor: 'rgb(var(--color-border))' }}
-        >
-          <a
-            href={personal.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className="flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium opacity-60 transition-colors hover:opacity-100"
-          >
-            <FileText size={16} />
-            Resume
-          </a>
         </div>
       </div>
     </>

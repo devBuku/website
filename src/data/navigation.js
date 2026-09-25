@@ -1,7 +1,6 @@
 export const navLinks = [
-  { to: '/work', label: 'Projects' },
+  { to: '/work', label: 'Work' },
   { to: '/experience', label: 'Experience' },
-  { to: '/blog', label: 'Blog' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ];

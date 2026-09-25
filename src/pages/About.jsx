@@ -6,28 +6,30 @@ import SkillSection from '../components/SkillSection';
 
 export default function About() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div className="document-page">
       <Helmet>
-        <title>About — Shubhayan Bagchi</title>
+        <title>About — {personal.name}</title>
       </Helmet>
       <ScrollReveal>
-        <header className="section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
-          <p className="eyebrow">01 / about</p>
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.06em] sm:text-7xl">
+        <header className="document-header">
+          <p className="document-kicker">About / profile</p>
+          <h1 className="document-title">
             Building with curiosity, care, and a little terminal noise.
           </h1>
-          <p className="text-muted mt-6 max-w-2xl text-lg leading-relaxed">
+          <p className="document-lede">
             Final-year CSE student, backend-focused developer, and curious
             builder based in Kolkata.
           </p>
         </header>
       </ScrollReveal>
-      <div
-        className="grid gap-12 border-t pt-12 lg:grid-cols-[1.2fr_0.8fr]"
-        style={{ borderColor: 'rgb(var(--color-border))' }}
-      >
+      <div className="document-grid">
         <ScrollReveal>
-          <div className="text-muted space-y-6 text-lg leading-relaxed">
+          <article className="document-card document-copy">
+            <div className="document-tabs">
+              <span className="tab-active">Hello</span>
+              <span>Approach</span>
+              <span>Outside code</span>
+            </div>
             <p>
               I build production-ready systems and full-stack applications with
               a focus on clear architecture, useful interfaces, and dependable
@@ -42,23 +44,23 @@ export default function About() {
               Outside code, I daily-drive Arch Linux with i3wm, develop in
               Neovim, solve DSA problems, and enjoy learning how systems work.
             </p>
-          </div>
+          </article>
         </ScrollReveal>
         <ScrollReveal delay={80}>
-          <div className="flex flex-col gap-4">
-            <div className="card">
-              <p className="eyebrow">education</p>
-              <p className="font-medium">{personal.about.education.degree}</p>
-              <p className="text-muted mt-1">
+          <aside className="document-stack">
+            <div className="document-card">
+              <p className="document-label">Education</p>
+              <p className="document-value">
+                {personal.about.education.degree}
+              </p>
+              <p className="document-muted">
                 {personal.about.education.institution}
               </p>
-              <p className="text-faint mt-3 font-mono text-sm">
-                {personal.about.education.period}
-              </p>
+              <p className="document-meta">{personal.about.education.period}</p>
             </div>
-            <div className="card">
-              <p className="eyebrow">seeking</p>
-              <p className="text-muted">
+            <div className="document-card">
+              <p className="document-label">Currently seeking</p>
+              <p className="document-muted">
                 Software engineering internships and entry-level SDE roles in
                 backend, full-stack, and systems engineering.
               </p>
@@ -66,19 +68,19 @@ export default function About() {
                 Let&apos;s talk <ArrowUpRight data-icon="inline-end" />
               </a>
             </div>
-          </div>
+          </aside>
         </ScrollReveal>
       </div>
       <ScrollReveal delay={100}>
-        <section className="section-block">
-          <div className="section-intro">
+        <section className="document-section">
+          <div className="document-section-heading">
             <div>
-              <p className="eyebrow">02 / toolkit</p>
-              <h2>Skills</h2>
+              <p className="document-kicker">Toolkit / 02</p>
+              <h2>Skills I reach for.</h2>
             </div>
-            <span className="text-muted max-w-xs text-sm">
-              Tools I reach for when turning an idea into something useful.
-            </span>
+            <p className="document-muted">
+              Tools for turning an idea into something useful.
+            </p>
           </div>
           <SkillSection />
         </section>
