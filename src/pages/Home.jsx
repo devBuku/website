@@ -70,17 +70,17 @@ export default function Home() {
       </Helmet>
 
       <header className="document-header">
-        <div className="document-cover" aria-hidden="true">
-          <span className="cover-orb cover-orb-one" />
-          <span className="cover-orb cover-orb-two" />
-          <span className="cover-grid" />
+        <div className="document-cover" aria-hidden="true" />
+        <div className="document-identity">
+          <div className="document-profile">
+            <img src="/me.png" alt={`${personal.name} profile`} />
+          </div>
+          <div>
+            <div className="document-kicker">Portfolio / 2026</div>
+            <h1>{personal.name}</h1>
+            <p className="document-role">{personal.role}</p>
+          </div>
         </div>
-        <div className="document-profile">
-          <img src="/me.png" alt="" />
-        </div>
-        <div className="document-kicker">Portfolio / 2026</div>
-        <h1>{personal.name}</h1>
-        <p className="document-role">{personal.role}</p>
         <p className="document-intro">
           I build backend systems and full-stack products that make complicated
           workflows easier to use and harder to break.
