@@ -1306,6 +1306,93 @@
     background: rgb(var(--color-bg-raised));
   }
 
+  .work-index {
+    display: grid;
+    gap: 4rem;
+  }
+  .work-group-heading {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    color: rgb(var(--color-text-faint));
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .work-group-heading h2 {
+    color: rgb(var(--color-text));
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .work-project-list {
+    display: grid;
+    gap: 0.25rem;
+  }
+  .work-project-item {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.25rem 0;
+    color: inherit;
+    transition:
+      background-color 180ms ease,
+      padding-inline 180ms ease;
+  }
+  .work-project-item:hover {
+    background: rgb(var(--color-bg-hover));
+    padding-inline: 1rem;
+  }
+  .work-project-number,
+  .work-project-tech {
+    color: rgb(var(--color-text-faint));
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+  .work-project-main {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .work-project-title {
+    font-size: clamp(1.25rem, 2vw, 1.8rem);
+    letter-spacing: -0.04em;
+  }
+  .work-project-description {
+    max-width: 42rem;
+    color: rgb(var(--color-text-muted));
+    line-height: 1.5;
+  }
+  .work-project-tech {
+    margin-top: 0.3rem;
+  }
+  .work-project-arrow {
+    color: rgb(var(--color-text-muted));
+    transition:
+      transform 180ms ease,
+      color 180ms ease;
+  }
+  .work-project-item:hover .work-project-arrow {
+    color: rgb(var(--color-text));
+    transform: translate(2px, -2px);
+  }
+  @media (max-width: 640px) {
+    .work-group-heading,
+    .work-project-item {
+      grid-template-columns: 2rem minmax(0, 1fr) auto;
+    }
+    .work-group-heading span:last-child {
+      display: none;
+    }
+    .work-project-description {
+      font-size: 0.9rem;
+    }
+  }
+
   .document-cover {
     height: 7rem;
     margin-bottom: -1.5rem;

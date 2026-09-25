@@ -3,7 +3,6 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ScrollReveal from '../components/ScrollReveal';
-import ProjectRow from '../components/ProjectRow';
 
 const categoryOrder = ['production', 'completed', 'ongoing', 'experiments'];
 const categoryLabels = {
@@ -59,22 +58,48 @@ export default function Projects() {
           </div>
         </header>
       </ScrollReveal>
-      <div className="space-y-20 sm:space-y-24">
+      <div className="work-index">
         {grouped.map((group, groupIndex) => (
-          <section key={group.label}>
+          <section className="work-group" key={group.label}>
             <ScrollReveal delay={groupIndex * 50}>
-              <div className="mb-8 flex items-center gap-4">
-                <p className="eyebrow !mb-0">{group.label}</p>
-                <div
-                  className="h-px flex-1"
-                  style={{ backgroundColor: 'rgb(var(--color-border))' }}
-                />
+              <div className="work-group-heading">
+                <span>{String(groupIndex + 1).padStart(2, '0')}</span>
+                <h2>{group.label}</h2>
+                <span>
+                  {String(group.items.length).padStart(2, '0')} projects
+                </span>
               </div>
             </ScrollReveal>
-            <div className="project-grid">
-              {group.items.map((project, i) => (
-                <ScrollReveal key={project.id} delay={groupIndex * 50 + i * 40}>
-                  <ProjectRow project={project} />
+            <div className="work-project-list">
+              {group.items.map((project, index) => (
+                <ScrollReveal
+                  key={project.id}
+                  delay={groupIndex * 50 + index * 40}
+                >
+                  <Link
+                    className="work-project-item"
+                    to={`/projects/${project.id}`}
+                  >
+                    <span className="work-project-number">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="work-project-main">
+                      <span className="work-project-title">
+                        {project.title}
+                      </span>
+                      <span className="work-project-description">
+                        {project.tagline}
+                      </span>
+                      <span className="work-project-tech">
+                        {project.tech.slice(0, 5).join(' · ')}
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      className="work-project-arrow"
+                      size={18}
+                      aria-hidden="true"
+                    />
+                  </Link>
                 </ScrollReveal>
               ))}
             </div>
