@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRight, FileText, Mail, MapPin } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { personal } from '../data/personal';
 import { projects } from '../data/projects';
 import { experience } from '../data/experience';
@@ -93,37 +93,41 @@ export default function Home() {
             <span className="status-dot" /> Open to software engineering roles
           </span>
         </div>
-        <div className="document-actions" aria-label="Important links">
-          <a
-            className="document-action-primary"
-            href={`mailto:${personal.email}`}
-          >
-            <Mail size={15} aria-hidden="true" /> Email me
+        <nav className="document-contact-row" aria-label="Contact links">
+          <a href={`mailto:${personal.email}`}>
+            <Mail size={14} aria-hidden="true" /> Email
           </a>
-          <a
-            className="document-action-secondary"
-            href={personal.resume}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FileText size={15} aria-hidden="true" /> View resume
+          <span aria-hidden="true">/</span>
+          <a href={personal.social.github.url} target="_blank" rel="noreferrer">
+            GitHub
           </a>
+          <span aria-hidden="true">/</span>
           <a
-            className="document-action-secondary"
             href={personal.social.linkedin.url}
             target="_blank"
             rel="noreferrer"
           >
-            LinkedIn <ArrowUpRight size={14} aria-hidden="true" />
+            LinkedIn
           </a>
-        </div>
-        <nav className="document-toc" aria-label="On this page">
-          <span>On this page</span>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <span aria-hidden="true">/</span>
+          <a href={personal.resume} target="_blank" rel="noreferrer">
+            Resume
+          </a>
         </nav>
+        <details className="document-jump">
+          <summary>Jump to</summary>
+          <nav aria-label="On this page">
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </details>
+        <div className="document-intro-block">
+          <p>{personal.about.intro[0]}</p>
+          <p>{personal.about.intro[1]}</p>
+        </div>
       </header>
 
       <main>
