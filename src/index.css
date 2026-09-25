@@ -1718,6 +1718,31 @@
   }
 }
 
+/* Selective dividers: major sections only, never every content row. */
+.section-block,
+.document-section {
+  border-bottom: 1px solid rgb(var(--color-border-subtle));
+}
+.section-block:last-child,
+.document-section:last-child {
+  border-bottom: 0;
+}
+.skill-row,
+.document-entry,
+.detail-section,
+.stack-list span,
+.detail-meta-row {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+.work-project-item + .work-project-item,
+.home-project-preview + .home-project-preview {
+  border-top: 0;
+}
+.detail-section + .detail-section {
+  margin-top: 1rem;
+}
+
 @layer utilities {
   .scroll-reveal {
     opacity: 0;
