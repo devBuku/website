@@ -73,6 +73,25 @@ export default function Home() {
             <p className="document-role">{personal.role}</p>
           </div>
         </div>
+        <nav className="document-contact-row" aria-label="Contact information">
+          <a href={`mailto:${personal.email}`}>{personal.email}</a>
+          <span aria-hidden="true">/</span>
+          <a href={personal.social.github.url} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href={personal.social.linkedin.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <span aria-hidden="true">/</span>
+          <a href={personal.resume} target="_blank" rel="noreferrer">
+            Resume
+          </a>
+        </nav>
         <p className="document-intro">
           I build backend systems and full-stack products that make complicated
           workflows easier to use and harder to break.
