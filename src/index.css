@@ -1388,7 +1388,7 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 0.35rem;
-      margin-top: -1.25rem;
+      margin-top: 0.75rem;
       padding-inline: 0.75rem;
     }
     .document-identity h1 {
@@ -1425,8 +1425,12 @@
     display: flex;
     align-items: flex-end;
     gap: 1rem;
-    margin-top: -2rem;
+    margin-top: 1rem;
     padding-inline: 1.25rem;
+  }
+  .document-identity > div:last-child {
+    min-width: 0;
+    padding-bottom: 0.25rem;
   }
   .document-profile {
     position: relative;
