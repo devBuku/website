@@ -34,7 +34,7 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: personal.name,
-    url: window.location.origin,
+    url: typeof window === 'undefined' ? '' : window.location.origin,
     jobTitle: personal.role,
     email: `mailto:${personal.email}`,
     address: {
@@ -125,8 +125,9 @@ export default function Home() {
           </nav>
         </details>
         <div className="document-intro-block">
-          <p>{personal.about.intro[0]}</p>
-          <p>{personal.about.intro[1]}</p>
+          {personal.about?.intro?.slice(0, 2).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </header>
 
@@ -203,10 +204,12 @@ export default function Home() {
                     <span>{String(index + 1).padStart(2, '0')}</span>
                   </div>
                   <h3>{project.title}</h3>
-                  <p>{project.tagline}</p>
-                  <p className="entry-stack">
-                    {project.tech.slice(0, 5).join(' · ')}
-                  </p>
+                  {project.tagline && <p>{project.tagline}</p>}
+                  {project.tech?.length > 0 && (
+                    <p className="entry-stack">
+                      {project.tech.slice(0, 5).join(' · ')}
+                    </p>
+                  )}
                   <a className="document-link" href={`/projects/${project.id}`}>
                     Read case study{' '}
                     <ArrowUpRight size={14} aria-hidden="true" />
