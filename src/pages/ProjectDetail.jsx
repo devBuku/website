@@ -209,9 +209,6 @@ export default function ProjectDetail() {
         <Link to="/work" className="back-link">
           <ArrowLeft data-icon="inline-start" /> Back to all work
         </Link>
-        <Link to="/contact" className="text-link">
-          Have a project in mind? <ArrowUpRight data-icon="inline-end" />
-        </Link>
       </footer>
     </main>
   );

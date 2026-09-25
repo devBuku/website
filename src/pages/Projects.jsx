@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ScrollReveal from '../components/ScrollReveal';
 import ProjectRow from '../components/ProjectRow';
@@ -31,7 +32,9 @@ export default function Projects() {
       <ScrollReveal>
         <header className="projects-hero section-block !border-0 !pb-16 !pt-0 sm:!pb-20">
           <div className="projects-hero-top">
-            <p className="eyebrow">01 / selected work</p>
+            <Link className="back-link" to="/">
+              <ArrowLeft data-icon="inline-start" /> Home
+            </Link>
             <span className="projects-count">
               {String(projects.length).padStart(2, '0')} projects
             </span>
@@ -83,11 +86,11 @@ export default function Projects() {
           className="closing-cta border-t"
           style={{ borderColor: 'rgb(var(--color-border))' }}
         >
-          <p className="eyebrow">have a problem worth solving?</p>
-          <h2>Let&apos;s make it real.</h2>
-          <a href="/contact" className="btn btn-outline mt-8">
-            Start a conversation <ArrowUpRight data-icon="inline-end" />
-          </a>
+          <p className="eyebrow">more from the portfolio</p>
+          <h2>Back to the beginning.</h2>
+          <Link to="/" className="btn btn-outline mt-8">
+            Return home <ArrowUpRight data-icon="inline-end" />
+          </Link>
         </div>
       </ScrollReveal>
     </div>

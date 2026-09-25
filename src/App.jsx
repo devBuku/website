@@ -5,11 +5,8 @@ import { Analytics } from '@vercel/analytics/react';
 import Footer from './components/Footer';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import Home from './pages/Home';
-import About from './pages/About';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
-import Experience from './pages/Experience';
-import Contact from './pages/Contact';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -72,9 +69,6 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/work" element={<Projects />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </PageTransition>
