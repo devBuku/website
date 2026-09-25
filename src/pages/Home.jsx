@@ -205,7 +205,7 @@ export default function Home() {
                   </div>
                   <h3>{project.title}</h3>
                   {project.tagline && <p>{project.tagline}</p>}
-                  {project.tech?.length > 0 && (
+                  {Array.isArray(project.tech) && project.tech.length > 0 && (
                     <p className="entry-stack">
                       {project.tech.slice(0, 5).join(' · ')}
                     </p>
