@@ -456,6 +456,44 @@
   .document-status {
     color: rgb(var(--color-text-muted));
   }
+  .document-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+  }
+  .document-action-primary,
+  .document-action-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 999px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+  .document-action-primary {
+    color: rgb(var(--color-bg));
+    background: rgb(var(--color-ink));
+    border-color: rgb(var(--color-ink));
+  }
+  .document-action-secondary {
+    color: rgb(var(--color-text));
+    background: rgb(var(--color-surface));
+  }
+  .document-action-primary:hover,
+  .document-action-secondary:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--color-accent));
+  }
+  .document-action-secondary:hover {
+    background: rgb(var(--color-accent-muted) / 0.16);
+  }
   .document-toc {
     display: flex;
     flex-wrap: wrap;

@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowUpRight, FileText, Mail, MapPin } from 'lucide-react';
 import { personal } from '../data/personal';
 import { projects } from '../data/projects';
 import { experience } from '../data/experience';
@@ -92,6 +92,30 @@ export default function Home() {
           <span className="document-status">
             <span className="status-dot" /> Open to software engineering roles
           </span>
+        </div>
+        <div className="document-actions" aria-label="Important links">
+          <a
+            className="document-action-primary"
+            href={`mailto:${personal.email}`}
+          >
+            <Mail size={15} aria-hidden="true" /> Email me
+          </a>
+          <a
+            className="document-action-secondary"
+            href={personal.resume}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FileText size={15} aria-hidden="true" /> View resume
+          </a>
+          <a
+            className="document-action-secondary"
+            href={personal.social.linkedin.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
         </div>
         <nav className="document-toc" aria-label="On this page">
           <span>On this page</span>
