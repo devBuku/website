@@ -126,32 +126,6 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="visual-notes" aria-label="Selected visual notes">
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=80"
-            alt="Desk with design sketches and a laptop"
-          />
-          <figcaption>Systems, interfaces, and thoughtful details.</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"
-            alt="Laptop showing a software development workspace"
-          />
-          <figcaption>
-            Building reliable things from first principles.
-          </figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-            alt="People collaborating around a laptop"
-          />
-          <figcaption>Collaborating clearly, shipping with care.</figcaption>
-        </figure>
-      </section>
-
       <main>
         <Section id="skills" number="01" title="Skills">
           <div className="skill-list">
@@ -197,37 +171,42 @@ export default function Home() {
         </Section>
 
         <Section id="projects" number="03" title="Projects">
-          <div className="document-list">
-            {visibleProjects.map((project) => (
-              <article
-                className="document-entry project-entry"
-                key={project.id}
-              >
-                <div className="entry-date">{project.category}</div>
-                <div>
-                  <div className="entry-title-row">
-                    <h3>{project.title}</h3>
-                    <ExternalLink href={`/projects/${project.id}`}>
-                      Details
-                    </ExternalLink>
+          <div className="home-project-previews">
+            {visibleProjects.map((project, index) => (
+              <article className="home-project-preview" key={project.id}>
+                <a
+                  className="home-project-media"
+                  href={`/projects/${project.id}`}
+                  aria-label={`View ${project.title} case study`}
+                >
+                  {project.image ? (
+                    <img src={project.image} alt={`${project.title} preview`} />
+                  ) : (
+                    <div
+                      className="home-project-placeholder"
+                      aria-hidden="true"
+                    >
+                      <span>
+                        Project / {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <strong>{project.title}</strong>
+                    </div>
+                  )}
+                </a>
+                <div className="home-project-info">
+                  <div className="home-project-meta">
+                    <span>{project.category}</span>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
                   </div>
-                  <p>{project.description}</p>
-                  <p className="entry-stack">{project.tech.join(' · ')}</p>
-                  <div className="entry-links">
-                    {project.github && project.github !== '#' && (
-                      <ExternalLink href={project.github}>Source</ExternalLink>
-                    )}
-                    {project.githubBackend && (
-                      <ExternalLink href={project.githubBackend}>
-                        Backend source
-                      </ExternalLink>
-                    )}
-                    {project.githubFrontend && (
-                      <ExternalLink href={project.githubFrontend}>
-                        Frontend source
-                      </ExternalLink>
-                    )}
-                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.tagline}</p>
+                  <p className="entry-stack">
+                    {project.tech.slice(0, 5).join(' · ')}
+                  </p>
+                  <a className="document-link" href={`/projects/${project.id}`}>
+                    Read case study{' '}
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
                 </div>
               </article>
             ))}
