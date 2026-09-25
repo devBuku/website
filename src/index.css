@@ -1388,6 +1388,21 @@
   .project-detail-page .detail-section {
     border-bottom: 0;
   }
+
+  /* Keep structure airy instead of segmented by repeated rules. */
+  .section-block,
+  .document-section,
+  .skill-row,
+  .document-entry,
+  .detail-section,
+  .detail-footer,
+  .detail-topline,
+  .home-project-preview,
+  .home-project-meta,
+  .document-jump {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
   .project-detail-page .detail-meta-card {
     padding: 0;
     border: 0;
