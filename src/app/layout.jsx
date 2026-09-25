@@ -1,7 +1,6 @@
 import '../index.css';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
 import ScrollProgressBar from '../components/ScrollProgressBar';
 
 export const metadata = {
@@ -23,7 +22,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <div className="flex min-h-screen flex-col" style={{ backgroundColor: 'rgb(var(--color-bg))' }}>
-      <Navbar />
       <ScrollProgressBar />
       <main className="flex-1">{children}</main>
       <Footer />

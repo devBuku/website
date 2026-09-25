@@ -1,11 +1,13 @@
 'use client';
 
 import { Helmet } from 'react-helmet-async';
+import Link from 'next/link';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { personal } from '../data/personal';
 import { projects } from '../data/projects';
 import { experience } from '../data/experience';
 import { skillCategories } from '../data/skills';
+import { blogPosts } from '../content/blog/posts';
 
 const visibleProjects = projects
   .filter((project) => project.id !== 'college-erp')
@@ -112,7 +114,8 @@ export default function Home() {
             <a href="#skills">Skills</a>
             <a href="#recent">Recent</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
+            <a href="#projects">Work</a>
+            <a href="#blog">Blog</a>
             <a href="#education">Education</a>
           </nav>
         </details>
@@ -232,9 +235,40 @@ export default function Home() {
               );
             })}
           </div>
+          <div className="mt-8">
+            <Link className="document-link" href="/work">
+              View all work <ArrowUpRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
         </Section>
 
-        <Section id="education" number="04" title="Education">
+        <Section id="blog" number="04" title="Writing">
+          {blogPosts.length > 0 ? (
+            <div className="blog-preview-grid">
+              {blogPosts.slice(0, 3).map((post) => (
+                <article className="blog-preview" key={post.slug}>
+                  <p className="blog-preview-meta">{post.date} · {post.readTime}</p>
+                  <h3><Link href={`/blog/${post.slug}`}>{post.title}</Link></h3>
+                  <p>{post.excerpt}</p>
+                  <Link className="document-link" href={`/blog/${post.slug}`}>
+                    Read more <ArrowUpRight size={14} aria-hidden="true" />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="blog-empty-preview">
+              <p>Notes on building reliable software, thoughtful interfaces, and useful products.</p>
+            </div>
+          )}
+          <div className="mt-8">
+            <Link className="document-link" href="/blog">
+              Go to the blog <ArrowUpRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
+        </Section>
+
+        <Section id="education" number="05" title="Education">
           <p className="education-line">
             <strong>{personal.about.education.degree}</strong> ·{' '}
             {personal.about.education.institution} ·{' '}
