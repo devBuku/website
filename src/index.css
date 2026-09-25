@@ -404,6 +404,198 @@
     margin-block: 1.5rem 2rem;
     line-height: 1.6;
   }
+  .document-shell {
+    width: min(100% - 2rem, 760px);
+    margin-inline: auto;
+    padding-bottom: 5rem;
+  }
+  .document-header {
+    padding: 5.5rem 0 3rem;
+  }
+  .document-kicker,
+  .document-number,
+  .entry-date {
+    color: rgb(var(--color-text-faint));
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .document-header h1 {
+    margin-top: 1.5rem;
+    font-size: clamp(3.5rem, 12vw, 6.5rem);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+  .document-role {
+    margin-top: 1.25rem;
+    color: rgb(var(--color-accent));
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+  }
+  .document-intro {
+    max-width: 40rem;
+    margin-top: 1rem;
+    color: rgb(var(--color-text-muted));
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+  .document-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    color: rgb(var(--color-text-faint));
+    font-size: 0.82rem;
+  }
+  .document-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .document-status {
+    color: rgb(var(--color-text-muted));
+  }
+  .document-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-top: 3.5rem;
+    padding-block: 1rem;
+    border-block: 1px solid rgb(var(--color-border));
+    font-size: 0.82rem;
+  }
+  .document-toc span {
+    color: rgb(var(--color-text-faint));
+    margin-right: 0.25rem;
+  }
+  .document-toc a,
+  .document-link {
+    color: rgb(var(--color-accent));
+  }
+  .document-toc a:hover,
+  .document-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .document-section {
+    padding-block: 3rem;
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+  .document-section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .document-section-heading h2 {
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+  .skill-list,
+  .document-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .skill-row {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    padding-block: 0.7rem;
+    border-top: 1px solid rgb(var(--color-border-subtle));
+  }
+  .skill-row h3 {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: rgb(var(--color-text-muted));
+  }
+  .skill-row p,
+  .education-line,
+  .contact-intro {
+    color: rgb(var(--color-text-muted));
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .document-entry {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1.25rem;
+    padding-block: 1.5rem;
+    border-top: 1px solid rgb(var(--color-border-subtle));
+  }
+  .document-entry h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+  }
+  .entry-company,
+  .entry-date {
+    margin-top: 0.35rem;
+  }
+  .document-entry ul {
+    display: grid;
+    gap: 0.45rem;
+    margin-top: 0.85rem;
+    padding-left: 1.1rem;
+    color: rgb(var(--color-text-muted));
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .document-entry li {
+    list-style: disc;
+  }
+  .project-entry > div:last-child > p {
+    margin-top: 0.75rem;
+    color: rgb(var(--color-text-muted));
+    font-size: 0.93rem;
+    line-height: 1.6;
+  }
+  .entry-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .entry-title-row .document-link,
+  .entry-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+  .entry-stack {
+    color: rgb(var(--color-text-faint)) !important;
+    font-family: monospace;
+    font-size: 0.76rem !important;
+  }
+  .entry-links {
+    margin-top: 0.8rem;
+  }
+  .contact-intro {
+    margin-bottom: 1rem;
+  }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+  }
+  @media (max-width: 560px) {
+    .document-shell {
+      width: min(100% - 2.25rem, 760px);
+    }
+    .document-header {
+      padding-top: 4rem;
+    }
+    .skill-row,
+    .document-entry {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    .entry-date {
+      order: -1;
+    }
+  }
   @media (min-width: 768px) {
     .hero-grid {
       grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.7fr);
