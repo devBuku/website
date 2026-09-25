@@ -18,20 +18,6 @@
     --color-border-subtle: 244 228 207;
   }
 
-  .dark {
-    --color-bg: 20 24 22;
-    --color-bg-raised: 28 34 30;
-    --color-bg-hover: 35 43 37;
-    --color-bg-overlay: 42 51 44;
-    --color-text: 237 241 234;
-    --color-text-muted: 170 182 171;
-    --color-text-faint: 119 132 121;
-    --color-accent: 131 193 158;
-    --color-accent-hover: 159 211 179;
-    --color-accent-muted: 50 83 62;
-    --color-border: 54 65 56;
-    --color-border-subtle: 42 51 44;
-  }
   html {
     scroll-behavior: smooth;
     color-scheme: light;
@@ -40,6 +26,11 @@
     background: rgb(var(--color-bg));
     color: rgb(var(--color-text));
     font-family: 'Geist', system-ui, sans-serif;
+    background-image: radial-gradient(
+      circle at 8% 4%,
+      rgb(var(--color-accent-muted) / 0.28),
+      transparent 22rem
+    );
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
@@ -1394,7 +1385,12 @@
     height: 13rem;
     overflow: hidden;
     border: 1px solid rgb(var(--color-border));
-    background: rgb(var(--color-accent-muted));
+    background: linear-gradient(
+      90deg,
+      rgb(var(--color-accent)) 0 7%,
+      rgb(var(--color-accent-muted)) 7% 52%,
+      rgb(var(--color-bg-raised)) 52% 100%
+    );
   }
   .document-cover::after {
     display: block;
@@ -1576,53 +1572,6 @@
     }
   }
 
-  /* Monochrome editorial system: shared across every route. */
-  :root,
-  .light {
-    --color-bg: 250 250 250;
-    --color-bg-raised: 255 255 255;
-    --color-bg-hover: 240 240 240;
-    --color-bg-overlay: 232 232 232;
-    --color-text: 17 17 17;
-    --color-text-muted: 82 82 82;
-    --color-text-faint: 115 115 115;
-    --color-accent: 17 17 17;
-    --color-accent-hover: 82 82 82;
-    --color-accent-muted: 224 224 224;
-    --color-border: 205 205 205;
-    --color-border-subtle: 230 230 230;
-  }
-  html.dark {
-    --color-bg: 17 17 17;
-    --color-bg-raised: 25 25 25;
-    --color-bg-hover: 35 35 35;
-    --color-bg-overlay: 45 45 45;
-    --color-text: 245 245 245;
-    --color-text-muted: 178 178 178;
-    --color-text-faint: 125 125 125;
-    --color-accent: 245 245 245;
-    --color-accent-hover: 190 190 190;
-    --color-accent-muted: 58 58 58;
-    --color-border: 68 68 68;
-    --color-border-subtle: 45 45 45;
-  }
-  html.dark body,
-  html.dark h1,
-  html.dark h2,
-  html.dark h3,
-  html.dark h4,
-  html.dark p,
-  html.dark span,
-  html.dark strong,
-  html.dark a {
-    color: inherit;
-  }
-  html.dark body {
-    color: rgb(245 245 245);
-  }
-  html.light body {
-    color: rgb(17 17 17);
-  }
   .mono-label,
   .detail-number,
   .entry-date,
