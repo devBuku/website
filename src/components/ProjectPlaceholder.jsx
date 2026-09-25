@@ -40,8 +40,7 @@ export default function ProjectPlaceholder({
       className={`${isCompact ? 'h-full w-full rounded-none border-none' : 'rounded-xl border'} relative flex flex-col items-center justify-center overflow-hidden ${isCompact ? '' : 'px-6 py-8'} ${className}`}
       style={{
         borderColor: 'rgb(var(--color-border))',
-        background:
-          'linear-gradient(135deg, rgb(var(--color-bg-raised)), rgb(var(--color-bg)))',
+        backgroundColor: 'rgb(var(--color-bg-raised))',
       }}
     >
       <div

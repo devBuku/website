@@ -55,7 +55,7 @@
   body {
     background: rgb(var(--color-bg));
     color: rgb(var(--color-text));
-    font-family: 'Geist', 'IBM Plex Sans', system-ui, sans-serif;
+    font-family: 'Geist', system-ui, sans-serif;
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
@@ -1273,6 +1273,38 @@
     max-height: 38rem;
     filter: grayscale(1);
   }
+  .project-detail-page .detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .project-detail-page .detail-actions .btn {
+    min-height: 2.75rem;
+    border: 1px solid rgb(var(--color-border));
+    background: transparent;
+    color: rgb(var(--color-text));
+    font-family: inherit;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+  }
+  .project-detail-page .detail-actions .btn:hover {
+    border-color: rgb(var(--color-text));
+    background: rgb(var(--color-text));
+    color: rgb(var(--color-bg));
+    text-decoration: none;
+  }
+  .project-detail-page .detail-actions .btn-primary {
+    background: rgb(var(--color-text));
+    color: rgb(var(--color-bg));
+  }
+  .project-detail-page .detail-actions .btn-primary:hover {
+    background: rgb(var(--color-text-muted));
+    border-color: rgb(var(--color-text-muted));
+  }
+  .project-detail-page .detail-media {
+    background: rgb(var(--color-bg-raised));
+  }
   .project-detail-page .detail-layout {
     padding-top: 0;
   }
@@ -1389,6 +1421,17 @@
   }
   html.light body {
     color: rgb(17 17 17);
+  }
+  .mono-label,
+  .detail-number,
+  .entry-date,
+  .entry-stack,
+  .document-kicker,
+  .home-project-meta,
+  .toolbelt-label,
+  .toolbelt-pill b,
+  .timeline-marker {
+    font-family: inherit;
   }
   *,
   *::before,
