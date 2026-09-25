@@ -1450,12 +1450,11 @@
   }
   a {
     color: inherit;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
+    text-decoration: none;
   }
-  a:hover {
-    text-decoration: underline;
-    text-decoration-color: currentColor;
+  a:hover,
+  a:focus-visible {
+    text-decoration: none;
   }
   .btn,
   .btn-primary,
@@ -1464,8 +1463,12 @@
   .document-action,
   .document-action-secondary,
   .back-link,
-  .text-link {
+  .text-link,
+  .document-link,
+  .document-toc a,
+  .entry-links a {
     border-radius: 0 !important;
+    text-decoration: none !important;
   }
   .btn-primary {
     background: rgb(var(--color-text));
