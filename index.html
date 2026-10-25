@@ -1,55 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer
-    </title>
-    <meta
-      name="description"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, systems design, and production-ready software."
-    />
-    <meta
-      name="keywords"
-      content="Shubhayan Bagchi, devBuku, full-stack developer, backend engineer, React, Node.js, MERN, software engineer, Kolkata"
-    />
-    <link rel="canonical" href="https://devbuku.vercel.app" />
-
-    <meta
-      property="og:title"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, and systems design."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171918" />
+    <meta name="description" content="Shubhayan Bagchi is a backend-focused full-stack developer open to software engineering roles." />
+    <link rel="canonical" href="https://devbuku.vercel.app/" />
+    <meta property="og:title" content="Shubhayan Bagchi — Software Engineer" />
+    <meta property="og:description" content="Backend-focused full-stack developer open to software engineering roles." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devbuku.vercel.app" />
-    <meta property="og:image" content="https://devbuku.vercel.app/me.jpg" />
-    <meta property="og:site_name" content="Shubhayan Bagchi" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shubhayan Bagchi (devBuku)" />
-    <meta
-      name="twitter:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering."
-    />
-    <meta name="twitter:image" content="https://devbuku.vercel.app/me.jpg" />
-
-    <link rel="icon" type="image/jpeg" href="/me.jpg" />
-    <link rel="apple-touch-icon" href="/me.jpg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <meta property="og:image" content="/me.jpg" />
+    <link rel="icon" href="/me.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Shubhayan Bagchi — Software Engineer</title>
   </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <p class="availability">Open to software engineering roles</p>
+        <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">Light theme</button>
+      </header>
 
-  <body class="antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+      <section class="intro" aria-labelledby="name">
+        <p class="eyebrow">Backend-focused full-stack developer</p>
+        <h1 id="name">Shubhayan<br /><em>Bagchi</em></h1>
+        <p class="summary">I build reliable software, useful products, and the systems behind them.</p>
+        <nav class="links" aria-label="Primary links">
+          <a href="mailto:shubhayanbagchi.work@gmail.com">Email</a>
+          <a href="https://github.com/devBuku" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="/resume.pdf">Resume</a>
+        </nav>
+      </section>
+
+      <section class="photo-section" aria-label="Portrait">
+        <img src="/me.jpg" alt="Portrait of Shubhayan Bagchi" width="900" height="900" fetchpriority="high" />
+      </section>
+
+      <section class="content-grid" aria-label="Portfolio information">
+        <div class="content-block">
+          <h2>Selected work</h2>
+          <article><h3>Backend and full-stack products</h3><p>Production-minded applications with clear APIs, thoughtful data models, and simple interfaces.</p><a href="https://github.com/devBuku" target="_blank" rel="noreferrer">View projects ↗</a></article>
+          <article><h3>SIH 2023 finalist</h3><p>Built an AI-powered video dubbing solution as part of the Smart India Hackathon national finale.</p></article>
+        </div>
+        <div class="content-block">
+          <h2>Tech stack</h2>
+          <p class="stack">JavaScript · TypeScript · React · Node.js · Express · PostgreSQL · MongoDB · Git · Linux</p>
+          <h2 class="second-heading">Currently</h2>
+          <p>Final-year Computer Science and Engineering student in Kolkata, India. Looking for software engineering internships and full-time opportunities.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Shubhayan Bagchi · Kolkata, India</p>
+        <a href="mailto:shubhayanbagchi.work@gmail.com">shubhayanbagchi.work@gmail.com</a>
+      </footer>
+    </main>
+    <script src="/script.js" defer></script>
   </body>
 </html>
