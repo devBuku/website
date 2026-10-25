@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "pnpm build",
+  "buildCommand": "pnpm run build",
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false
