@@ -57,9 +57,12 @@ a:hover {
   border-bottom: 1px solid var(--line);
   padding-bottom: 0.8rem;
   font:
-    12px/1.2 ui-monospace,
+    12px/1.2 'JetBrains Mono',
+    ui-monospace,
     SFMono-Regular,
     Menlo,
+    Monaco,
+    Consolas,
     monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -83,9 +86,12 @@ a:hover {
 .eyebrow {
   color: var(--accent);
   font:
-    12px/1.2 ui-monospace,
+    12px/1.2 'JetBrains Mono',
+    ui-monospace,
     SFMono-Regular,
     Menlo,
+    Monaco,
+    Consolas,
     monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -166,9 +172,12 @@ h3 {
   border-left: 2px solid var(--accent);
   color: var(--muted);
   font:
-    0.8rem/1.4 ui-monospace,
+    0.8rem/1.4 'JetBrains Mono',
+    ui-monospace,
     SFMono-Regular,
     Menlo,
+    Monaco,
+    Consolas,
     monospace;
 }
 .terminal-line span {
