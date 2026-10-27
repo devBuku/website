@@ -1,55 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer
-    </title>
-    <meta
-      name="description"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, systems design, and production-ready software."
-    />
-    <meta
-      name="keywords"
-      content="Shubhayan Bagchi, devBuku, full-stack developer, backend engineer, React, Node.js, MERN, software engineer, Kolkata"
-    />
-    <link rel="canonical" href="https://devbuku.vercel.app" />
-
-    <meta
-      property="og:title"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, and systems design."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devbuku.vercel.app" />
-    <meta property="og:image" content="https://devbuku.vercel.app/me.jpg" />
-    <meta property="og:site_name" content="Shubhayan Bagchi" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shubhayan Bagchi (devBuku)" />
-    <meta
-      name="twitter:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering."
-    />
-    <meta name="twitter:image" content="https://devbuku.vercel.app/me.jpg" />
-
-    <link rel="icon" type="image/jpeg" href="/me.jpg" />
-    <link rel="apple-touch-icon" href="/me.jpg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body class="antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Portfolio of Shubhayan Bagchi, a full-stack developer in Kolkata, India.">
+  <meta property="og:title" content="Shubhayan Bagchi — full-stack developer">
+  <meta property="og:description" content="Portfolio of Shubhayan Bagchi, a full-stack developer in Kolkata, India.">
+  <link rel="canonical" href="https://devbuku.vercel.app/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-family='monospace' font-size='20'>sb</text></svg>">
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="style.css">
+  <title>Shubhayan Bagchi — full-stack developer</title>
+</head>
+<body>
+  <header>
+    <h1>Shubhayan Bagchi</h1>
+    <p class="muted">Full-stack developer · Kolkata, India · open to software engineering roles (internships and full-time)</p>
+    <p id="local-time" class="muted" hidden>local time in Kolkata: <time></time></p>
+    <nav aria-label="Primary navigation">
+      <a href="#practice">practice</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#setup">setup</a><a href="https://github.com/devBuku" rel="noopener">github</a><a href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275" rel="noopener">linkedin</a><a href="resume.pdf">resume (pdf)</a><a href="mailto:shubhayanbagchi.work@gmail.com">email</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about"><h2>about</h2><p>I'm a final-year computer science student in Kolkata. I build full-stack web apps, and most of my depth is on the backend: APIs, databases, authentication and real-time features. Lately I've been learning Next.js, WebSockets, WebRTC and Socket.IO by building things with them. I'm looking for a software engineering role where I can keep shipping.</p></section>
+    <section id="practice"><h2>practice</h2><p class="muted">Coding practice problems and contests. Numbers as of 27 October 2026. They are small and still growing; I am working on them.</p><p><a class="label" href="https://leetcode.com/u/devBuku/" rel="noopener">leetcode</a> 33 solved (26 easy, 7 medium, 0 hard), 143 submissions in the past year across 55 active days, longest streak 12 days, contest rating 1480 after 1 contest</p><p><a class="label" href="https://codeforces.com/profile/devBuku" rel="noopener">codeforces</a> just started, account created October 2026, no contests yet</p><p><a class="label" href="https://github.com/devBuku" rel="noopener">github</a> 31 repositories</p><p>I solve these in C++.</p></section>
+    <section id="projects"><h2>projects</h2><p>Four finished projects first, then what I'm building now.</p>
+      <article><h3>rtcamern</h3><p>A real-time chat app, hand-coded from scratch. Two people sign in, message each other instantly, see who is online and send photos and videos.</p><p>Express 5 and Socket.IO server, MongoDB, Clerk sign-in kept in sync through webhooks, file uploads with Multer stored on ImageKit. Ships as a single Docker image. Every part is explained in a docs folder.</p><p class="muted">stack: React 19, Vite, TypeScript, Tailwind CSS, Express 5, Socket.IO, MongoDB, Clerk, Docker</p><p class="links"><a href="https://rtcamern.onrender.com" rel="noopener">live demo</a> <span class="muted">(free host, first load may take a few seconds)</span><a href="https://github.com/devBuku/rtcamern" rel="noopener">code</a><a href="https://github.com/devBuku/rtcamern/tree/main/docs" rel="noopener">docs</a></p></article>
+      <article><h3>College ERP system</h3><p>One web app for a college's admissions, exams, attendance, fees and library.</p><p>A final-year project by a team of five. I wrote all the backend APIs for the library module (catalogue, issue and return, overdue tracking, reports) and the exams and results module (scheduling, marks entry, grades, transcripts), plus the dashboard reporting endpoints. Login uses JWT with role-based access for students, faculty and admins. It was demoed on a VPS, and my college is currently evaluating it for production use. The demo server has since been taken down to save hosting costs.</p><p class="muted">stack: PostgreSQL, Express, React, Node.js, Redis, Prisma, Docker, Nginx, TypeScript, Tailwind CSS, Zustand, TanStack Query, Zod, JWT, Python (data ingestor)</p><p class="links">private repo · walkthrough on request</p></article>
+      <article><h3>VagDevi.ai</h3><p>A chatbot that answers in your language. You type or upload an image, and the reply can be translated.</p><p>Text and image understanding with the Gemini API, multilingual replies, JWT login. It won my college's tech fest.</p><p class="muted">stack: React, Flask, MongoDB, Gemini API, JWT</p><p class="links"><a href="https://github.com/devBuku/VagDevi.ai" rel="noopener">code</a></p></article>
+      <article><h3>Swarlipi</h3><p>Turns a video into another language. Speech is transcribed, translated and re-voiced, and the new audio is stretched to match the original timing.</p><p>A pipeline with Whisper, Google Translate and gTTS, with pydub and moviepy to keep the audio and video in sync. National finalist at Smart India Hackathon 2023 (CGC Landran, Punjab, 19-20 December 2023).</p><p class="muted">stack: Python, Flask, HTML templates, OpenAI Whisper, Google Translate API, gTTS, pydub, moviepy</p><p class="links"><a href="https://github.com/devBuku/swarlipi-full-project-demo" rel="noopener">code</a></p></article>
+      <h3 class="subheading">in progress</h3>
+      <article class="short"><h3>Uber clone</h3><p>A ride-booking app with separate rider and captain sides.</p><p class="links"><a href="https://github.com/devBuku/Uber" rel="noopener">code</a></p></article>
+      <article class="short"><h3>Omegle clone</h3><p>A random video chat with strangers.</p><p class="links">links: none yet</p></article>
+      <article class="short"><h3>Excalidraw clone</h3><p>A shared drawing whiteboard, built as a Turborepo monorepo.</p><p class="links"><a href="https://github.com/devBuku/exbb" rel="noopener">code</a></p></article>
+      <h3 class="subheading">smaller</h3>
+      <article class="short"><h3>Quickbute</h3><p>A food-ordering site with cart, Stripe payments and an admin dashboard (MongoDB, Express, React, Node.js, Stripe).</p><p class="links"><a href="https://github.com/devBuku/Tomato" rel="noopener">code</a></p></article>
+      <article class="short"><h3>random-walk</h3><p>A multi-threaded C program that draws coloured random walks with SDL2 and POSIX threads.</p><p class="links"><a href="https://github.com/devBuku/random-walk" rel="noopener">code</a></p></article>
+    </section>
+    <section id="skills"><h2>skills</h2><p><span class="label">languages:</span> C++: data structures and algorithms<br>Python: VagDevi.ai (Flask backend), Swarlipi (the whole AI pipeline), and the data ingestor in the College ERP<br>JavaScript and TypeScript: the web apps, front end and back end: the College ERP (PostgreSQL, Express, React, Node.js, in TypeScript), rtcamern and my other web projects<br>C: random-walk, a multi-threaded SDL2 program<br>HTML and CSS: the page templates in Swarlipi, and this page<br>also: SQL (the PostgreSQL database behind the College ERP)</p><p><span class="label">frontend:</span> React, Tailwind CSS, shadcn/ui, MUI, Bootstrap, Zustand, TanStack Query</p><p><span class="label">backend:</span> Node.js, Express, Flask, REST APIs, JWT and cookie auth, RBAC, Zod</p><p><span class="label">databases:</span> PostgreSQL, MySQL, MongoDB, Prisma, Mongoose</p><p><span class="label">tools:</span> Docker, Git, GitHub, Linux, Postman</p><p><span class="label">recently learned:</span> Next.js, WebSockets, WebRTC, Socket.IO</p><p><span class="label">learning now:</span> Nix</p></section>
+    <section id="education"><h2>education</h2><p>B.Tech, Computer Science &amp; Engineering. Swami Vivekananda Institute of Science &amp; Technology, Kolkata (MAKAUT). 2022 to 2026 (expected).</p><p>Coursework: Data Structures and Algorithms, Design and Analysis of Algorithms, DBMS, Operating Systems, Computer Networks, Compiler Design, Fullstack web development.</p><p>Also: Smart India Hackathon 2023 national finalist. Group Leader of the Coding Club at the same college, mentoring juniors in fullstack web development.</p></section>
+    <section id="setup"><h2>setup</h2><p>The tools I work in every day. Mostly a terminal.</p><pre><span class="muted">editor        </span>Neovim
+<span class="muted">multiplexer   </span>tmux + tmux-sessionizer
+<span class="muted">os            </span>Debian 13
+<span class="muted">packages      </span>Nix (learning)
+<span class="muted">terminal      </span>kitty
+<span class="muted">shell         </span>zsh + oh-my-zsh</pre><p class="muted"><a href="https://github.com/devBuku/.dotfiles" rel="noopener">dotfiles</a> // This page is hand-written HTML and CSS. View source.</p></section>
+  </main>
+  <footer><p>email: <a href="mailto:shubhayanbagchi.work@gmail.com">shubhayanbagchi.work@gmail.com</a><br>last updated: October 2026<br>source: <a href="https://github.com/devBuku/website" rel="noopener">https://github.com/devBuku/website</a></p><button id="theme-toggle" type="button" hidden>toggle theme</button></footer>
+  <script src="theme.js"></script>
+</body>
 </html>

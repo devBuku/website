@@ -1,5 +1,1 @@
-{
-  "framework": "nextjs",
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install --frozen-lockfile"
-}
+{"redirects":[{"source":"/work","destination":"/#projects"},{"source":"/blog","destination":"/"},{"source":"/projects/:slug","destination":"/#projects"}]}
