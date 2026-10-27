@@ -1,55 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer
-    </title>
-    <meta
-      name="description"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, systems design, and production-ready software."
-    />
-    <meta
-      name="keywords"
-      content="Shubhayan Bagchi, devBuku, full-stack developer, backend engineer, React, Node.js, MERN, software engineer, Kolkata"
-    />
-    <link rel="canonical" href="https://devbuku.vercel.app" />
-
-    <meta
-      property="og:title"
-      content="Shubhayan Bagchi (devBuku) — Backend-Focused Full-Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering, React, Node.js, and systems design."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devbuku.vercel.app" />
-    <meta property="og:image" content="https://devbuku.vercel.app/me.jpg" />
-    <meta property="og:site_name" content="Shubhayan Bagchi" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Shubhayan Bagchi (devBuku)" />
-    <meta
-      name="twitter:description"
-      content="Backend-Focused Full-Stack Developer & CSE Undergrad. Backend-first engineering."
-    />
-    <meta name="twitter:image" content="https://devbuku.vercel.app/me.jpg" />
-
-    <link rel="icon" type="image/jpeg" href="/me.jpg" />
-    <link rel="apple-touch-icon" href="/me.jpg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body class="antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Shubhayan Bagchi — computer science student and full-stack developer in Kolkata.">
+  <link rel="stylesheet" href="style.css">
+  <title>Shubhayan Bagchi — home</title>
+  <script>try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+  <header>
+    <p class="prompt" aria-hidden="true">~/shubhayan $ whoami</p>
+    <h1>Shubhayan Bagchi</h1>
+    <p class="muted">Full-stack developer · Kolkata, India · open to software engineering roles</p>
+    <p id="local-time" class="muted" hidden>local time in Kolkata: <time></time></p>
+    <nav aria-label="Primary navigation"><a href="index.html" aria-current="page">home</a> // <a href="projects.html">projects</a> // <a href="practice.html">practice</a> // <a href="about.html">about</a> // <a href="https://github.com/devBuku" rel="noopener">github</a> // <a href="https://www.linkedin.com/in/shubhayan-bagchi-b83522275" rel="noopener">linkedin</a> // <a href="resume.pdf">resume (pdf)</a> // <a href="mailto:shubhayanbagchi.work@gmail.com">email</a></nav>
+  </header>
+  <main>
+    <p>Final-year computer science student in Kolkata. I build full-stack web apps, strongest on the backend, and I&apos;m looking for a software engineering role.</p>
+    <section><h2>proof</h2><div class="rows"><div>leetcode: 33 solved, best streak 12 days</div><div>codeforces: just started</div><div>github: 31 repositories</div></div><p><a href="practice.html">all practice stats -&gt;</a></p></section>
+    <section><h2>featured</h2><article><a href="projects.html#rtcamern">rtcamern</a> <span class="status done">[done]</span><p>A real-time chat app with instant messages, online status, and media sharing.</p></article><article><a href="projects.html#college-erp">College ERP system</a> <span class="status private">[private]</span><p>A college app for admissions, exams, attendance, fees and library.</p></article><p><a href="projects.html">all projects -&gt;</a></p></section>
+    <section><h2>building now</h2><p>Uber clone, Omegle clone, Excalidraw clone.</p></section>
+  </main>
+  <footer><p>email: <a href="mailto:shubhayanbagchi.work@gmail.com">shubhayanbagchi.work@gmail.com</a><br>last updated: October 2026<br>source: <a href="https://github.com/devBuku/website" rel="noopener">https://github.com/devBuku/website</a></p><button id="theme-toggle" type="button" hidden>toggle theme</button></footer>
+  <script src="script.js"></script>
+</body>
 </html>
